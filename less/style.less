@@ -1,0 +1,183 @@
+// Import LESS Elements 0.6 by Dmitry Fadeyev
+@import "elements.less";
+
+/*
+Theme Name: RÉÉL-Radio 2013
+Description: RÉÉL-Radio 2012 is a custom theme made for RÉÉL-Radio, the student radio of the Université du Québec en Outaouais.
+Version: 0.1
+Author: Paul Morel & Marie-Michelle Daigle
+Author URI: http://paulmorel.com
+Theme URI: http://reel-radio.fm
+*/  
+
+// Import normalize CSS from H5BP
+@import "normalize.less";
+
+/* =============================================================================
+   Styles
+   ========================================================================== */
+/* -----------------------------------------------------------------------------
+   Fonts
+   -------------------------------------------------------------------------- */
+
+@font-face {
+    font-family: 'DIN';
+    src: url('../type/DINWeb-Light.eot');
+    src: url('../type/DINWeb-Light.eot?#iefix') format('embedded-opentype'),
+         url('../type/DINWeb-Light.woff') format('woff'),
+         url('../type/DINPro-Light.otf') format('opentype');
+    font-weight: 200; // Light
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DIN';
+    src: url('../type/DINWeb-Medium.eot');
+    src: url('../type/DINWeb-Medium.eot?#iefix') format('embedded-opentype'),
+         url('../type/DINWeb-Medium.woff') format('woff'),
+         url('../type/DINPro-Medium.otf') format('opentype');
+    font-weight: 400; // Normal
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DIN';
+    src: url('../type/DINWeb-Black.eot');
+    src: url('../type/DINWeb-Black.eot?#iefix') format('embedded-opentype'),
+         url('../type/DINWeb-Black.woff') format('woff'),
+         url('../type/DINPro-Black.otf') format('opentype');
+    font-weight: 700; // Bold
+    font-style: normal;
+}
+
+/* -----------------------------------------------------------------------------
+   Base
+   -------------------------------------------------------------------------- */
+// Colour Variables
+@maincolour: #5bd3d2;
+@textcolour: #444;
+@textcolour2: #757575;
+
+body {
+	background:url(../img/bg.png);
+  color:@textcolour;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+/* -----------------------------------------------------------------------------
+   Headings
+   -------------------------------------------------------------------------- */
+
+
+h1 {
+  font-family: 'DIN', sans-serif;
+  font-size:2.25em;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: @maincolour;
+  text-shadow: 0px 1px 1px #fff;
+}
+
+h2 {
+  font-family: 'DIN', sans-serif;
+  font-size: 1.25em;
+  font-weight: normal;
+  color: @textcolour;
+}
+
+.page-wrapper {
+	width:960px;
+	padding: 0 10px;
+  margin:0 auto;
+}
+
+/* -----------------------------------------------------------------------------
+   Songs
+   -------------------------------------------------------------------------- */
+
+.song-list {
+  list-style-type: none;
+  margin:0;
+  padding:0;
+}
+
+.song {
+	background:#fff;
+	width:220px;
+  padding: 10px;
+  margin-left:20px;
+  margin-top:20px;
+
+  display: inline;
+  display: inline-block;
+  zoom:1;
+
+	.drop-shadow (0px, 1px, 2px, 0.2);
+
+  &:first-child {
+    margin-left:0;
+  }
+
+  a {
+    text-decoration: none;
+    color:#000;
+
+    //&:hover;
+  }
+
+	figure, figure img {
+		width:200px;
+		height:200px;
+
+    .drop-shadow (0px, 0px, 2px, 0.1);
+
+	}
+
+  .info {
+    //padding:10px;
+    margin-top:20px;
+    font-size:0.75em;
+    color: @textcolour2;
+
+    ul {
+      list-style: none;
+      margin:10px 0;
+      padding:0;
+
+      li {
+        text-align: right;
+        height:20px;
+        margin:5px 0;
+      }
+    }
+  }
+
+  h2 {
+    border-bottom:1px #ddd solid;
+    margin:0;
+    padding-bottom:5px;
+  }
+
+}
+
+// Import helper classes from H5BP
+@import "helpers.less";
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media print {
+	* { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
+	a, a:visited { text-decoration: underline; }
+	a[href]:after { content: " (" attr(href) ")"; }
+	abbr[title]:after { content: " (" attr(title) ")"; }
+	.ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+	pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+	thead { display: table-header-group; } /* h5bp.com/t */
+	tr, img { page-break-inside: avoid; }
+	img { max-width: 100% !important; }
+	@page { margin: 0.5cm; }
+	p, h2, h3 { orphans: 3; widows: 3; }
+	h2, h3 { page-break-after: avoid; }
+}
