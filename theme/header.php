@@ -35,9 +35,5 @@
 		<?php wp_nav_menu(array('container_class' => 'main-nav','theme_location' => 'primary')); ?>
 		<?php wp_nav_menu(array('container_class' => 'extra-nav-1','theme_location' => 'secondary','fallback_cb' => NULL)); ?>
 		<?php wp_nav_menu(array('container_class' => 'extra-nav-2','theme_location' => 'tertiary','fallback_cb' => NULL)); ?>
-		<ol class="drdre">
-				<li class="snoop"></li>
-				<li class="icecube"><a href=""><span></span></a></li>
-			</ol>	
 	</header>
 
