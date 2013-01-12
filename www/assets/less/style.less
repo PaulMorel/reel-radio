@@ -9,13 +9,44 @@
    ========================================================================== */
 
 // Colour Variables
-@yellow = #f2c536
-@black = #000
-@grey = #aaa
+@yellow: #f2c536;
+@black: #000;
+@grey: #eee;
 
 /* -----------------------------------------------------------------------------
    Fonts
    -------------------------------------------------------------------------- */
+
+body{
+	background:@grey;
+}
+
+header.page {
+	height:66px;
+	background:@black;
+
+	.logo{
+		background:#FFF;
+		width:350px;
+		height:66px;
+		float:left;
+	}
+
+	nav {
+
+		float:left;
+
+		a{
+		color:#FFF;
+		text-transform: uppercase;
+		}	
+	}
+}
+
+.wrapper{
+	width: 940px;
+	margin:0 auto;
+}
 
 // Import helper classes from H5BP
 @import "helpers.less";
