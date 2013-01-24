@@ -221,7 +221,7 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 		function add_config_page() {
 			global $wpdb;
 			if ( function_exists('add_submenu_page') ) {
-				add_options_page('Weekly Schedule for Wordpress', 'Weekly Schedule', 9, basename(__FILE__), array('WS_Admin','config_page'));
+				add_options_page('Grille Horaire', 'Grille Horaire', 9, basename(__FILE__), array('WS_Admin','config_page'));
 				add_filter( 'plugin_action_links', array( 'WS_Admin', 'filter_plugin_actions'), 10, 2 );
 							}
 		} // end add_WS_config_page()
@@ -231,7 +231,7 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 			static $this_plugin;
 			if ( ! $this_plugin ) $this_plugin = plugin_basename(__FILE__);
 			if ( $file == $this_plugin ){
-				$settings_link = '<a href="options-general.php?page=weekly-schedule.php">' . __('Settings') . '</a>';
+				$settings_link = '<a href="options-general.php?page=weekly-schedule.php">' . __('Paramètres et réglages') . '</a>';
 				
 				array_unshift( $links, $settings_link ); // before other links
 			}
@@ -312,7 +312,7 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 			
 			}
 			if ( isset($_POST['submit']) ) {
-				if (!current_user_can('manage_options')) die(__('You cannot edit the Weekly Schedule for WordPress options.'));
+				if (!current_user_can('manage_options')) die(__('Vous n\'avez pas les permissions nécessaires pour modifier les paramètres de Grille Horaire'));
 				check_admin_referer('wspp-config');
 				
 				
@@ -326,22 +326,22 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 					
 					if ($itemsquarterhour)
 					{
-						echo '<div id="warning" class="updated fade"><p><strong>Cannot change time division to tri-hourly since some items have quarter-hourly durations</strong></div>';
+						echo '<div id="warning" class="updated fade"><p><strong>Impossible de changer la répartition du temps aux tiers d\'heures, car certains éléments sont aux quarts d\'heures.</strong></div>';
 						$options['timedivision'] = "0.25";
 					}
 					elseif ($itemshalfhour)
 					{
-						echo '<div id="warning" class="updated fade"><p><strong>Cannot change time division to tri-hourly since some items have half-hourly durations</strong></div>';
+						echo '<div id="warning" class="updated fade"><p><strong>Impossible de changer la répartition du temps aux tiers d\'heures, car certains éléments sont aux demi-heures.</strong></div>';
 						$options['timedivision'] = "0.5";
 					}
 					elseif ($itemshour)
 					{
-						echo '<div id="warning" class="updated fade"><p><strong>Cannot change time division to tri-hourly since some items have hourly durations</strong></div>';
+						echo '<div id="warning" class="updated fade"><p><strong>Impossible de changer la répartition du temps aux tiers d\'heures, car certains éléments sont aux heures.</strong></div>';
 						$options['timedivision'] = "1.0";
 					}
 					elseif ($itemstwohour)
 					{
-						echo '<div id="warning" class="updated fade"><p><strong>Cannot change time division to tri-hourly since some items have hourly durations</strong></div>';
+						echo '<div id="warning" class="updated fade"><p><strong>Impossible de changer la répartition du temps aux tiers d\'heures, car certains éléments sont aux heures.</strong></div>';
 						$options['timedivision'] = "2.0";
 					}
 					else
