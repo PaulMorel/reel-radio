@@ -25,11 +25,11 @@ You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software    
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA*/
 
-if (is_file(trailingslashit(ABSPATH.PLUGINDIR).'weekly-schedule.php')) {
-	define('WS_FILE', trailingslashit(ABSPATH.PLUGINDIR).'weekly-schedule.php');
+if (is_file(trailingslashit(ABSPATH.PLUGINDIR).'grille-horaire.php')) {
+	define('WS_FILE', trailingslashit(ABSPATH.PLUGINDIR).'grille-horaire.php');
 }
-else if (is_file(trailingslashit(ABSPATH.PLUGINDIR).'weekly-schedule/weekly-schedule.php')) {
-	define('WS_FILE', trailingslashit(ABSPATH.PLUGINDIR).'weekly-schedule/weekly-schedule.php');
+else if (is_file(trailingslashit(ABSPATH.PLUGINDIR).'grille-horaire/grille-horaire.php')) {
+	define('WS_FILE', trailingslashit(ABSPATH.PLUGINDIR).'grille-horaire/grille-horaire.php');
 }
 
 function ws_install() {
@@ -231,7 +231,7 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 			static $this_plugin;
 			if ( ! $this_plugin ) $this_plugin = plugin_basename(__FILE__);
 			if ( $file == $this_plugin ){
-				$settings_link = '<a href="options-general.php?page=weekly-schedule.php">' . __('Paramètres et réglages') . '</a>';
+				$settings_link = '<a href="options-general.php?page=grille-horaire.php">' . __('Paramètres et réglages') . '</a>';
 				
 				array_unshift( $links, $settings_link ); // before other links
 			}
@@ -758,9 +758,9 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 			?>
 			<div class="wrap">
 				<h2>Paramètres et réglages des Grilles Horaire</h2>
-				<!--<a href="http://yannickcorner.nayanna.biz/wordpress-plugins/weekly-schedule/" target="weeklyschedule"><img src="<?php echo $wspluginpath; ?>/icons/btn_donate_LG.gif" /></a> | <a target='wsinstructions' href='http://wordpress.org/extend/plugins/weekly-schedule/installation/'>Installation Instructions</a> | <a href='http://wordpress.org/extend/plugins/weekly-schedule/faq/' target='llfaq'>FAQ</a> | <a href='http://yannickcorner.nayanna.biz/contact-me'>Contact the Author</a><br /><br />-->
+				<!--<a href="http://yannickcorner.nayanna.biz/wordpress-plugins/grille-horaire/" target="weeklyschedule"><img src="<?php echo $wspluginpath; ?>/icons/btn_donate_LG.gif" /></a> | <a target='wsinstructions' href='http://wordpress.org/extend/plugins/grille-horaire/installation/'>Installation Instructions</a> | <a href='http://wordpress.org/extend/plugins/grille-horaire/faq/' target='llfaq'>FAQ</a> | <a href='http://yannickcorner.nayanna.biz/contact-me'>Contact the Author</a><br /><br />-->
 				
-				<form name='wsadmingenform' action="<?php echo add_query_arg( 'page', 'weekly-schedule', admin_url( 'options-general.php' ) ); ?>" method="post" id="ws-conf">
+				<form name='wsadmingenform' action="<?php echo add_query_arg( 'page', 'grille-horaire', admin_url( 'options-general.php' ) ); ?>" method="post" id="ws-conf">
 				<?php
 				if ( function_exists('wp_nonce_field') )
 						wp_nonce_field('wspp-config');
@@ -801,9 +801,9 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 
 				<div style='padding-top: 15px;clear:both'>
 					<fieldset style='border:1px solid #CCC;padding:10px'>
-					<legend style='padding: 0 5px 0 5px;'><strong>Schedule Selection and Usage Instructions</strong></legend>				
+					<legend style='padding: 0 5px 0 5px;'><strong>Selection d'horaire et instructions d'utilisation</strong></legend>				
 						<FORM name="scheduleselection">
-							Select Current Schedule: 
+							Selectionner grille horaire actuelle: 
 							<SELECT name="schedulelist" style='width: 300px'>
 							<?php if ($genoptions['numberschedules'] == '') $numberofschedules = 2; else $numberofschedules = $genoptions['numberschedules'];
 								for ($counter = 1; $counter <= $numberofschedules; $counter++): ?>
@@ -812,7 +812,7 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 									   <option value="<?php echo $counter ?>" <?php if ($schedule == $counter) echo 'SELECTED';?>>Schedule <?php echo $counter ?><?php if ($tempoptions != "") echo " (" . $tempoptions['schedulename'] . ")"; ?></option>
 								<?php endfor; ?>
 							</SELECT>
-							<INPUT type="button" name="go" value="Go!" onClick="window.location= '?page=weekly-schedule.php&amp;settings=<?php echo $adminpage; ?>&amp;schedule=' + document.scheduleselection.schedulelist.options[document.scheduleselection.schedulelist.selectedIndex].value">						
+							<INPUT type="button" name="go" value="Go!" onClick="window.location= '?page=grille-horaire.php&amp;settings=<?php echo $adminpage; ?>&amp;schedule=' + document.scheduleselection.schedulelist.options[document.scheduleselection.schedulelist.selectedIndex].value">						
 							Copy from: 
 							<SELECT name="copysource" style='width: 300px'>
 							<?php if ($genoptions['numberschedules'] == '') $numberofschedules = 2; else $numberofschedules = $genoptions['numberschedules'];
@@ -824,25 +824,25 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 									   <?php endif; 
 								    endfor; ?>
 							</SELECT>
-							<INPUT type="button" name="copy" value="Copy!" onClick="window.location= '?page=weekly-schedule.php&amp;copy=<?php echo $schedule; ?>&source=' + document.scheduleselection.copysource.options[document.scheduleselection.copysource.selectedIndex].value">							
+							<INPUT type="button" name="copy" value="Copy!" onClick="window.location= '?page=grille-horaire.php&amp;copy=<?php echo $schedule; ?>&source=' + document.scheduleselection.copysource.options[document.scheduleselection.copysource.selectedIndex].value">							
 					<br />
 					<br />
 					<table class='widefat' style='clear:none;width:100%;background: #DFDFDF url(/wp-admin/images/gray-grad.png) repeat-x scroll left top;'>
 						<thead>
 						<tr>
 							<th style='width:80px' class="tooltip">
-								Schedule #
+								No. de la Grille horiare
 							</th>
 							<th style='width:130px' class="tooltip">
-								Schedule Name
+								Nom de Grille horaire
 							</th>
 							<th class="tooltip">
-								Code to insert on a Wordpress page to see Weekly Schedule
+								Code à insérer sur une page pour visionner la grille horaire
 							</th>
 						</tr>
 						</thead>
 						<tr>
-						<td style='background: #FFF'><?php echo $schedule; ?></td><td style='background: #FFF'><?php echo $options['schedulename']; ?></a></td><td style='background: #FFF'><?php echo "[weekly-schedule schedule=" . $schedule . "]"; ?></td><td style='background: #FFF;text-align:center'></td>
+						<td style='background: #FFF'><?php echo $schedule; ?></td><td style='background: #FFF'><?php echo $options['schedulename']; ?></a></td><td style='background: #FFF'><?php echo "[grille-horaire schedule=" . $schedule . "]"; ?></td><td style='background: #FFF;text-align:center'></td>
 						</tr>
 					</table> 
 					<br />
@@ -853,10 +853,10 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 
 	
 				<fieldset style='border:1px solid #CCC;padding:10px'>
-				<legend style='padding: 0 5px 0 5px;'><strong>Settings for Schedule <?php echo $schedule; ?> - <?php echo $options['schedulename']; ?></strong></legend>	
+				<legend style='padding: 0 5px 0 5px;'><strong>Paramètres pous grille horaire <?php echo $schedule; ?> - <?php echo $options['schedulename']; ?></strong></legend>	
 				<?php if (($adminpage == "") || ($adminpage == "general")): ?>
-				<a href="?page=weekly-schedule.php&amp;settings=general&amp;schedule=<?php echo $schedule; ?>"><strong>General Settings</strong></a> | <a href="?page=weekly-schedule.php&amp;settings=categories&amp;schedule=<?php echo $schedule; ?>">Manage Schedule Categories</a> | <a href="?page=weekly-schedule.php&amp;settings=items&amp;schedule=<?php echo $schedule; ?>">Manage Schedule Items</a> | <a href="?page=weekly-schedule.php&amp;settings=days&amp;schedule=<?php echo $schedule; ?>">Manage Days Labels</a><br /><br />
-				<form name="wsadminform" action="<?php echo add_query_arg( 'page', 'weekly-schedule', admin_url( 'options-general.php' ) ); ?>" method="post" id="ws-config">
+				<a href="?page=grille-horaire.php&amp;settings=general&amp;schedule=<?php echo $schedule; ?>"><strong>Réglages généraux</strong></a> | <a href="?page=grille-horaire.php&amp;settings=categories&amp;schedule=<?php echo $schedule; ?>">Manage Schedule Categories</a> | <a href="?page=grille-horaire.php&amp;settings=items&amp;schedule=<?php echo $schedule; ?>">Manage Schedule Items</a> | <a href="?page=grille-horaire.php&amp;settings=days&amp;schedule=<?php echo $schedule; ?>">Manage Days Labels</a><br /><br />
+				<form name="wsadminform" action="<?php echo add_query_arg( 'page', 'grille-horaire', admin_url( 'options-general.php' ) ); ?>" method="post" id="ws-config">
 				<?php
 					if ( function_exists('wp_nonce_field') )
 						wp_nonce_field('wspp-config');
@@ -1116,7 +1116,7 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 					</fieldset>
 				<?php /* --------------------------------------- Categories --------------------------------- */ ?>
 				<?php elseif ($adminpage == "categories"): ?>
-				<a href="?page=weekly-schedule.php&amp;settings=general&amp;schedule=<?php echo $schedule; ?>">General Settings</a> | <a href="?page=weekly-schedule.php&amp;settings=categories&amp;schedule=<?php echo $schedule; ?>"><strong>Manage Schedule Categories</strong></a> | <a href="?page=weekly-schedule.php&amp;settings=items&amp;schedule=<?php echo $schedule; ?>">Manage Schedule Items</a> | <a href="?page=weekly-schedule.php&amp;settings=days&amp;schedule=<?php echo $schedule; ?>">Manage Days Labels</a><br /><br />
+				<a href="?page=grille-horaire.php&amp;settings=general&amp;schedule=<?php echo $schedule; ?>">General Settings</a> | <a href="?page=grille-horaire.php&amp;settings=categories&amp;schedule=<?php echo $schedule; ?>"><strong>Manage Schedule Categories</strong></a> | <a href="?page=grille-horaire.php&amp;settings=items&amp;schedule=<?php echo $schedule; ?>">Manage Schedule Items</a> | <a href="?page=grille-horaire.php&amp;settings=days&amp;schedule=<?php echo $schedule; ?>">Manage Days Labels</a><br /><br />
 				<div style='float:left;margin-right: 15px'>
 					<form name="wscatform" action="" method="post" id="ws-config">
 					<?php
@@ -1158,11 +1158,11 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 							  <?php foreach($cats as $cat): ?>
 								<tr>
 								<td class='name column-name' style='background: #FFF'><?php echo $cat->id; ?></td>
-								<td style='background: #FFF'><a href='?page=weekly-schedule.php&amp;editcat=<?php echo $cat->id; ?>&schedule=<?php echo $schedule; ?>'><strong><?php echo $cat->name; ?></strong></a></td>
+								<td style='background: #FFF'><a href='?page=grille-horaire.php&amp;editcat=<?php echo $cat->id; ?>&schedule=<?php echo $schedule; ?>'><strong><?php echo $cat->name; ?></strong></a></td>
 								<td style='background: <?php echo $cat->backgroundcolor != NULL ? $cat->backgroundcolor : '#FFF'; ?>;text-align:right'></td>
 								<td style='background: #FFF;text-align:right'><?php echo $cat->nbitems; ?></td>
 								<?php if ($cat->nbitems == 0): ?>
-								<td style='background:#FFF'><a href='?page=weekly-schedule.php&amp;deletecat=<?php echo $cat->id; ?>&schedule=<?php echo $schedule; ?>' 
+								<td style='background:#FFF'><a href='?page=grille-horaire.php&amp;deletecat=<?php echo $cat->id; ?>&schedule=<?php echo $schedule; ?>' 
 								<?php echo "onclick=\"if ( confirm('" . esc_js(sprintf( __("You are about to delete this category '%s'\n  'Cancel' to stop, 'OK' to delete."), $cat->name )) . "') ) { return true;}return false;\"" ?>><img src='<?php echo $wspluginpath; ?>/icons/delete.png' /></a></td>
 								<?php else: ?>
 								<td style='background: #FFF'></td>
@@ -1179,7 +1179,7 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 				</div>
 				<?php /* --------------------------------------- Items --------------------------------- */ ?>
 				<?php elseif ($adminpage == "items"): ?>
-				<a href="?page=weekly-schedule.php&amp;settings=general&amp;schedule=<?php echo $schedule; ?>">General Settings</a> | <a href="?page=weekly-schedule.php&amp;settings=categories&amp;schedule=<?php echo $schedule; ?>">Manage Schedule Categories</a> | <a href="?page=weekly-schedule.php&amp;settings=items&amp;schedule=<?php echo $schedule; ?>"><strong>Manage Schedule Items</strong></a> | <a href="?page=weekly-schedule.php&amp;settings=days&amp;schedule=<?php echo $schedule; ?>">Manage Days Labels</a><br /><br />
+				<a href="?page=grille-horaire.php&amp;settings=general&amp;schedule=<?php echo $schedule; ?>">General Settings</a> | <a href="?page=grille-horaire.php&amp;settings=categories&amp;schedule=<?php echo $schedule; ?>">Manage Schedule Categories</a> | <a href="?page=grille-horaire.php&amp;settings=items&amp;schedule=<?php echo $schedule; ?>"><strong>Manage Schedule Items</strong></a> | <a href="?page=grille-horaire.php&amp;settings=days&amp;schedule=<?php echo $schedule; ?>">Manage Days Labels</a><br /><br />
 				<div style='float:left;margin-right: 15px;width: 500px;'>
 					<form name="wsitemsform" action="" method="post" id="ws-config">
 					<?php
@@ -1353,8 +1353,8 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 
 							  <?php foreach($items as $item): ?>
 								<tr>
-								<td class='name column-name' style='background: #FFF'><a href='?page=weekly-schedule.php&amp;edititem=<?php echo $item->id; ?>&amp;schedule=<?php echo $schedule; ?>'><strong><?php echo $item->id; ?></strong></a></td>
-								<td style='background: #FFF'><a href='?page=weekly-schedule.php&amp;edititem=<?php echo $item->id; ?>&amp;schedule=<?php echo $schedule; ?>'><strong><?php echo stripslashes($item->name); ?></strong></a></td>
+								<td class='name column-name' style='background: #FFF'><a href='?page=grille-horaire.php&amp;edititem=<?php echo $item->id; ?>&amp;schedule=<?php echo $schedule; ?>'><strong><?php echo $item->id; ?></strong></a></td>
+								<td style='background: #FFF'><a href='?page=grille-horaire.php&amp;edititem=<?php echo $item->id; ?>&amp;schedule=<?php echo $schedule; ?>'><strong><?php echo stripslashes($item->name); ?></strong></a></td>
 
 								<td style='background: <?php echo $item->backgroundcolor ? $item->backgroundcolor : '#FFF'; ?>'></td>
 								<td style='background: #FFF;text-align:right'><?php echo $item->dayname; ?></td>
@@ -1397,7 +1397,7 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 								else
 									echo $hour . ":" . $minutes . $timeperiod . "\n";
 								?></td>
-								<td style='background:#FFF'><a href='?page=weekly-schedule.php&amp;deleteitem=<?php echo $item->id; ?>&amp;schedule=<?php echo $schedule; ?>' 
+								<td style='background:#FFF'><a href='?page=grille-horaire.php&amp;deleteitem=<?php echo $item->id; ?>&amp;schedule=<?php echo $schedule; ?>' 
 								<?php echo "onclick=\"if ( confirm('" . esc_js(sprintf( __("You are about to delete the item '%s'\n  'Cancel' to stop, 'OK' to delete."), $item->name )) . "') ) { return true;}return false;\""; ?>><img src='<?php echo $wspluginpath; ?>/icons/delete.png' /></a></td>
 								</tr>
 							  <?php endforeach; ?>				
@@ -1408,7 +1408,7 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 				</div>
 				<?php elseif ($adminpage == "days"): ?>
 				<div>
-					<a href="?page=weekly-schedule.php&amp;settings=general&amp;schedule=<?php echo $schedule; ?>">General Settings</a> | <a href="?page=weekly-schedule.php&amp;settings=categories&amp;schedule=<?php echo $schedule; ?>">Manage Schedule Categories</a> | <a href="?page=weekly-schedule.php&amp;settings=items&amp;schedule=<?php echo $schedule; ?>">Manage Schedule Items</a> | <a href="?page=weekly-schedule.php&amp;settings=days&amp;schedule=<?php echo $schedule; ?>"><strong>Manage Days Labels</strong></a><br /><br />
+					<a href="?page=grille-horaire.php&amp;settings=general&amp;schedule=<?php echo $schedule; ?>">General Settings</a> | <a href="?page=grille-horaire.php&amp;settings=categories&amp;schedule=<?php echo $schedule; ?>">Manage Schedule Categories</a> | <a href="?page=grille-horaire.php&amp;settings=items&amp;schedule=<?php echo $schedule; ?>">Manage Schedule Items</a> | <a href="?page=grille-horaire.php&amp;settings=days&amp;schedule=<?php echo $schedule; ?>"><strong>Manage Days Labels</strong></a><br /><br />
 					<div>
 						<form name="wsdaysform" action="" method="post" id="ws-config">
 						<?php
@@ -1954,11 +1954,11 @@ $version = "1.0";
 // adds the menu item to the admin interface
 add_action('admin_menu', array('WS_Admin','add_config_page'));
 
-add_shortcode('weekly-schedule', 'ws_library_func');
+add_shortcode('grille-horaire', 'ws_library_func');
 
-add_shortcode('flat-weekly-schedule', 'ws_library_flat_func');
+add_shortcode('flat-grille-horaire', 'ws_library_flat_func');
 
-add_shortcode( 'daily-weekly-schedule', 'ws_day_list_func' );
+add_shortcode( 'daily-grille-horaire', 'ws_day_list_func' );
 
 function ws_day_list_func( $atts ) {
     extract(shortcode_atts(array(
@@ -2033,10 +2033,10 @@ function ws_conditionally_add_scripts_and_styles($posts){
 			
 			while ($continuesearch) 
 			{
-				$weeklyschedulepos = stripos($post->post_content, 'weekly-schedule ', $searchpos);
+				$weeklyschedulepos = stripos($post->post_content, 'grille-horaire ', $searchpos);
 				if ($weeklyschedulepos == false)
 				{
-					$weeklyschedulepos = stripos($post->post_content, 'weekly-schedule]', $searchpos);
+					$weeklyschedulepos = stripos($post->post_content, 'grille-horaire]', $searchpos);
 				}
 				$continuesearch = $weeklyschedulepos;
 				if ($continuesearch)
@@ -2099,7 +2099,7 @@ function ws_conditionally_add_scripts_and_styles($posts){
 		if ($genoptions == "")
 			$genoptions['stylesheet'] = 'stylesheet.css';
 			
-		wp_enqueue_style('weeklyschedulestyle', get_bloginfo('wpurl') . '/wp-content/plugins/weekly-schedule/' . $genoptions['stylesheet']);	
+		wp_enqueue_style('weeklyschedulestyle', get_bloginfo('wpurl') . '/wp-content/plugins/grille-horaire/' . $genoptions['stylesheet']);	
 	}
  
 	if ($load_jquery)
@@ -2109,8 +2109,8 @@ function ws_conditionally_add_scripts_and_styles($posts){
 	
 	if ($load_qtip)
 	{
-		wp_enqueue_style('qtipstyle', get_bloginfo('wpurl') . '/wp-content/plugins/weekly-schedule/jquery-qtip/jquery.qtip-2.0.min.css');
-		wp_enqueue_script('qtip', get_bloginfo('wpurl') . '/wp-content/plugins/weekly-schedule/jquery-qtip/jquery.qtip-2.0.min.js');
+		wp_enqueue_style('qtipstyle', get_bloginfo('wpurl') . '/wp-content/plugins/grille-horaire/jquery-qtip/jquery.qtip-2.0.min.css');
+		wp_enqueue_script('qtip', get_bloginfo('wpurl') . '/wp-content/plugins/grille-horaire/jquery-qtip/jquery.qtip-2.0.min.js');
 	}
 	 
 	return $posts;
