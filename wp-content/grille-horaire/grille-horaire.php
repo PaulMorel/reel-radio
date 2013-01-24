@@ -355,17 +355,17 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 					
 					if ($itemsquarterhour)
 					{
-						echo '<div id="warning" class="updated fade"><p><strong>Cannot change time division to bi-hourly since some items have quarter-hourly durations</strong></div>';
+						echo '<div id="warning" class="updated fade"><p><strong>Impossible de changer la répartition du temps aux deux heures, car certains éléments sont aux quarts d\'heures.</strong></div>';
 						$options['timedivision'] = "0.25";
 					}
 					elseif ($itemshalfhour)
 					{
-						echo '<div id="warning" class="updated fade"><p><strong>Cannot change time division to bi-hourly since some items have half-hourly durations</strong></div>';
+						echo '<div id="warning" class="updated fade"><p><strong>Impossible de changer la répartition du temps aux deux heures, car certains éléments sont aux demi-heures.</strong></div>';
 						$options['timedivision'] = "0.5";
 					}
 					elseif ($itemshour)
 					{
-						echo '<div id="warning" class="updated fade"><p><strong>Cannot change time division to bi-hourly since some items have hourly durations</strong></div>';
+						echo '<div id="warning" class="updated fade"><p><strong>Impossible de changer la répartition du temps aux deux heures, car certains éléments sont aux heures.</strong></div>';
 						$options['timedivision'] = "1.0";
 					}
 					else
@@ -378,12 +378,12 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 					
 					if ($itemsquarterhour)
 					{
-						echo '<div id="warning" class="updated fade"><p><strong>Cannot change time division to hourly since some items have quarter-hourly durations</strong></div>';
+						echo '<div id="warning" class="updated fade"><p><strong>Impossible de changer la répartition du temps aux heures, car certains éléments sont aux quarts d\'heures.</strong></div>';
 						$options['timedivision'] = "0.25";
 					}
 					elseif ($itemshalfhour)
 					{
-						echo '<div id="warning" class="updated fade"><p><strong>Cannot change time division to hourly since some items have half-hourly durations</strong></div>';
+						echo '<div id="warning" class="updated fade"><p><strong>Impossible de changer la répartition du temps aux heures, car certains éléments sont aux demi-heures.</strong></div>';
 						$options['timedivision'] = "0.5";
 					}
 					else
@@ -395,7 +395,7 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 					
 					if ($itemsquarterhour)
 					{
-						echo '<div id="warning" class="updated fade"><p><strong>Cannot change time division to hourly since some items have quarter-hourly durations</strong></div>';
+						echo '<div id="warning" class="updated fade"><p><strong>Impossible de changer la répartition du temps aux heures, car certains éléments sont aux quarts d\'heures.</strong></div>';
 						$options['timedivision'] = "0.25";
 					}
 					else
@@ -423,11 +423,11 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 				$schedulename = 'WS_PP' . $schedule;
 				update_option($schedulename, $options);
 				
-				echo '<div id="message" class="updated fade"><p><strong>Weekly Schedule: Schedule ' . $schedule . ' Updated</strong></div>';
+				echo '<div id="message" class="updated fade"><p><strong>Grille Horaire: Grille horaire ' . $schedule . ' a été mise a jour.</strong></div>';
 			}
 			if (isset($_POST['submitgen']))
 			{
-				if (!current_user_can('manage_options')) die(__('You cannot edit the Weekly Schedule for WordPress options.'));
+				if (!current_user_can('manage_options')) die(__('Vous n\'avez pas les permissions nécessaires pour modifier les paramètres de Grille Horaire'));
 				check_admin_referer('wspp-config');
 				
 				foreach (array('stylesheet', 'numberschedules', 'includestylescript') as $option_name) {
@@ -455,7 +455,7 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 				$selectedcat = $wpdb->get_row("select * from " . $wpdb->prefix . "wscategories where id = " . $_GET['editcat']);
 			}			
 			if ( isset($_POST['newcat']) || isset($_POST['updatecat'])) {
-				if (!current_user_can('manage_options')) die(__('You cannot edit the Weekly Schedule for WordPress options.'));
+				if (!current_user_can('manage_options')) die(__('Vous n\'avez pas les permissions nécessaires pour modifier les paramètres de Grille Horaire'));
 				check_admin_referer('wspp-config');
 				
 				if (isset($_POST['name']))
@@ -474,12 +474,12 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 				if (isset($_POST['newcat']))
 				{
 					$wpdb->insert( $wpdb->prefix.'wscategories', $newcat);
-					echo '<div id="message" class="updated fade"><p><strong>Inserted New Category</strong></div>';
+					echo '<div id="message" class="updated fade"><p><strong>Nouvelle catégorie insérée</strong></div>';
 				}
 				elseif (isset($_POST['updatecat']))
 				{
 					$wpdb->update( $wpdb->prefix.'wscategories', $newcat, $id);
-					echo '<div id="message" class="updated fade"><p><strong>Category Updated</strong></div>';
+					echo '<div id="message" class="updated fade"><p><strong>Catégorie mise a jour</strong></div>';
 				}
 				
 				$mode = "";
@@ -495,7 +495,7 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 				if ($catexist)
 				{
 					$wpdb->query("DELETE from " . $wpdb->prefix . "wscategories WHERE id = " . $_GET['deletecat']);
-					echo '<div id="message" class="updated fade"><p><strong>Category Deleted</strong></div>';
+					echo '<div id="message" class="updated fade"><p><strong>Catégorie supprimée</strong></div>';
 				}
 			}
 			if ( isset($_GET['edititem']))
@@ -509,7 +509,7 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 			if (isset($_POST['newitem']) || isset($_POST['updateitem']))
 			{
 			// Need to re-work all of this to support multiple schedules 
-				if (!current_user_can('manage_options')) die(__('You cannot edit the Weekly Schedule for WordPress options.'));
+				if (!current_user_can('manage_options')) die(__('Vous n\'avez pas les permissions nécessaires pour modifier les paramètres de Grille Horaire'));
 				check_admin_referer('wspp-config');
 				
 				if (isset($_POST['name']) && isset($_POST['starttime']) && isset($_POST['duration']))
@@ -610,12 +610,12 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 					if (isset($_POST['newitem']))
 					{
 						$wpdb->insert( $wpdb->prefix.'wsitems', $newitem);
-						echo '<div id="message" class="updated fade"><p><strong>Inserted New Item</strong></div>';
+						echo '<div id="message" class="updated fade"><p><strong>Nouvel élément inséré</strong></div>';
 					}
 					elseif (isset($_POST['updateitem']))
 					{
 						$wpdb->update( $wpdb->prefix.'wsitems', $newitem, $id);
-						echo '<div id="message" class="updated fade"><p><strong>Item Updated</strong></div>';
+						echo '<div id="message" class="updated fade"><p><strong>Élément mis a jour</strong></div>';
 					}									 
 				}				
 				
@@ -657,7 +657,7 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 							$wpdb->update($wpdb->prefix . 'wsdays', $newdayrow, $dayid);
 						}
 					}	
-					echo '<div id="message" class="updated fade"><p><strong>Item Deleted</strong></div>';
+					echo '<div id="message" class="updated fade"><p><strong>Élément supprimé</strong></div>';
 				}				
 			}
 			if (isset($_POST['updatedays']))
@@ -682,7 +682,7 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 				{
 					$oldoptions = get_option('WS_PP');
 					if ($options)
-						echo "If you are upgrading from versions before 2.0, please deactivate and reactivate the plugin in the Wordpress Plugins admin to upgrade all tables correctly.";
+						echo "Si vous mettez à niveau le plugin d'une version antérieure à version 2.0, veuillez désactiver et réactiver le plugin dans l'administration de Wordpress pour réinitialiser la base de données.";
 				}
 					
 				$schedule = 1;
@@ -757,8 +757,8 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 			
 			?>
 			<div class="wrap">
-				<h2>Weekly Schedule Configuration</h2>
-				<a href="http://yannickcorner.nayanna.biz/wordpress-plugins/weekly-schedule/" target="weeklyschedule"><img src="<?php echo $wspluginpath; ?>/icons/btn_donate_LG.gif" /></a> | <a target='wsinstructions' href='http://wordpress.org/extend/plugins/weekly-schedule/installation/'>Installation Instructions</a> | <a href='http://wordpress.org/extend/plugins/weekly-schedule/faq/' target='llfaq'>FAQ</a> | <a href='http://yannickcorner.nayanna.biz/contact-me'>Contact the Author</a><br /><br />
+				<h2>Paramètres et réglages des Grilles Horaire</h2>
+				<!--<a href="http://yannickcorner.nayanna.biz/wordpress-plugins/weekly-schedule/" target="weeklyschedule"><img src="<?php echo $wspluginpath; ?>/icons/btn_donate_LG.gif" /></a> | <a target='wsinstructions' href='http://wordpress.org/extend/plugins/weekly-schedule/installation/'>Installation Instructions</a> | <a href='http://wordpress.org/extend/plugins/weekly-schedule/faq/' target='llfaq'>FAQ</a> | <a href='http://yannickcorner.nayanna.biz/contact-me'>Contact the Author</a><br /><br />-->
 				
 				<form name='wsadmingenform' action="<?php echo add_query_arg( 'page', 'weekly-schedule', admin_url( 'options-general.php' ) ); ?>" method="post" id="ws-conf">
 				<?php
@@ -766,17 +766,17 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 						wp_nonce_field('wspp-config');
 					?>
 				<fieldset style='border:1px solid #CCC;padding:10px'>
-				<legend class="tooltip" title='These apply to all schedules' style='padding: 0 5px 0 5px;'><strong>General Settings <span style="border:0;padding-left: 15px;" class="submit"><input type="submit" name="submitgen" value="Update General Settings &raquo;" /></span></strong></legend>
+				<legend class="tooltip" title='These apply to all schedules' style='padding: 0 5px 0 5px;'><strong>Réglages généraux <span style="border:0;padding-left: 15px;" class="submit"><input type="submit" name="submitgen" value="Update General Settings &raquo;" /></span></strong></legend>
 				<table>
 				<tr>
 				<td style='padding: 8px; vertical-align: top'>
 					<table>
 					<tr>
-					<td style='width:200px'>Stylesheet File Name</td>
+					<td style='width:200px'>Feuille de style <!-- Nom du fichier --></td>
 					<td><input type="text" id="stylesheet" name="stylesheet" size="40" value="<?php echo $genoptions['stylesheet']; ?>"/></td>
 					</tr>
 					<tr>
-					<td>Number of Schedules</td>
+					<td>Nombre d'horaires</td>
 					<td><input type="text" id="numberschedules" name="numberschedules" size="5" value="<?php if ($genoptions['numberschedules'] == '') echo '2'; echo $genoptions['numberschedules']; ?>"/></td>
 					</tr>
 					<tr>
@@ -784,16 +784,16 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 					<td><input type="checkbox" id="debugmode" name="debugmode" <?php if ($genoptions['debugmode']) echo ' checked="checked" '; ?>/></td>
 					</tr>
 					<tr>
-						<td colspan="2">Additional pages to style (Comma-Separated List of Page IDs)</td>
+						<td colspan="2">Pages supplémentaires à styliser (Comma-Separated List of Page IDs)</td>
 					</tr>
 					<tr>
 						<td colspan="2"><input type='text' name='includestylescript' style='width: 200px' value='<?php echo $genoptions['includestylescript']; ?>' /></td>
 					</tr>
 					</table>
 				</td>
-				<td style='padding: 8px; vertical-align: top; border: #cccccc 1px solid;'>
+				<!--<td style='padding: 8px; vertical-align: top; border: #cccccc 1px solid;'>
 					<div><h3>ThemeFuse Original WP Themes</h3>If you are looking to buy an original WP theme, take a look at <a href="https://www.e-junkie.com/ecom/gb.php?cl=136641&c=ib&aff=153522" target="ejejcsingle">ThemeFuse</a><br />They have a nice 1-click installer, great support and good-looking themes.</div><div style='text-align: center; padding-top: 10px'><a href="https://www.e-junkie.com/ecom/gb.php?cl=136641&c=ib&aff=153522" target="ejejcsingle"><img src='http://themefuse.com/wp-content/themes/themefuse/images/campaigns/themefuse.jpg' /></a></div>
-				</td>
+				</td>-->
 				</tr>
 				</table>
 				</fieldset>
