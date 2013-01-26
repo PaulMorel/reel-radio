@@ -824,7 +824,7 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 									   <?php endif; 
 								    endfor; ?>
 							</SELECT>
-							<INPUT type="button" name="copy" value="Copy!" onClick="window.location= '?page=grille-horaire.php&amp;copy=<?php echo $schedule; ?>&source=' + document.scheduleselection.copysource.options[document.scheduleselection.copysource.selectedIndex].value">							
+							<INPUT type="button" name="copy" value="Copy!" onClick="window.location= '?page=grille-horaire.php&amp;copy=<?php echo $schedule; ?>&amp;source=' + document.scheduleselection.copysource.options[document.scheduleselection.copysource.selectedIndex].value">							
 					<br />
 					<br />
 					<table class='widefat' style='clear:none;width:100%;background: #DFDFDF url(/wp-admin/images/gray-grad.png) repeat-x scroll left top;'>
@@ -855,18 +855,18 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 				<fieldset style='border:1px solid #CCC;padding:10px'>
 				<legend style='padding: 0 5px 0 5px;'><strong>Paramètres pous grille horaire <?php echo $schedule; ?> - <?php echo $options['schedulename']; ?></strong></legend>	
 				<?php if (($adminpage == "") || ($adminpage == "general")): ?>
-				<a href="?page=grille-horaire.php&amp;settings=general&amp;schedule=<?php echo $schedule; ?>"><strong>Réglages généraux</strong></a> | <a href="?page=grille-horaire.php&amp;settings=categories&amp;schedule=<?php echo $schedule; ?>">Manage Schedule Categories</a> | <a href="?page=grille-horaire.php&amp;settings=items&amp;schedule=<?php echo $schedule; ?>">Manage Schedule Items</a> | <a href="?page=grille-horaire.php&amp;settings=days&amp;schedule=<?php echo $schedule; ?>">Manage Days Labels</a><br /><br />
+				<a href="?page=grille-horaire.php&amp;settings=general&amp;schedule=<?php echo $schedule; ?>"><strong>Réglages généraux</strong></a> | <a href="?page=grille-horaire.php&amp;settings=categories&amp;schedule=<?php echo $schedule; ?>">Gérer les catégories de l'horaire</a> | <a href="?page=grille-horaire.php&amp;settings=items&amp;schedule=<?php echo $schedule; ?>">Gérer les éléments de l'horaire</a> | <a href="?page=grille-horaire.php&amp;settings=days&amp;schedule=<?php echo $schedule; ?>">Gérer les noms des jours</a><br /><br />
 				<form name="wsadminform" action="<?php echo add_query_arg( 'page', 'grille-horaire', admin_url( 'options-general.php' ) ); ?>" method="post" id="ws-config">
 				<?php
 					if ( function_exists('wp_nonce_field') )
 						wp_nonce_field('wspp-config');
 					?>
-					Schedule Name: <input type="text" id="schedulename" name="schedulename" size="80" value="<?php echo $options['schedulename']; ?>"/><br /><br />
-					<strong>Time-related Settings</strong><br />
+					Nom de l'horaire: <input type="text" id="schedulename" name="schedulename" size="80" value="<?php echo $options['schedulename']; ?>"/><br /><br />
+					<strong>Réglages temporels</strong><br />
 					<input type="hidden" name="schedule" value="<?php echo $schedule; ?>" />
 					<table>
 					<tr>
-					<td>Schedule Layout</td>
+					<td>Mise en forme de la grille</td>
 					<td><select style="width: 200px" name='layout'>
 					<?php $layouts = array("horizontal" => "Horizontal", "vertical" => "Vertical");
 						foreach($layouts as $key => $layout)
@@ -880,9 +880,9 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 						}
 					?>
 					</select></td>
-					<td>Time Display Format</td>
+					<td>Format d'affichage du temps</td>
 					<td><select style="width: 200px" name='timeformat'>
-					<?php $descriptions = array("24hours" => "24 Hours (e.g. 17h30)", "12hours" => "12 Hours (e.g. 1:30pm)");
+					<?php $descriptions = array("24hours" => "24 heures (ex. 17h30)", "12hours" => "12 herues (ex. 1:30pm)");
 						foreach($descriptions as $key => $description)
 						{
 							if ($key == $options['timeformat'])
@@ -896,7 +896,7 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 					</select></td>
 					</tr>
 					<tr>
-					<td>Start Time</td>
+					<td>Heure de début</td>
 					<td><select style='width: 200px' name="starttime">
 					<?php $timedivider = (in_array($options['timedivision'], array('1.0', '2.0', '3.0')) ? '1.0': $options['timedivision']); 
 						  $maxtime = 24 + $timedivider; for ($i = 0; $i < $maxtime; $i+= $timedivider)
@@ -945,7 +945,7 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 						  }
 					?>
 					</select></td>
-					<td>End Time</td>
+					<td>Heure de fin</td>
 					<td><select style='width: 200px' name="endtime">
 					<?php for ($i = 0; $i < $maxtime; $i+= $timedivider)
 						  {
@@ -996,13 +996,13 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 					</select></td>
 					</tr>
 					<tr>
-					<td>Cell Time Division</td>
+					<td>Division des cellules de la grille</td>
 					<td><select style='width: 250px' name='timedivision'>
-					<?php $timedivisions = array("0.25" => "Quarter-Hourly (15 min intervals)",
-												 ".50" => "Half-Hourly (30 min intervals)",
-												 "1.0" => "Hourly (60 min intervals)",
-												 "2.0" => "Bi-Hourly (120 min intervals)",
-												 "3.0" => "Tri-Hourly (180 min intervals)");
+					<?php $timedivisions = array("0.25" => "Quarts d'heures (intervales de 15 min)",
+												 ".50" => "Demi-heures (intervales de 30 min)",
+												 "1.0" => "Heures (intervales de 60 min)",
+												 "2.0" => "Deux heures (intervales de 120 min)",
+												 "3.0" => "Trois heures (intervales de 180 min)");
 						foreach($timedivisions as $key => $timedivision)
 						{
 							if ($key == $options['timedivision'])
@@ -1014,7 +1014,7 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 						}
 					?>	
 					</select></td>
-					<td>Show Description</td>
+					<td>Afficher description</td>
 					<td><select style="width: 200px" name='displaydescription'>
 					<?php $descriptions = array("tooltip" => "Show as tooltip", "cell" => "Show in cell after item name", "none" => "Do not display");
 						foreach($descriptions as $key => $description)
@@ -1029,23 +1029,23 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 					?>
 					</select></td></tr>
 					<tr>
-						<td colspan='2'>Day List (comma-separated Day IDs to specify days to be displayed and their order)
+						<td colspan='2'>Liste des jours <!--Day List(comma-separated Day IDs to specify days to be displayed and their order)--> 
 						</td>
 						<td colspan='2'><input type='text' name='daylist' style='width: 200px' value='<?php echo $options['daylist']; ?>' />
 						</td>						
 					</tr>
 					<tr>
-						<td>Target Window Name
+						<td>Nom de la fenêtre cible <!-- Target Window Name -->
 						</td>
 						<td><input type='text' name='linktarget' style='width: 250px' value='<?php echo $options['linktarget']; ?>' />
 						</td>
 					</tr>
 					</table>
 					<br /><br />
-					<strong>Tooltip Configuration</strong>
+					<strong>Configuration des infobulles</strong>
 					<table>
 					<tr>
-					<td>Tooltip Color Scheme</td>
+					<td>Palette de couleur des infobulles</td>
 					<td><select name='tooltipcolorscheme' style='width: 100px'>
 						<?php $colors = array('ui-tooltip' => 'cream', 'ui-tooltip-dark' => 'dark', 'ui-tooltip-green' => 'green', 'ui-tooltip-light' => 'light', 'ui-tooltip-red' => 'red', 'ui-tooltip-blue' => 'blue');					
 							  foreach ($colors as $key => $color)
@@ -1059,10 +1059,10 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 								}
 						?>						
 					</select></td>
-					<td>Tooltip Width</td><td><input type='text' name='tooltipwidth' style='width: 100px' value='<?php echo $options['tooltipwidth']; ?>' /></td>
+					<td>Largeur des infobulles</td><td><input type='text' name='tooltipwidth' style='width: 100px' value='<?php echo $options['tooltipwidth']; ?>' /></td>
 					</tr>
 					<tr>
-					<td>Tooltip Anchor Point on Data Cell</td>
+					<td>Point d'encrage des infobulles</td>
 					<td><select name='tooltiptarget' style='width: 200px'>
 						<?php $positions = array('top left' => 'Top-Left Corner', 'top center' => 'Middle of Top Side', 
 												'top right' => 'Top-Right Corner', 'right top' => 'Right Side of Top-Right Corner',
@@ -1083,7 +1083,7 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 												
 						?>
 					</select></td>
-					<td>Tooltip Attachment Point</td>
+					<td>Point d'attache des infobulles</td>
 					<td><select name='tooltippoint' style='width: 200px'>
 						<?php $positions = array('top left' => 'Top-Left Corner', 'top center' => 'Middle of Top Side', 
 												'top right' => 'Top-Right Corner', 'right top' => 'Right Side of Top-Right Corner',
@@ -1111,12 +1111,12 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 					<td></td><td></td>
 					</tr>
 					</table>
-					<p style="border:0;" class="submit"><input type="submit" name="submit" value="Update Settings &raquo;" /></p>
+					<p style="border:0;" class="submit"><input type="submit" name="submit" value="Mise a jour des réglages &raquo;" /></p>
 					</form>
 					</fieldset>
 				<?php /* --------------------------------------- Categories --------------------------------- */ ?>
 				<?php elseif ($adminpage == "categories"): ?>
-				<a href="?page=grille-horaire.php&amp;settings=general&amp;schedule=<?php echo $schedule; ?>">General Settings</a> | <a href="?page=grille-horaire.php&amp;settings=categories&amp;schedule=<?php echo $schedule; ?>"><strong>Manage Schedule Categories</strong></a> | <a href="?page=grille-horaire.php&amp;settings=items&amp;schedule=<?php echo $schedule; ?>">Manage Schedule Items</a> | <a href="?page=grille-horaire.php&amp;settings=days&amp;schedule=<?php echo $schedule; ?>">Manage Days Labels</a><br /><br />
+				<a href="?page=grille-horaire.php&amp;settings=general&amp;schedule=<?php echo $schedule; ?>">Réglages généraux</a> | <a href="?page=grille-horaire.php&amp;settings=categories&amp;schedule=<?php echo $schedule; ?>"><strong>Manage Schedule Categories</strong></a> | <a href="?page=grille-horaire.php&amp;settings=items&amp;schedule=<?php echo $schedule; ?>">Manage Schedule Items</a> | <a href="?page=grille-horaire.php&amp;settings=days&amp;schedule=<?php echo $schedule; ?>">Manage Days Labels</a><br /><br />
 				<div style='float:left;margin-right: 15px'>
 					<form name="wscatform" action="" method="post" id="ws-config">
 					<?php
