@@ -13,33 +13,43 @@
 @black: #000;
 @grey: #eee;
 
+//Typography
+@bodyColor: #444;
+
 /* -----------------------------------------------------------------------------
    Fonts
    -------------------------------------------------------------------------- */
+@font-face {
+	font-family: 'Avenir';
+	src: url('assets/type/avenir-roman-webfont.eot');
+	src: url('assets/type/avenir-roman-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('assets/type/avenir-roman-webfont.woff') format('woff'),
+		 url('assets/type/avenir-roman-webfont.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+}
+/*
+@font-face {
+	font-family: 'Avenir';
+	src: url('assets/type/AvenirBlack.eot');
+	src: url('assets/type/AvenirBlack.eot?#iefix') format('embedded-opentype'),
+		 url('assets/type/AvenirBlack.woff') format('woff'),
+		 url('assets/type/AvenirBlack.ttf') format('truetype');
+	font-weight: 700;
+	font-style: normal;
+}
+*/
+/* -----------------------------------------------------------------------------
+   Base Styles
+   -------------------------------------------------------------------------- */
 
 body{
+		font-family: 'Avenir', Helvetica, Arial, sans-serif;
+
 	background:@grey;
-}
-
-header.page {
-	height:66px;
-	background:@black;
-
-	.logo{
-		background:#FFF;
-		width:350px;
-		height:66px;
-		float:left;
-	}
-
-	nav {
-		float:left;
-
-		a{
-		color:#FFF;
-		text-transform: uppercase;
-		}	
-	}
+	font-weight: normal;
+	font-size:14px;
+	color: @bodyColor;
 }
 
 .wrapper{
@@ -47,17 +57,81 @@ header.page {
 	margin:0 auto;
 }
 
-.column{
-	float:left;
-	margin-top:20px;
-	margin-left:40px;
+/* -----------------------------------------------------------------------------
+   Header Styles
+   -------------------------------------------------------------------------- */
+
+header.page {
+	height:66px;
+	background:@black;
+	
+	.background {
+		width: 42.5%;
+		position: absolute;
+		left: 0;
+		background: #fff;
+		height: 66px;
+	}
+
+	.logo {
+		width:350px;
+		height:66px;
+		float:left;
+		position: relative;
+		z-index: 10;
+
+		a {
+			background: url(assets/img/logo_small.png) top left no-repeat;
+			display: block;
+			width:350px;
+			height:66px;
+		}
+	}
+
+	nav.main-menu {
+		float:left;
+
+		a {
+			color:#FFF;
+			text-transform: uppercase;
+
+		}	
+	}
 }
 
-.site-footer{
-	background:#fff;
 
-	li{
-		list-style:none;
+
+/* -----------------------------------------------------------------------------
+   Footer
+   -------------------------------------------------------------------------- */
+
+footer.page {
+
+	background:#fff;
+	padding: 40px 0;
+
+	.widget {
+		float:left;
+		margin-top:20px;
+		margin-left:40px;
+
+		&:first-child {
+			margin-left: 0px;
+		}
+	}
+}
+
+.widget-contact .vcard {
+
+	.logo {
+			background: url(assets/img/logo_big.png) top left no-repeat;
+			display: block;
+			width:220px;
+			height:66px;
+	}
+	
+	.org, .adr, .street-address, .tel {
+		display:block;
 	}
 }
 
