@@ -324,44 +324,57 @@ Fonts
 --------------------------------------------------------------------------*/
 @font-face {
 	font-family: 'Avenir';
-	src: url('assets/type/avenir-roman-webfont.eot');
-	src: url('assets/type/avenir-roman-webfont.eot?#iefix') format('embedded-opentype'), url('assets/type/avenir-roman-webfont.woff') format('woff'), url('assets/type/avenir-roman-webfont.ttf') format('truetype');
-	font-weight: 400;
+	src: url('assets/type/AvenirRoman.eot');
+	src: url('assets/type/AvenirRoman.eot?#iefix') format('embedded-opentype'), url('assets/type/AvenirRoman.woff') format('woff'), url('assets/type/AvenirRoman.ttf') format('truetype');
+	font-weight: normal;
 	font-style: normal;
 }
 
-/*
-@font-face  {
-	
-font-family:  'Avenir';
-	
-src:  url('assets/type/AvenirBlack.eot');
-	
-src:  url('assets/type/AvenirBlack.eot?#iefix') format('embedded-opentype'),
-url('assets/type/AvenirBlack.woff') format('woff'),
-url('assets/type/AvenirBlack.ttf') format('truetype');
-	
-font-weight:  700;
-	
-font-style:  normal;
-	
+@font-face {
+	font-family: 'Avenir';
+	src: url('assets/type/AvenirBlack.eot');
+	src: url('assets/type/AvenirBlack.eot?#iefix') format('embedded-opentype'), url('assets/type/AvenirBlack.woff') format('woff'), url('assets/type/AvenirBlack.ttf') format('truetype');
+	font-weight: 700;
+	font-style: normal;
 }
 
- */
+@font-face {
+	font-family: 'ModernPictogramsNormal';
+	src: url('assets/type/modernpics-webfont.eot');
+	src: url('assets/type/modernpics-webfont.eot?#iefix') format('embedded-opentype'), url('assets/type/modernpics-webfont.woff') format('woff'), url('assets/type/modernpics-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
 /* -----------------------------------------------------------------------------
 Base Styles
 --------------------------------------------------------------------------*/
 body {
-	font-family: 'Avenir', Helvetica, Arial, sans-serif;
 	background: #eeeeee;
 	font-weight: normal;
-	font-size: 14px;
+	font: 14px/18px 'Avenir', Helvetica, Arial, sans-serif;
 	color: #444444;
 }
 
 .wrapper {
 	width: 940px;
 	margin: 0 auto;
+}
+
+h1 {
+	font-size: 2.15em;
+	color: #fff;
+	background: #f2c536;
+	display: inline-block;
+	padding: 10px 20px;
+	text-transform: uppercase;
+}
+
+h3 {
+	font-size: 1em;
+	color: #f2c536;
+	font-weight: bold;
+	text-transform: uppercase;
 }
 
 /* -----------------------------------------------------------------------------
@@ -399,9 +412,47 @@ header.page nav.main-menu {
 	float: left;
 }
 
+header.page nav.main-menu ul {
+	list-style: none;
+	margin: 25px 0 0 50px;
+	padding: 0;
+}
+
+header.page nav.main-menu ul li {
+	float: left;
+	margin-left: 20px;
+}
+
+header.page nav.main-menu ul li:first-child {
+	margin-left: 0;
+}
+
+header.page nav.main-menu ul li.dropdown:after {
+	font-family: 'ModernPictogramsNormal';
+	font-size: 1.25em;
+	content: '/';
+	color: #fff;
+	padding-left: 5px;
+}
+
+header.page nav.main-menu ul li.dropdown ul {
+	display: none;
+	margin: 0;
+}
+
+header.page nav.main-menu ul li.dropdown ul li {
+	float: none;
+}
+
 header.page nav.main-menu a {
+	font-weight: bold;
 	color: #FFF;
 	text-transform: uppercase;
+	text-decoration: none;
+}
+
+header.page nav.main-menu a:hover {
+	color: #f2c536;
 }
 
 /* -----------------------------------------------------------------------------
@@ -427,6 +478,7 @@ footer.page .widget:first-child {
 	display: block;
 	width: 220px;
 	height: 66px;
+	margin-bottom: 20px;
 }
 
 .widget-contact .vcard .org,.widget-contact .vcard .adr,.widget-contact .vcard .street-address,.widget-contact .vcard .tel {
@@ -565,3 +617,5 @@ h2,h3 {
 }
 
 }
+
+/* This beautiful CSS-File has been crafted with LESS (lesscss.org) and compiled by simpLESS (wearekiss.com/simpless) */

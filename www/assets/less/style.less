@@ -21,14 +21,14 @@
    -------------------------------------------------------------------------- */
 @font-face {
 	font-family: 'Avenir';
-	src: url('assets/type/avenir-roman-webfont.eot');
-	src: url('assets/type/avenir-roman-webfont.eot?#iefix') format('embedded-opentype'),
-		 url('assets/type/avenir-roman-webfont.woff') format('woff'),
-		 url('assets/type/avenir-roman-webfont.ttf') format('truetype');
-	font-weight: 400;
+	src: url('assets/type/AvenirRoman.eot');
+	src: url('assets/type/AvenirRoman.eot?#iefix') format('embedded-opentype'),
+		 url('assets/type/AvenirRoman.woff') format('woff'),
+		 url('assets/type/AvenirRoman.ttf') format('truetype');
+	font-weight: normal;
 	font-style: normal;
 }
-/*
+
 @font-face {
 	font-family: 'Avenir';
 	src: url('assets/type/AvenirBlack.eot');
@@ -38,17 +38,25 @@
 	font-weight: 700;
 	font-style: normal;
 }
-*/
+
+@font-face {
+    font-family: 'ModernPictogramsNormal';
+    src: url('assets/type/modernpics-webfont.eot');
+    src: url('assets/type/modernpics-webfont.eot?#iefix') format('embedded-opentype'),
+         url('assets/type/modernpics-webfont.woff') format('woff'),
+         url('assets/type/modernpics-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
 /* -----------------------------------------------------------------------------
    Base Styles
    -------------------------------------------------------------------------- */
 
-body{
-		font-family: 'Avenir', Helvetica, Arial, sans-serif;
-
+body {
 	background:@grey;
 	font-weight: normal;
-	font-size:14px;
+	font:14px/18px 'Avenir', Helvetica, Arial, sans-serif;
 	color: @bodyColor;
 }
 
@@ -57,6 +65,21 @@ body{
 	margin:0 auto;
 }
 
+h1 {
+	font-size: 2.15em;
+	color:#fff;
+	background: @yellow;
+	display: inline-block;
+	padding:10px 20px;
+	text-transform: uppercase;
+}
+
+h3 {
+	font-size:1em;
+	color:@yellow;
+	font-weight: bold;
+	text-transform: uppercase;
+}
 /* -----------------------------------------------------------------------------
    Header Styles
    -------------------------------------------------------------------------- */
@@ -91,9 +114,47 @@ header.page {
 	nav.main-menu {
 		float:left;
 
+		ul {
+			list-style: none;
+			margin:25px 0 0 50px;
+			padding:0;
+
+			li {
+				float:left;
+				margin-left:20px;
+
+				&:first-child{
+					margin-left: 0;
+				}
+				&.dropdown:after {
+					font-family:'ModernPictogramsNormal';
+					font-size:1.25em;
+				    content:'/';
+				    color:#fff;
+				    padding-left:5px;
+				}
+
+				&.dropdown ul {
+					display: none;
+					margin:0;
+
+					li {
+						float: none;
+					}
+				}
+			}
+		}
+
 		a {
+			font-weight: bold;
+			//font-size: 12px;
 			color:#FFF;
 			text-transform: uppercase;
+			text-decoration: none;
+
+			&:hover {
+				color:@yellow;
+			}
 
 		}	
 	}
@@ -128,6 +189,7 @@ footer.page {
 			display: block;
 			width:220px;
 			height:66px;
+			margin-bottom:20px;
 	}
 	
 	.org, .adr, .street-address, .tel {
