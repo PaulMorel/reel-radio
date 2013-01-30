@@ -361,12 +361,28 @@ body {
 	margin: 0 auto;
 }
 
+a {
+	color: #163d78;
+}
+
+a:hover {
+	color: #a0bfed;
+}
+
 h1 {
 	font-size: 2.15em;
 	color: #fff;
 	background: #f2c536;
 	display: inline-block;
-	padding: 10px 20px;
+	padding: 20px 20px 15px 20px;
+	text-transform: uppercase;
+	width: 330px;
+}
+
+h2 {
+	font-size: 1.28em;
+	line-height: 1.25em;
+	font-weight: bold;
 	text-transform: uppercase;
 }
 
@@ -375,6 +391,12 @@ h3 {
 	color: #f2c536;
 	font-weight: bold;
 	text-transform: uppercase;
+}
+
+h4 {
+	font-size: 1em;
+	color: #000000;
+	font-weight: bold;
 }
 
 /* -----------------------------------------------------------------------------
@@ -456,6 +478,62 @@ header.page nav.main-menu a:hover {
 }
 
 /* -----------------------------------------------------------------------------
+Articles
+--------------------------------------------------------------------------*/
+.main-content article {
+	background: #fff;
+	min-height: 225px;
+	width: 300px;
+	margin: 0 20px 20px 0;
+}
+
+.main-content article h2 {
+	margin: 0;
+	padding: 15px 40px 10px 20px;
+	background: #fff;
+	display: inline-block;
+}
+
+.main-content article .excerpt {
+	margin: 0;
+	padding: 15px 40px 10px 20px;
+	background: #fff;
+	display: inline-block;
+}
+
+.main-content article.listen {
+	background: #000000;
+}
+
+/* -----------------------------------------------------------------------------
+Side Bar & Pre Footer
+--------------------------------------------------------------------------*/
+aside.page {
+	background: #000000;
+	padding: 40px 0;
+}
+
+.widget-links h3 {
+	float: left;
+	margin-right: 120px;
+	display: table-cell;
+}
+
+.widget-links ul {
+	list-style: none;
+	float: left;
+}
+
+.widget-links ul li {
+	float: left;
+	margin-left: 20px;
+}
+
+.widget-links ul li:first-child {
+	margin-left: 0px;
+}
+
+/* -----------------------------------------------------------------------------
 Footer
 --------------------------------------------------------------------------*/
 footer.page {
@@ -473,7 +551,29 @@ footer.page .widget:first-child {
 	margin-left: 0px;
 }
 
-.widget-contact .vcard .logo {
+footer.page .widget ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.widget-news h4 {
+	margin: 0;
+}
+
+.widget-news p {
+	margin: 0;
+}
+
+.widget-news li {
+	margin-bottom: 18px;
+}
+
+.widget-contact .vcard {
+	text-align: right;
+}
+
+.widget-contact .vcard .logo a {
 	background: url(assets/img/logo_big.png) top left no-repeat;
 	display: block;
 	width: 220px;
@@ -617,5 +717,3 @@ h2,h3 {
 }
 
 }
-
-/* This beautiful CSS-File has been crafted with LESS (lesscss.org) and compiled by simpLESS (wearekiss.com/simpless) */

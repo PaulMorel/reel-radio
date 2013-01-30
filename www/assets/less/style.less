@@ -15,6 +15,8 @@
 
 //Typography
 @bodyColor: #444;
+@linkColor: #163d78;
+@linkHoverColor: lighten(@linkColor, 50%);
 
 /* -----------------------------------------------------------------------------
    Fonts
@@ -65,13 +67,31 @@ body {
 	margin:0 auto;
 }
 
+a {
+	color: @linkColor;
+	
+	&:hover {
+		color: @linkHoverColor;
+	}
+}
+
 h1 {
 	font-size: 2.15em;
 	color:#fff;
 	background: @yellow;
 	display: inline-block;
-	padding:10px 20px;
+	padding: 20px 20px 15px 20px;
 	text-transform: uppercase;
+	width: 330px;
+}
+
+h2 {
+
+	font-size: 1.28em;
+	line-height: 1.25em;
+	font-weight: bold;
+	text-transform: uppercase;
+
 }
 
 h3 {
@@ -79,6 +99,12 @@ h3 {
 	color:@yellow;
 	font-weight: bold;
 	text-transform: uppercase;
+}
+
+h4 {
+	font-size:1em;
+	color:@black;
+	font-weight: bold;
 }
 /* -----------------------------------------------------------------------------
    Header Styles
@@ -159,8 +185,71 @@ header.page {
 		}	
 	}
 }
+/* -----------------------------------------------------------------------------
+   Articles
+   -------------------------------------------------------------------------- */
 
+.main-content article {
+	background: #fff;
+	min-height: 225px;
+	width:300px;
+	//padding:20px;
 
+	margin:0 20px 20px 0;
+	
+	h2 {
+		margin:0;
+		padding:15px 40px 10px 20px;
+		background: #fff;
+		display: inline-block;
+	}
+
+	.excerpt {
+		margin: 0;
+		padding:15px 40px 10px 20px;
+		background: #fff;
+		display: inline-block;
+	}
+
+	&.listen {
+		background: @black;
+	}
+}
+
+/* -----------------------------------------------------------------------------
+   Side Bar & Pre Footer
+   -------------------------------------------------------------------------- */
+
+aside.page {
+
+	background: @black;
+	padding: 40px 0;
+
+}
+
+.widget-links {
+
+	h3 {
+		float:left;
+		margin-right: 120px;
+
+		display:table-cell;
+	}
+
+	ul {
+		list-style: none;
+		float:left;
+
+		li {
+			float:left;
+			margin-left: 20px;
+
+			&:first-child {
+				margin-left: 0px;
+			}
+		}
+	}
+}
 
 /* -----------------------------------------------------------------------------
    Footer
@@ -179,12 +268,34 @@ footer.page {
 		&:first-child {
 			margin-left: 0px;
 		}
+
+		ul {
+			list-style: none;
+			margin:0;
+			padding: 0;
+		}
+	}
+}
+
+.widget-news {
+	h4 {
+		margin:0;
+	}
+
+	p {
+		margin:0;
+	}
+
+	li {
+		margin-bottom:18px;
 	}
 }
 
 .widget-contact .vcard {
 
-	.logo {
+	text-align: right;
+
+	.logo a {
 			background: url(assets/img/logo_big.png) top left no-repeat;
 			display: block;
 			width:220px;
