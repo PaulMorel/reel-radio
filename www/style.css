@@ -385,7 +385,7 @@ header.page {
   background: #000000;
 }
 header.page .background {
-  width: 42.5%;
+  width: 40%;
   position: absolute;
   left: 0;
   background: #fff;
@@ -427,11 +427,28 @@ header.page nav.main-menu ul li.dropdown:after {
   padding-left: 5px;
 }
 header.page nav.main-menu ul li.dropdown ul {
-  display: none;
   margin: 0;
+  background: #000;
+  margin-left: -20px;
+  /*border-top:1px solid #fff;*/
+
+  position: absolute;
+  z-index: 20;
+  top: 67px;
 }
 header.page nav.main-menu ul li.dropdown ul li {
   float: none;
+  height: auto;
+  margin: 0;
+}
+header.page nav.main-menu ul li.dropdown ul li a {
+  padding: 10px 20px;
+  margin: 0;
+  display: block;
+}
+header.page nav.main-menu ul li.dropdown ul li a:hover {
+  background: #f2c536;
+  color: #fff;
 }
 header.page nav.main-menu a {
   font-weight: bold;
@@ -445,19 +462,19 @@ header.page nav.main-menu a:hover {
 /* -----------------------------------------------------------------------------
    Articles
    -------------------------------------------------------------------------- */
-.main-content article {
+#home article {
   background: #fff;
   min-height: 225px;
   width: 300px;
   position: relative;
-  margin: 0 20px 20px 0;
+  margin: 0 0 20px 0;
   overflow: hidden;
 }
-.main-content article .post-image {
+#home article .post-image {
   position: absolute;
   z-index: 0;
 }
-.main-content article .article-content {
+#home article .article-content {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -466,31 +483,38 @@ header.page nav.main-menu a:hover {
   display: inline-block;
   padding: 10px 10px 0 0;
 }
-.main-content article h2 {
+#home article h2 {
   margin: 0;
   padding: 15px 30px 10px 20px;
   background: #fff;
   display: inline-block;
 }
-.main-content article .excerpt {
+#home article .excerpt {
   margin: 0;
   padding: 10px 20px 0px 20px;
   background: #fff;
   display: inline-block;
 }
-.main-content article .excerpt ul {
+#home article .excerpt ul {
   margin: 0 0 12px 0px;
   padding: 0;
   list-style: none;
 }
-.main-content article .excerpt p {
+#home article .excerpt p {
   margin-bottom: 8px;
 }
-.main-content article.listen {
+#home article.listen {
   background: #000000;
 }
-.main-content article.is-long {
+#home article.is-long {
   width: 460px;
+}
+#page article {
+  width: 940px;
+  background: #fff;
+}
+#page article .entry-content {
+  padding: 20px;
 }
 /* -----------------------------------------------------------------------------
    Side Bar & Pre Footer
@@ -559,6 +583,47 @@ footer.page .widget ul {
 .widget-contact .vcard .street-address,
 .widget-contact .vcard .tel {
   display: block;
+}
+/**** Isotope Filtering ****/
+.isotope-item {
+  z-index: 2;
+}
+.isotope-hidden.isotope-item {
+  pointer-events: none;
+  z-index: 1;
+}
+/**** Isotope CSS3 transitions ****/
+.isotope,
+.isotope .isotope-item {
+  -webkit-transition-duration: 0.8s;
+  -moz-transition-duration: 0.8s;
+  -ms-transition-duration: 0.8s;
+  -o-transition-duration: 0.8s;
+  transition-duration: 0.8s;
+}
+.isotope {
+  -webkit-transition-property: height, width;
+  -moz-transition-property: height, width;
+  -ms-transition-property: height, width;
+  -o-transition-property: height, width;
+  transition-property: height, width;
+}
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+  -moz-transition-property: -moz-transform, opacity;
+  -ms-transition-property: -ms-transform, opacity;
+  -o-transition-property: -o-transform, opacity;
+  transition-property: transform, opacity;
+}
+/**** disabling Isotope CSS3 transitions ****/
+.isotope.no-transition,
+.isotope.no-transition .isotope-item,
+.isotope .isotope-item.no-transition {
+  -webkit-transition-duration: 0s;
+  -moz-transition-duration: 0s;
+  -ms-transition-duration: 0s;
+  -o-transition-duration: 0s;
+  transition-duration: 0s;
 }
 /* ==========================================================================
    Helper Classes
