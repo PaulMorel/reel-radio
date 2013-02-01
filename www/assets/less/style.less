@@ -274,9 +274,39 @@ header.page {
 #page article {
 	width:940px;
 	background: #fff;
+	margin-bottom:40px;
 
 	.entry-content {
-		padding:20px;
+		padding:40px;
+	}
+
+	.logo a {
+			background: url(assets/img/logo_big.png) top left no-repeat;
+			display: block;
+			width:220px;
+			height:66px;
+			margin-bottom:20px;
+	}
+	
+	.org, .adr, .street-address, .tel {
+		display:block;
+	}
+}
+
+// Generic Form
+form {
+
+	label, input, textarea {
+		display: block;
+	}
+
+	input, textarea {
+		padding:10px;
+		border:none;
+	}
+
+	input:not([type=submit]):not([type=file]), textarea {
+		background: @grey;
 	}
 }
 /* -----------------------------------------------------------------------------
@@ -370,6 +400,8 @@ footer.page {
 		display:block;
 	}
 }
+
+
 
 /**** Isotope Filtering ****/
 

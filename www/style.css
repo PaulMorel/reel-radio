@@ -512,9 +512,37 @@ header.page nav.main-menu a:hover {
 #page article {
   width: 940px;
   background: #fff;
+  margin-bottom: 40px;
 }
 #page article .entry-content {
-  padding: 20px;
+  padding: 40px;
+}
+#page article .logo a {
+  background: url(assets/img/logo_big.png) top left no-repeat;
+  display: block;
+  width: 220px;
+  height: 66px;
+  margin-bottom: 20px;
+}
+#page article .org,
+#page article .adr,
+#page article .street-address,
+#page article .tel {
+  display: block;
+}
+form label,
+form input,
+form textarea {
+  display: block;
+}
+form input,
+form textarea {
+  padding: 10px;
+  border: none;
+}
+form input:not([type=submit]):not([type=file]),
+form textarea {
+  background: #eeeeee;
 }
 /* -----------------------------------------------------------------------------
    Side Bar & Pre Footer
