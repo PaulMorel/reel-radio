@@ -38,6 +38,27 @@
 
 $(document).ready(function() {
 
+  function initialize() {
+    var reelradioLoc = new google.maps.LatLng(45.421869, -75.738738);
+    var mapOptions = {
+      center: reelradioLoc,
+      zoom: 16,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      disableDefaultUI: true
+    };
+    var map = new google.maps.Map(document.getElementById("mapcanvas"), mapOptions);
+
+    var marker = new google.maps.Marker({
+      position: reelradioLoc,
+      title:"RÉÉL-Radio"
+    })
+    marker.setMap(map)
+  }
+
+  $('#mapcanvas').exists(function(){
+      initialize();
+  })
+
 	$('.articles').isotope({
 		// options
 		itemSelector : 'article',
@@ -49,9 +70,20 @@ $(document).ready(function() {
 	});
 
 	$('.dropdown').click(function(e){
-		e.preventDefault();
-		$(this).children('ul').slideToggle();	
+    
+    e.preventDefault();
+    $('.dropdown ul').slideUp(100);
+
+    if ( $(this).children('ul').css('display') != 'none' ){
+
+      $(this).children('ul').slideUp(100);
+
+    } else {
+
+      $(this).children('ul').slideDown(100); 
+
+    }
+
 	})
 	
-
 })

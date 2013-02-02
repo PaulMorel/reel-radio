@@ -14,7 +14,7 @@
 		<script src="assets/js/libs/modernizr-2.6.2.min.js"></script>
 	</head>
 
-	<body id="page">
+	<body id="page" class="contact">
 	   <header class="page">
 	   		<div class="background"></div>
 	   		<div class="wrapper">
@@ -42,13 +42,27 @@
      <section class="main-content">
      	<div class="wrapper">
 
-      <h1>Contact</h1>
+      <h1>Coordonnées et contact</h1>
       <article>
-      	<div class="map">
-			<iframe width="940" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.ca/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=R%C3%89%C3%89L+Radio,+Gatineau,+QC&amp;aq=0&amp;oq=R%C3%89%C3%89L-Radio&amp;sll=49.891235,-97.15369&amp;sspn=30.854033,86.572266&amp;ie=UTF8&amp;hq=R%C3%89%C3%89L+Radio,&amp;hnear=Gatineau,+Communaut%C3%A9-Urbaine-de-l'Outaouais,+Quebec&amp;t=m&amp;ll=45.4246,-75.75099&amp;spn=0.012048,0.04034&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
+      	<div id="mapcanvas">
+			<!--<iframe width="940" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.ca/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=R%C3%89%C3%89L+Radio,+Gatineau,+QC&amp;aq=0&amp;oq=R%C3%89%C3%89L-Radio&amp;sll=49.891235,-97.15369&amp;sspn=30.854033,86.572266&amp;ie=UTF8&amp;hq=R%C3%89%C3%89L+Radio,&amp;hnear=Gatineau,+Communaut%C3%A9-Urbaine-de-l'Outaouais,+Quebec&amp;t=m&amp;ll=45.4246,-75.75099&amp;spn=0.012048,0.04034&amp;z=15&amp;iwloc=near&amp;output=embed"></iframe>-->
 		</div>
-		<div class="entry-content">
+		<div class="entry-content clearfix">
+			<div class="contact-form">
+				<h2>Écrivez-nous</h2>
+				<form action="#" method="post">
+					<label for="contactName">Nom</label>
+					<input type="text" name="contactName" id="contactName">
+					<label for="contactEmail">Courriel</label>
+					<input type="text" name="contactEmail" id="contactEmail">
+					<label for="contactSubject">Sujet</label>
+					<input type="text" name="contactSubject" id="contactSubject">
+					<label for="contactMessage">Message</label><textarea name="contactMessage" id="contactMessage" cols="30" rows="10"></textarea>
+					<input type="submit" value="Envoyer votre message">
+				</form>
+			</div>
 			<div class="vcard">
+				<h2>Venez nous voir</h2>
 			    <p>
 			      	<span class="fn url ir logo"><a href="#">RÉÉL-Radio</a></span>
 			      	<span class="org">Université du Québec en Outaouais</span>
@@ -66,18 +80,6 @@
 			        </span>
 			        Courriel : <a class="email" href="mailto:info@reel-radio.fm">info@reel-radio.fm</a>
 			    </p>
-			</div>
-			<div class="contact-form">
-				<form action="#" method="post">
-					<label for="contactName">Nom</label>
-					<input type="text" name="contactName" id="contactName">
-					<label for="contactEmail">Courriel</label>
-					<input type="text" name="contactEmail" id="contactEmail">
-					<label for="contactSubject">Sujet</label>
-					<input type="text" name="contactSubject" id="contactSubject">
-					<label for="contactMessage">Message</label><textarea name="contactMessage" id="contactMessage" cols="30" rows="10"></textarea>
-					<input type="submit" value="Envoyer votre message">
-				</form>
 			</div>
 		</div>
       </article>
@@ -163,7 +165,9 @@
 		</footer>
      
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKvZQrhBQSUCsctvSphe_2yIRzwvzI2l4&amp;sensor=false"></script>
 		<script src="assets/js/plugins.js"></script>
 		<script src="assets/js/script.js"></script>
+
 	</body>
 </html>
