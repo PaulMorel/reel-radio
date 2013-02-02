@@ -285,6 +285,28 @@ header.page {
 
 }
 
+#single .main-content {
+
+	article {
+		width:700px;
+		background: #fff;
+		margin:0 20px 40px 0;
+		float:left;
+
+		.entry-content {
+			padding:40px;
+		}
+	}
+
+	aside {
+		width:200px;
+		background: #fff;
+		margin-bottom: 20px;
+		padding:20px;
+		float:left;
+	}
+}
+
 #page.contact article {
 	
 	#mapcanvas {
@@ -420,9 +442,16 @@ footer.page {
 	}
 }
 
-.widget-news {
+
+.widget-news, .widget-related, .widget-listen {
 	h4 {
 		margin:0;
+	}
+
+	ul {
+		list-style: none;
+		margin:0;
+		padding: 0;
 	}
 
 	p {

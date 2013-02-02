@@ -521,6 +521,22 @@ header.page nav.main-menu a:hover {
 #page article .entry-content {
   padding: 40px;
 }
+#single .main-content article {
+  width: 700px;
+  background: #fff;
+  margin: 0 20px 40px 0;
+  float: left;
+}
+#single .main-content article .entry-content {
+  padding: 40px;
+}
+#single .main-content aside {
+  width: 200px;
+  background: #fff;
+  margin-bottom: 20px;
+  padding: 20px;
+  float: left;
+}
 #page.contact article #mapcanvas {
   width: 100%;
   height: 400px;
@@ -629,13 +645,26 @@ footer.page .widget ul {
   margin: 0;
   padding: 0;
 }
-.widget-news h4 {
+.widget-news h4,
+.widget-related h4,
+.widget-listen h4 {
   margin: 0;
 }
-.widget-news p {
+.widget-news ul,
+.widget-related ul,
+.widget-listen ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.widget-news p,
+.widget-related p,
+.widget-listen p {
   margin: 0;
 }
-.widget-news li {
+.widget-news li,
+.widget-related li,
+.widget-listen li {
   margin-bottom: 18px;
 }
 .widget-contact .vcard {
