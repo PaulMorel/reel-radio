@@ -1,163 +1,535 @@
 // Import LESS Elements 0.6 by Dmitry Fadeyev
 @import "elements.less";
 
-/*
-Theme Name: RÉÉL-Radio 2013
-Description: RÉÉL-Radio 2012 is a custom theme made for RÉÉL-Radio, the student radio of the Université du Québec en Outaouais.
-Version: 0.1
-Author: Paul Morel & Marie-Michelle Daigle
-Author URI: http://paulmorel.com
-Theme URI: http://reel-radio.fm
-*/  
-
 // Import normalize CSS from H5BP
 @import "normalize.less";
 
 /* =============================================================================
    Styles
    ========================================================================== */
+
+// Colour Variables
+@yellow: #f2c536;
+@black: #000;
+@grey: #eee;
+
+//Typography
+@bodyColor: #444;
+@linkColor: #163d78;
+@linkHoverColor: lighten(@linkColor, 50%);
+
 /* -----------------------------------------------------------------------------
    Fonts
    -------------------------------------------------------------------------- */
-
 @font-face {
-    font-family: 'DIN';
-    src: url('../type/DINWeb-Light.eot');
-    src: url('../type/DINWeb-Light.eot?#iefix') format('embedded-opentype'),
-         url('../type/DINWeb-Light.woff') format('woff'),
-         url('../type/DINPro-Light.otf') format('opentype');
-    font-weight: 200; // Light
-    font-style: normal;
+	font-family: 'Avenir';
+	src: url('assets/type/AvenirRoman.eot');
+	src: url('assets/type/AvenirRoman.eot?#iefix') format('embedded-opentype'),
+		 url('assets/type/AvenirRoman.woff') format('woff'),
+		 url('assets/type/AvenirRoman.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
 }
 
 @font-face {
-    font-family: 'DIN';
-    src: url('../type/DINWeb-Medium.eot');
-    src: url('../type/DINWeb-Medium.eot?#iefix') format('embedded-opentype'),
-         url('../type/DINWeb-Medium.woff') format('woff'),
-         url('../type/DINPro-Medium.otf') format('opentype');
-    font-weight: 400; // Normal
-    font-style: normal;
+	font-family: 'Avenir';
+	src: url('assets/type/AvenirBlack.eot');
+	src: url('assets/type/AvenirBlack.eot?#iefix') format('embedded-opentype'),
+		 url('assets/type/AvenirBlack.woff') format('woff'),
+		 url('assets/type/AvenirBlack.ttf') format('truetype');
+	font-weight: 700;
+	font-style: normal;
 }
 
 @font-face {
-    font-family: 'DIN';
-    src: url('../type/DINWeb-Black.eot');
-    src: url('../type/DINWeb-Black.eot?#iefix') format('embedded-opentype'),
-         url('../type/DINWeb-Black.woff') format('woff'),
-         url('../type/DINPro-Black.otf') format('opentype');
-    font-weight: 700; // Bold
+    font-family: 'ModernPictogramsNormal';
+    src: url('assets/type/modernpics-webfont.eot');
+    src: url('assets/type/modernpics-webfont.eot?#iefix') format('embedded-opentype'),
+         url('assets/type/modernpics-webfont.woff') format('woff'),
+         url('assets/type/modernpics-webfont.ttf') format('truetype');
+    font-weight: normal;
     font-style: normal;
-}
 
+}
 /* -----------------------------------------------------------------------------
-   Base
+   Base Styles
    -------------------------------------------------------------------------- */
-// Colour Variables
-@maincolour: #5bd3d2;
-@textcolour: #444;
-@textcolour2: #757575;
 
 body {
-	background:url(../img/bg.png);
-  color:@textcolour;
-  font-family: Helvetica, Arial, sans-serif;
+	background:@grey;
+	font-weight: normal;
+	font:14px/18px 'Avenir', Helvetica, Arial, sans-serif;
+	color: @bodyColor;
 }
 
-/* -----------------------------------------------------------------------------
-   Headings
-   -------------------------------------------------------------------------- */
+.wrapper{
+	width: 940px;
+	margin:0 auto;
+}
 
+a {
+	color: @linkColor;
+	
+	&:hover {
+		color: @linkHoverColor;
+	}
+}
 
 h1 {
-  font-family: 'DIN', sans-serif;
-  font-size:2.25em;
-  font-weight: 400;
-  text-transform: uppercase;
-  color: @maincolour;
-  text-shadow: 0px 1px 1px #fff;
+	font-size: 2.15em;
+	color:#fff;
+	background: @yellow;
+	display: inline-block;
+	padding: 20px 40px 15px 20px;
+	text-transform: uppercase;
+	/*width: 330px;*/
 }
 
 h2 {
-  font-family: 'DIN', sans-serif;
-  font-size: 1.25em;
-  font-weight: normal;
-  color: @textcolour;
+
+	font-size: 1.28em;
+	line-height: 1.25em;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin:0 0 40px 0;
+
 }
 
-.page-wrapper {
-	width:960px;
-	padding: 0 10px;
-  margin:0 auto;
+h3 {
+	font-size:1em;
+	color:@yellow;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+h4 {
+	font-size:1em;
+	color:@black;
+	font-weight: bold;
+}
+
+p {
+	margin:0 0 14px 0;
+}
+
+.highlight {
+	color:@yellow;
+}
+/* -----------------------------------------------------------------------------
+   Header Styles
+   -------------------------------------------------------------------------- */
+
+header.page {
+	height:66px;
+	background:@black;
+	
+	.background {
+		width: 40%;
+		position: absolute;
+		left: 0;
+		background: #fff;
+		height: 66px;
+	}
+
+	.logo {
+		width:350px;
+		height:66px;
+		float:left;
+		position: relative;
+		z-index: 10;
+
+		a {
+			background: url(assets/img/logo_small.png) top left no-repeat;
+			display: block;
+			width: 140px;
+			height: 43px;
+			margin-top: 10px;
+		}
+	}
+
+	nav.main-menu {
+		float:left;
+
+		ul {
+			list-style: none;
+			margin:25px 0 0 50px;
+			padding:0;
+
+			li {
+				float:left;
+				margin-left:20px;
+
+				&:first-child{
+					margin-left: 0;
+				}
+				&.dropdown:after {
+					font-family:'ModernPictogramsNormal';
+					font-size:1.25em;
+				    content:'/';
+				    color:#fff;
+				    padding-left:5px;
+				}
+
+				&.dropdown ul {
+					display:none;
+					margin:0;
+					background: #000;
+					margin-left: -20px;
+					/*border-top:1px solid #fff;*/
+					position: absolute;
+					z-index: 20;
+					top:67px;
+
+					li {
+						float: none;
+						height:auto;
+						margin:0;
+						
+						a {
+							padding:10px 20px;
+							margin:0;
+							display: block;
+
+							&:hover{
+								background: @yellow;
+								color: #fff;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		a {
+			font-weight: bold;
+			//font-size: 12px;
+			color:#FFF;
+			text-transform: uppercase;
+			text-decoration: none;
+
+			&:hover {
+				color:@yellow;
+			}
+
+		}	
+	}
+}
+/* -----------------------------------------------------------------------------
+   Articles
+   -------------------------------------------------------------------------- */
+
+#home article {
+	background: #fff;
+	min-height: 225px;
+	width:300px;
+	//padding:20px;
+	position: relative;
+	margin:0 0 20px 0;
+	overflow: hidden;
+
+	.post-image {
+		position: absolute;
+		z-index:0;
+	}
+	.article-content {
+		position: absolute;
+		bottom:0;
+		left:0;
+		z-index: 10;
+		background: rgba(242, 197, 54, 0.6);
+		display: inline-block;
+		padding:10px 10px 0 0;
+	}
+
+	h2 {
+		margin:0;
+		padding:15px 30px 10px 20px;
+		background: #fff;
+		display: inline-block;
+	}
+
+	.excerpt {
+		margin: 0;
+		padding:10px 20px 0px 20px;
+		background: #fff;
+		display: inline-block;
+
+		ul {
+			margin:0 0 12px 0px;
+			padding:0;
+			list-style: none;
+		}
+
+		p {
+			margin-bottom: 8px;
+		}
+	}
+
+	&.listen {
+		background: @black;
+	}
+
+	&.is-long {
+		width:460px;
+	}
+}
+
+#page article {
+	width:940px;
+	background: #fff;
+	margin-bottom:40px;
+
+	.entry-content {
+		padding:40px;
+	}
+
+}
+
+#single .main-content {
+
+	article {
+		width:700px;
+		background: #fff;
+		margin:0 20px 40px 0;
+		float:left;
+
+		.entry-content {
+			padding:40px;
+		}
+	}
+
+	aside {
+		width:200px;
+		background: #fff;
+		margin-bottom: 20px;
+		padding:20px;
+		float:left;
+	}
+}
+
+#page.contact article {
+	
+	#mapcanvas {
+		width:100%;
+		height:400px;
+	}
+
+	.vcard {
+		float:left;
+	}
+
+	.logo a {
+			background: url(assets/img/logo_big.png) top left no-repeat;
+			display: block;
+			width:220px;
+			height:66px;
+			margin-bottom:20px;
+	}
+	
+	.org, .adr, .street-address, .tel {
+		display:block;
+	}
+}
+
+
+// Generic Form
+.contact-form {
+	float:left;
+	width:460px;
+
+	label, input, textarea {
+		display: block;
+
+	}
+	label {
+		margin-bottom:12px;
+		font-size:1.2em;
+	}
+
+	input, textarea {
+		padding:10px;
+		margin-bottom:20px;
+		border:none;
+		width: 360px;
+	}
+
+	input:not([type=submit]):not([type=file]), textarea {
+		background: @grey;
+		border: 1px solid @grey;
+
+		&:focus{
+			background: #fff;
+			border: 1px solid @yellow;
+		}
+	}
+
+	input[type=submit] {
+		background: @yellow;
+
+		padding: 20px;
+		color: #fff;
+		text-transform: uppercase;
+		font-size:1.28em;
+		font-weight: bold;
+		font-family: 'Avenir', Helvetica, Arial, sans-serif;
+		border-bottom:4px solid darken(@yellow,10%);
+
+		&:hover{
+			border-bottom:4px solid lighten(@yellow,5%);
+			background: lighten(@yellow,15%);
+			color:@black;
+		}
+	}
+}
+/* -----------------------------------------------------------------------------
+   Side Bar & Pre Footer
+   -------------------------------------------------------------------------- */
+
+aside.page {
+
+	background: @black;
+	padding: 40px 0;
+
+}
+
+.widget-links {
+
+	h3 {
+		float:left;
+		margin-right: 120px;
+
+		display:table-cell;
+	}
+
+	ul {
+		list-style: none;
+		float:left;
+
+		li {
+			float:left;
+			margin-left: 20px;
+
+			&:first-child {
+				margin-left: 0px;
+			}
+		}
+	}
 }
 
 /* -----------------------------------------------------------------------------
-   Songs
+   Footer
    -------------------------------------------------------------------------- */
 
-.song-list {
-  list-style-type: none;
-  margin:0;
-  padding:0;
+footer.page {
+
+	background:#fff;
+	padding: 40px 0;
+
+	.widget {
+		float:left;
+		margin-top:20px;
+		margin-left:40px;
+
+		&:first-child {
+			margin-left: 0px;
+		}
+
+		ul {
+			list-style: none;
+			margin:0;
+			padding: 0;
+		}
+	}
 }
 
-.song {
-	background:#fff;
-	width:220px;
-  padding: 10px;
-  margin-left:20px;
-  margin-top:20px;
 
-  display: inline;
-  display: inline-block;
-  zoom:1;
-
-	.drop-shadow (0px, 1px, 2px, 0.2);
-
-  &:first-child {
-    margin-left:0;
-  }
-
-  a {
-    text-decoration: none;
-    color:#000;
-
-    //&:hover;
-  }
-
-	figure, figure img {
-		width:200px;
-		height:200px;
-
-    .drop-shadow (0px, 0px, 2px, 0.1);
-
+.widget-news, .widget-related, .widget-listen {
+	h4 {
+		margin:0;
 	}
 
-  .info {
-    //padding:10px;
-    margin-top:20px;
-    font-size:0.75em;
-    color: @textcolour2;
+	ul {
+		list-style: none;
+		margin:0;
+		padding: 0;
+	}
 
-    ul {
-      list-style: none;
-      margin:10px 0;
-      padding:0;
+	p {
+		margin:0;
+	}
 
-      li {
-        text-align: right;
-        height:20px;
-        margin:5px 0;
-      }
-    }
-  }
+	li {
+		margin-bottom:18px;
+	}
+}
 
-  h2 {
-    border-bottom:1px #ddd solid;
-    margin:0;
-    padding-bottom:5px;
-  }
+.widget-contact .vcard {
 
+	text-align: right;
+
+	.logo a {
+			background: url(assets/img/logo_big.png) top left no-repeat;
+			display: block;
+			width:220px;
+			height:66px;
+			margin-bottom:20px;
+	}
+	
+	.org, .adr, .street-address, .tel {
+		display:block;
+	}
+}
+
+
+
+/**** Isotope Filtering ****/
+
+.isotope-item {
+  z-index: 2;
+}
+
+.isotope-hidden.isotope-item {
+  pointer-events: none;
+  z-index: 1;
+}
+
+/**** Isotope CSS3 transitions ****/
+
+.isotope,
+.isotope .isotope-item {
+  -webkit-transition-duration: 0.8s;
+     -moz-transition-duration: 0.8s;
+      -ms-transition-duration: 0.8s;
+       -o-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+}
+
+.isotope {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+      -ms-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+     -moz-transition-property:    -moz-transform, opacity;
+      -ms-transition-property:     -ms-transform, opacity;
+       -o-transition-property:      -o-transform, opacity;
+          transition-property:         transform, opacity;
+}
+
+/**** disabling Isotope CSS3 transitions ****/
+
+.isotope.no-transition,
+.isotope.no-transition .isotope-item,
+.isotope .isotope-item.no-transition {
+  -webkit-transition-duration: 0s;
+     -moz-transition-duration: 0s;
+      -ms-transition-duration: 0s;
+       -o-transition-duration: 0s;
+          transition-duration: 0s;
 }
 
 // Import helper classes from H5BP
