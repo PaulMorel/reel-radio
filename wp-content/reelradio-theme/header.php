@@ -42,12 +42,9 @@
    <header class="page" role="banner">
 	   		<div class="background"></div>
 	   		<div class="wrapper">
-			   <div class="site-titlelogo ir"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></div>
+			   <div class="site-title logo ir"><a href="<?php echo get_option('home'); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></div>
 			   <nav class="main-menu">
 					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 			   </nav>
 		   </div>
 	  </header>
-
-     <section class="main-content">
-     	<div class="wrapper">

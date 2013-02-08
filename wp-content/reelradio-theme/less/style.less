@@ -1,3 +1,14 @@
+/*
+Theme Name: RÉÉL-Radio 2013
+Theme URI: http://reel-radio.fm
+Author: Paul Morel & Marie-Michelle Daigle
+Author URI: http://paulmorel.com
+Description: RÉÉL-Radio est un theme créé à partir de zéro pour la radio étudiante de l'Université du Québec en Outaouais.
+Version: 0.7
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
 // Import LESS Elements 0.6 by Dmitry Fadeyev
 @import "elements.less";
 
@@ -23,30 +34,30 @@
    -------------------------------------------------------------------------- */
 @font-face {
 	font-family: 'Avenir';
-	src: url('assets/type/AvenirRoman.eot');
-	src: url('assets/type/AvenirRoman.eot?#iefix') format('embedded-opentype'),
-		 url('assets/type/AvenirRoman.woff') format('woff'),
-		 url('assets/type/AvenirRoman.ttf') format('truetype');
+	src: url('type/AvenirRoman.eot');
+	src: url('type/AvenirRoman.eot?#iefix') format('embedded-opentype'),
+		 url('type/AvenirRoman.woff') format('woff'),
+		 url('type/AvenirRoman.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'Avenir';
-	src: url('assets/type/AvenirBlack.eot');
-	src: url('assets/type/AvenirBlack.eot?#iefix') format('embedded-opentype'),
-		 url('assets/type/AvenirBlack.woff') format('woff'),
-		 url('assets/type/AvenirBlack.ttf') format('truetype');
+	src: url('type/AvenirBlack.eot');
+	src: url('type/AvenirBlack.eot?#iefix') format('embedded-opentype'),
+		 url('type/AvenirBlack.woff') format('woff'),
+		 url('type/AvenirBlack.ttf') format('truetype');
 	font-weight: 700;
 	font-style: normal;
 }
 
 @font-face {
     font-family: 'ModernPictogramsNormal';
-    src: url('assets/type/modernpics-webfont.eot');
-    src: url('assets/type/modernpics-webfont.eot?#iefix') format('embedded-opentype'),
-         url('assets/type/modernpics-webfont.woff') format('woff'),
-         url('assets/type/modernpics-webfont.ttf') format('truetype');
+    src: url('type/modernpics-webfont.eot');
+    src: url('type/modernpics-webfont.eot?#iefix') format('embedded-opentype'),
+         url('type/modernpics-webfont.woff') format('woff'),
+         url('type/modernpics-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 
@@ -139,7 +150,7 @@ header.page {
 		z-index: 10;
 
 		a {
-			background: url(assets/img/logo_small.png) top left no-repeat;
+			background: url(img/logo_small.png) top left no-repeat;
 			display: block;
 			width: 140px;
 			height: 43px;
@@ -162,7 +173,7 @@ header.page {
 				&:first-child{
 					margin-left: 0;
 				}
-				&.dropdown:after {
+				&.current-menu-parent:after {
 					font-family:'ModernPictogramsNormal';
 					font-size:1.25em;
 				    content:'/';
@@ -170,7 +181,7 @@ header.page {
 				    padding-left:5px;
 				}
 
-				&.dropdown ul {
+				&.current-menu-parent ul.sub-menu {
 					display:none;
 					margin:0;
 					background: #000;
@@ -218,7 +229,7 @@ header.page {
    Articles
    -------------------------------------------------------------------------- */
 
-#home article {
+.home article {
 	background: #fff;
 	min-height: 225px;
 	width:300px;
@@ -319,7 +330,7 @@ header.page {
 	}
 
 	.logo a {
-			background: url(assets/img/logo_big.png) top left no-repeat;
+			background: url(img/logo_big.png) top left no-repeat;
 			display: block;
 			width:220px;
 			height:66px;
@@ -441,11 +452,16 @@ footer.page {
 		}
 	}
 }
+.widget_nav_menu {
+	ul.sub-menu {
+		display:none;
+	}
+}
 
-
-.widget-news, .widget-related, .widget-listen {
-	h4 {
+.widget_recent_entries, .widget-related, .widget-listen {
+	li a {
 		margin:0;
+		display: block;
 	}
 
 	ul {
@@ -468,7 +484,7 @@ footer.page {
 	text-align: right;
 
 	.logo a {
-			background: url(assets/img/logo_big.png) top left no-repeat;
+			background: url(img/logo_big.png) top left no-repeat;
 			display: block;
 			width:220px;
 			height:66px;

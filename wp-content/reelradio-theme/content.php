@@ -15,7 +15,7 @@
 				</div>
 				<?php endif; ?>
 			</div>
-		<?php endif; ?>
+		<?php //endif; ?>
 	</header><!-- .entry-header -->
 
 	<?php if ( is_search() ) : // Only display Excerpts for Search ?>
@@ -34,12 +34,12 @@
 			<?php
 				/* translators: used between list items, there is a space after the comma */
 				$categories_list = get_the_category_list( __( ', ', 'reel_radio' ) );
-				if ( $categories_list && _s_categorized_blog() ) :
+				//if ( $categories_list && _s_categorized_blog() ) :
 			?>
 			<span class="cat-links">
 				<?php printf( __( 'Posted in %1$s', 'reel_radio' ), $categories_list ); ?>
 			</span>
-			<?php endif; // End if categories ?>
+			<?php //endif; // End if categories ?>
 
 			<?php
 				/* translators: used between list items, there is a space after the comma */

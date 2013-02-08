@@ -69,10 +69,10 @@ $(document).ready(function() {
 		}
 	});
 
-	$('.dropdown').click(function(e){
+	$('.current-menu-parent').click(function(e){
     
     e.preventDefault();
-    $('.dropdown ul').slideUp(100);
+    $('.current-menu-parent ul').slideUp(100);
 
     if ( $(this).children('ul').css('display') != 'none' ){
 
