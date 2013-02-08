@@ -69,7 +69,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 body {
 	background:@grey;
 	font-weight: normal;
-	font:14px/18px 'Avenir', Helvetica, Arial, sans-serif;
+	font:14px/20px 'Avenir', Helvetica, Arial, sans-serif;
 	color: @bodyColor;
 }
 
@@ -120,7 +120,7 @@ h4 {
 }
 
 p {
-	margin:0 0 14px 0;
+	margin: 0 0 22px 0;
 }
 
 .highlight {
@@ -296,25 +296,26 @@ header.page {
 
 }
 
-#single .main-content {
+.single .main-content {
 
-	article {
+	article, .comments {
 		width:700px;
 		background: #fff;
 		margin:0 20px 40px 0;
 		float:left;
-
-		.entry-content {
-			padding:40px;
-		}
+		padding:40px;
 	}
 
-	aside {
-		width:200px;
-		background: #fff;
-		margin-bottom: 20px;
-		padding:20px;
+	section.widget-area {
 		float:left;
+		width:200px;
+
+		.widget {
+			width:200px;
+			background: #fff;
+			margin-bottom: 20px;
+			padding:20px;
+		}
 	}
 }
 
@@ -344,7 +345,7 @@ header.page {
 
 
 // Generic Form
-.contact-form {
+form {
 	float:left;
 	width:460px;
 

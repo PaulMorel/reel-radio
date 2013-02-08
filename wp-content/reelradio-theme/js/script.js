@@ -59,7 +59,7 @@ $(document).ready(function() {
       initialize();
   })
 
-	$('.articles').isotope({
+	$('.home .articles').isotope({
 		// options
 		itemSelector : 'article',
 		layoutMode : 'masonry',
