@@ -428,18 +428,19 @@ header.page nav.main-menu ul {
 header.page nav.main-menu ul li {
   float: left;
   margin-left: 20px;
+  /*&:after {
+					font-family:'ModernPictogramsNormal';
+					font-size:1.25em;
+				    content:'/';
+				    color:#fff;
+				    padding-left:5px;
+				}*/
+
 }
 header.page nav.main-menu ul li:first-child {
   margin-left: 0;
 }
-header.page nav.main-menu ul li.current-menu-parent:after {
-  font-family: 'ModernPictogramsNormal';
-  font-size: 1.25em;
-  content: '/';
-  color: #fff;
-  padding-left: 5px;
-}
-header.page nav.main-menu ul li.current-menu-parent ul.sub-menu {
+header.page nav.main-menu ul li ul.sub-menu {
   display: none;
   margin: 0;
   background: #000;
@@ -450,17 +451,17 @@ header.page nav.main-menu ul li.current-menu-parent ul.sub-menu {
   z-index: 20;
   top: 67px;
 }
-header.page nav.main-menu ul li.current-menu-parent ul.sub-menu li {
+header.page nav.main-menu ul li ul.sub-menu li {
   float: none;
   height: auto;
   margin: 0;
 }
-header.page nav.main-menu ul li.current-menu-parent ul.sub-menu li a {
+header.page nav.main-menu ul li ul.sub-menu li a {
   padding: 10px 20px;
   margin: 0;
   display: block;
 }
-header.page nav.main-menu ul li.current-menu-parent ul.sub-menu li a:hover {
+header.page nav.main-menu ul li ul.sub-menu li a:hover {
   background: #f2c536;
   color: #fff;
 }
@@ -523,12 +524,12 @@ header.page nav.main-menu a:hover {
 .home article.is-long {
   width: 460px;
 }
-#page article {
+.page article {
   width: 940px;
   background: #fff;
   margin-bottom: 40px;
 }
-#page article .entry-content {
+.page article .entry-content {
   padding: 40px;
 }
 .single .main-content article,
@@ -549,24 +550,24 @@ header.page nav.main-menu a:hover {
   margin-bottom: 20px;
   padding: 20px;
 }
-#page.contact article #mapcanvas {
+.page.contact article #mapcanvas {
   width: 100%;
   height: 400px;
 }
-#page.contact article .vcard {
+.page.contact article .vcard {
   float: left;
 }
-#page.contact article .logo a {
+.page.contact article .logo a {
   background: url(img/logo_big.png) top left no-repeat;
   display: block;
   width: 220px;
   height: 66px;
   margin-bottom: 20px;
 }
-#page.contact article .org,
-#page.contact article .adr,
-#page.contact article .street-address,
-#page.contact article .tel {
+.page.contact article .org,
+.page.contact article .adr,
+.page.contact article .street-address,
+.page.contact article .tel {
   display: block;
 }
 form {
@@ -614,6 +615,10 @@ form input[type=submit]:hover {
   background: #f7da7e;
   color: #000000;
 }
+blockquote {
+  background: #eeeeee;
+  padding: 20px 20px 1px;
+}
 /* -----------------------------------------------------------------------------
    Side Bar & Pre Footer
    -------------------------------------------------------------------------- */
@@ -636,6 +641,12 @@ aside.page {
 }
 .widget-links ul li:first-child {
   margin-left: 0px;
+}
+.widget_nav_menu ul,
+.widget_archive ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 /* -----------------------------------------------------------------------------
    Footer

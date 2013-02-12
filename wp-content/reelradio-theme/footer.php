@@ -23,7 +23,7 @@
 
 	   <footer class="page clearfix">
 	   	<div class="wrapper">
-		 <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar() ) : ?>
+		 <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Sidebar 2') ) : ?>
 		<?php endif; ?>
 			<div class="widget widget-contact">
 				<h3>Contactez-nous</h3>

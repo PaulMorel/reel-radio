@@ -104,9 +104,9 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 add_action( 'init', 'custom_menus' ); // Add Custom Menus
 
 //Modify Sidebar Markup
-if ( function_exists('register_sidebar') )
-    register_sidebar(array(
-    	//'name' => 'Footer Widgets',
+if ( function_exists('register_sidebars') )
+    register_sidebars(2, array(
+    	'name' => 'Sidebar %d',
         'before_widget' => '<div class="widget %2$s">',
         'after_widget' => '</div>',
         'before_title' => '<h3>',

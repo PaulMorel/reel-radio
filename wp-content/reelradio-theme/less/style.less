@@ -173,15 +173,15 @@ header.page {
 				&:first-child{
 					margin-left: 0;
 				}
-				&.current-menu-parent:after {
+				/*&:after {
 					font-family:'ModernPictogramsNormal';
 					font-size:1.25em;
 				    content:'/';
 				    color:#fff;
 				    padding-left:5px;
-				}
+				}*/
 
-				&.current-menu-parent ul.sub-menu {
+				ul.sub-menu {
 					display:none;
 					margin:0;
 					background: #000;
@@ -285,7 +285,7 @@ header.page {
 	}
 }
 
-#page article {
+.page article {
 	width:940px;
 	background: #fff;
 	margin-bottom:40px;
@@ -319,7 +319,7 @@ header.page {
 	}
 }
 
-#page.contact article {
+.page.contact article {
 	
 	#mapcanvas {
 		width:100%;
@@ -393,6 +393,11 @@ form {
 		}
 	}
 }
+
+blockquote {
+	background:@grey;
+	padding:20px 20px 1px;
+}
 /* -----------------------------------------------------------------------------
    Side Bar & Pre Footer
    -------------------------------------------------------------------------- */
@@ -427,6 +432,12 @@ aside.page {
 		}
 	}
 }
+.widget_nav_menu ul, .widget_archive ul {
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+
 
 /* -----------------------------------------------------------------------------
    Footer
