@@ -11,12 +11,12 @@
 	<aside class="page clearfix">
 		<div class="wrapper">
 			<div class="widget widget-links">
-				<h3>Partenaires</h3>
-				<ul>
-					<li><img src="http://placehold.it/150x150&amp;text=STO" alt="STO"></li>
-					<li><img src="http://placehold.it/150x150&amp;text=Petit Chicago" alt="STO"></li>
-					<li><img src="http://placehold.it/150x150&amp;text=UQO" alt="STO"></li>
-				</ul>
+				<?php wp_list_bookmarks( array(
+					'title_li'         => __('Partenaires'),
+				    'title_before'     => '<h3>',
+				    'title_after'      => '</h3>',
+				    'categorize'	=> false
+				)); ?> 
 			</div>
 		</div>
 	</aside>
