@@ -407,7 +407,7 @@ define( 'RWMB_DIR', trailingslashit( STYLESHEETPATH . '/include/meta-box' ) );
 // Include the meta box script
 require_once RWMB_DIR . 'meta-box.php';
 // Include the meta box definition (the file where you define meta boxes, see `demo/demo.php`)
-include 'config-meta-boxes.php';
+//include 'config-meta-boxes.php';
 
 
 function add_emissions_post_type() {
@@ -425,7 +425,7 @@ function add_emissions_post_type() {
 					'not_found' =>  __('Aucune émission trouvée'),
 					'not_found_in_trash' => __('Aucune émission trouvée dans la corbeille'), 
 					'parent_item_colon' => '',
-					'menu_name' => 'Émissions'),
+					'menu_name' => 'Émissions');
 
 	$args = array(	'labels'        => $labels,
 					'description'   => 'Contient les émissions RÉÉL-Radio',
