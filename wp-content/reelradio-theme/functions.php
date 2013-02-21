@@ -13,8 +13,9 @@ $shortname = "rr";
 $author = "http://paulmorel.com/";
 
 // Set content_width. Hopefully it works
-$GLOBALS['content_width'] = 620;
-
+if ( ! isset( $content_width ) ) {
+	$content_width = 620;
+} 
 // ----------------------------------------------
 // Theme Tweaks
 // ----------------------------------------------
@@ -44,7 +45,7 @@ function login_error_mess() {
 // Extra Theme Support
 if ( function_exists( 'add_theme_support' ) ) { 
   add_theme_support( 'post-thumbnails' ); 
-  set_post_thumbnail_size( 700, 300, true );
+  set_post_thumbnail_size( 300, 225, true );
   add_theme_support( 'nav-menus' );
 }
 
@@ -381,61 +382,64 @@ $align = 'class="' . esc_attr($align) . '" ';
         }*/
 
 // ----------------------------------------------
-// Add Releases Post Type and Taxonomies
+// Add Emissions
 // ----------------------------------------------
-/*
-add_action( 'init', 'portfolio_post_type');
-add_action( 'init', 'portfolio_builtin_taxonimies');
+
+add_action( 'init', 'add_emissions_post_type');
+/*add_action( 'init', 'portfolio_builtin_taxonimies');
+
 
 add_action( "admin_init", "portfolio_meta_boxes");
 add_action('save_post', 'portfolio_save');
-/*add_action("manage_posts_custom_column",  "portfolio_custom_columns");
+add_action("manage_posts_custom_column",  "portfolio_custom_columns");
 add_filter("manage_edit-releases_columns", "portfolio_edit_columns");*/
 
-/*
-function portfolio_builtin_taxonimies() {
+
+/*function portfolio_builtin_taxonimies() {
 	register_taxonomy_for_object_type('category', 'portfolio'); 
 	register_taxonomy_for_object_type('post_tag', 'portfolio'); 	
-}
+}*/
+// Load Meta-Box Plugin
+
+// Re-define meta box path and URL
+define( 'RWMB_URL', trailingslashit( get_stylesheet_directory_uri() . '/include/meta-box' ) );
+define( 'RWMB_DIR', trailingslashit( STYLESHEETPATH . '/include/meta-box' ) );
+// Include the meta box script
+require_once RWMB_DIR . 'meta-box.php';
+// Include the meta box definition (the file where you define meta boxes, see `demo/demo.php`)
+include 'config-meta-boxes.php';
 
 
+function add_emissions_post_type() {
 
-function portfolio_post_type() {
-	
-	// Add Releases Post Type
-	register_post_type('portfolio', array(
-			'labels' =>  $labels = array(
-					'name' => _x('Portfolio', 'post type general name'),
-					'singular_name' => _x('Portfolio Item', 'post type singular name'),
-					'add_new' => _x('Add New', 'portfolio item'),
-					'add_new_item' => __('Add New Portfolio Item'),
-					'edit_item' => __('Edit Portfolio Item'),
-					'new_item' => __('New Portfolio Item'),
-					'view_item' => __('View Portfolio Item'),
-					'search_items' => __('Search Portfolio Items'),
-					'not_found' =>  __('No Portfolio Items found'),
-					'not_found_in_trash' => __('No Portfolio Items found in Trash'), 
-					'parent_item_colon' => ''),
-			'public' => true,
-			'show_ui' => true,
-			'capability_type' => 'post',
-			'hierarchical' => false,
-			'rewrite' => array('slug' => 'work'),
-			'query_var' => true,
-			'menu_position' => 20,
-			'show_in_nav_menus' => false,
-			/*'taxonomies' => array('category', 'post_tag'),*//*
-			'supports' => array(
-					'title',
-					'editor',
-					'custom-fields',
-					'revisions',
-					'thumbnail',)
-			) );	
+	// Custom Post Type Labels
+	$labels = array('name' => _x('Émissions', 'post type general name'),
+					'singular_name' => _x('Émission', 'post type singular name'),
+					'add_new' => _x('Ajouter', 'portfolio item'),
+					'add_new_item' => __('Ajouter une nouvelle émission'),
+					'edit_item' => __('Modifier une émission'),
+					'new_item' => __('Nouvelle émission'),
+					'all_items' => __( 'Tous les émissions' ),
+					'view_item' => __('Afficher émission'),
+					'search_items' => __('Rechercher émissions'),
+					'not_found' =>  __('Aucune émission trouvée'),
+					'not_found_in_trash' => __('Aucune émission trouvée dans la corbeille'), 
+					'parent_item_colon' => '',
+					'menu_name' => 'Émissions'),
+
+	$args = array(	'labels'        => $labels,
+					'description'   => 'Contient les émissions RÉÉL-Radio',
+					'public'        => true,
+					'menu_position' => 5,
+					'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'),
+					'has_archive'   => true,
+	);
+
+	register_post_type('emissions',$args );
 			
 	flush_rewrite_rules();
 	
-	// Adding the Custom Taxonomy for Credits
+	/*// Adding the Custom Taxonomy for Credits
     register_taxonomy( 'tasks', 'portfolio', array(
 			 'hierarchical' => false,
 			 'label' =>  __('Tasks'), 
@@ -451,115 +455,11 @@ function portfolio_post_type() {
 			 "singular_label" => __('Skill'),
 			 'rewrite' => array('slug' => 'skills' )
 		)
-	);
+	);*/
 
 
 }
 
-
-// Releases Meta Boxes
-
-
-function portfolio_meta_boxes(){
-  add_meta_box("addinfo_meta", "Additional Information", "addinfo_meta", "portfolio", "side", "high");
-  add_meta_box("credits_meta", "Credits", "credits_meta", "portfolio", "normal", "low");
-  add_meta_box("media_meta", "Previews &amp; Media", "media_meta", "portfolio", "normal", "low");
-
-}
- 
-
-function addinfo_meta() {
-  global $post;
-  $custom = get_post_custom($post->ID);
-  $completion_date = $custom["completion_date"][0];
-  $visit_link = $custom["visit_link"][0];
-  ?>
-
-<p>
-  <label>Completion Date</label><br />
-  <input name="completion_date" value="<?php echo $completion_date; ?>" />
-</p>
-<p>
-  <label>Link</label><br />
-  <input name="visit_link" value="<?php echo $visit_link; ?>" />
-</p>
-<?php
-}
-
-function credits_meta() {
-  global $post;
-  $custom = get_post_custom($post->ID);
-  $designers = $custom["designers"][0];
-  $developers = $custom["developers"][0];
-  $integrators = $custom["integrators"][0];
-  $other_credits = $custom["other_credits"][0];
-  ?>
-  <p><label>Design Credits</label><br />
-  <textarea cols="80" rows="6" name="designers"><?php echo $designers; ?></textarea></p>
-  <p><label>Developer Credits</label><br />
-  <textarea cols="80" rows="6" name="developers"><?php echo $developers; ?></textarea></p>
-  <p><label>Integration Credits</label><br />
-  <textarea cols="80" rows="6" name="integrators"><?php echo $integrators; ?></textarea></p>
-  <p><label>Misc Credits</label><br />
-  <textarea cols="80" rows="6" name="other_credits"><?php echo $other_credits; ?></textarea></p>
-
-<?php
-
-}
-function media_meta() {
-  global $post;
-  $custom = get_post_custom($post->ID);
-  $flickr_set = $custom["flickr_set"][0];
-  $preview = $custom["preview"][0];
-  $preview_full1 = $custom["preview_full1"][0];
-  $preview_full2 = $custom["preview_full2"][0];
-  $preview_full3 = $custom["preview_full3"][0];
-  ?>
-  <p>
-  <label>Flickr Set (Optional):</label>
-  <input name="flickr_set" value="<?php echo $flickr_set; ?>"/>
-</p>
-<p>
-  <label>Small Preview:</label>
-  <input name="preview" value="<?php echo $preview; ?>"/>
-</p>
-<p>
-  <label>Full Preview 1:</label>
-  <input name="preview_full1" value="<?php echo $preview_full1; ?>" />
-</p>
-<p>
-  <label>Full Preview 2:</label>
-  <input name="preview_full2" value="<?php echo $preview_full2; ?>" />
-</p>
-<p>
-  <label>Full Preview 3:</label>
-  <input name="preview_full3" value="<?php echo $preview_full3; ?>" />
-</p>
-<?php
-
-}
-function portfolio_save(){
-  global $post;
-	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
-	    return $post->ID;
-	}
-	
-  update_post_meta($post->ID, "completion_date", $_POST["completion_date"]);
-  update_post_meta($post->ID, "visit_link", $_POST["visit_link"]);
-  
-  update_post_meta($post->ID, "designers", $_POST["designers"]);
-  update_post_meta($post->ID, "developers", $_POST["developers"]);
-  update_post_meta($post->ID, "integrators", $_POST["integrators"]);
-  update_post_meta($post->ID, "other_credits", $_POST["other_credits"]);
-  
-  update_post_meta($post->ID, "flickr_set", $_POST["flickr_set"]);
-  update_post_meta($post->ID, "preview", $_POST["preview"]);
-  update_post_meta($post->ID, "preview_full1", $_POST["preview_full1"]);
-  update_post_meta($post->ID, "preview_full2", $_POST["preview_full2"]);
-  update_post_meta($post->ID, "preview_full3", $_POST["preview_full3"]);
-
-}
- 
 /*function portfolio_edit_columns($columns){
   $columns = array(
     "cb" => "<input type=\"checkbox\" />",
