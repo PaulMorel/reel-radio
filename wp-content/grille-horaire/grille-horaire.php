@@ -1106,7 +1106,7 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 					</select></td>
 					</tr>
 					<tr>
-					<td>Auto-Adjust Position to be visible</td>
+					<td>Ajuster automatiquement la position pour être visible</td>
 					<td><input type="checkbox" id="adjusttooltipposition" name="adjusttooltipposition" <?php if ($options['adjusttooltipposition'] == true) echo ' checked="checked" '; ?>/></td>
 					<td></td><td></td>
 					</tr>
@@ -1124,17 +1124,17 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 						wp_nonce_field('wspp-config');
 					?>
 					<?php if ($mode == "edit"): ?>
-					<strong>Editing Category #<?php echo $selectedcat->id; ?></strong><br />
+					<strong>Modification de catégorie #<?php echo $selectedcat->id; ?></strong><br />
 					<?php endif; ?>
-					Category Name: <input style="width:300px" type="text" name="name" <?php if ($mode == "edit") echo "value='" . $selectedcat->name . "'";?>/>
-					<br>Background Cell Color (optional)
+					Nom de la catégorie: <input style="width:300px" type="text" name="name" <?php if ($mode == "edit") echo "value='" . $selectedcat->name . "'";?>/>
+					<br>Couleur d'arrière-plan  de la cellule (facultatif)
 					<input style="width:100px" type="text" name="backgroundcolor" <?php if ($mode == "edit") echo "value='" . $selectedcat->backgroundcolor . "'";?>/>
 					<input type="hidden" name="id" value="<?php if ($mode == "edit") echo $selectedcat->id; ?>" />
 					<input type="hidden" name="schedule" value="<?php echo $schedule; ?>" />
 					<?php if ($mode == "edit"): ?>
-						<p style="border:0;" class="submit"><input type="submit" name="updatecat" value="Update &raquo;" /></p>
+						<p style="border:0;" class="submit"><input type="submit" name="updatecat" value="Mettre a jour &raquo;" /></p>
 					<?php else: ?>
-						<p style="border:0;" class="submit"><input type="submit" name="newcat" value="Insert New Category &raquo;" /></p>
+						<p style="border:0;" class="submit"><input type="submit" name="newcat" value="Ajouter nouvelle catégorie &raquo;" /></p>
 					<?php endif; ?>
 					</form>
 				</div>
@@ -1146,9 +1146,9 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 							  <thead>
 							  <tr>
   							  <th scope='col' style='width: 50px' id='id' class='manage-column column-id' >ID</th>
-							  <th scope='col' id='name' class='manage-column column-name' style=''>Name</th>
-							  <th scope='col' style='width: 50px;text-align: right' id='color' class='manage-column column-color' style=''>Color</th>
-							  <th scope='col' style='width: 50px;text-align: right' id='items' class='manage-column column-items' style=''>Items</th>
+							  <th scope='col' id='name' class='manage-column column-name' style=''>Nom</th>
+							  <th scope='col' style='width: 50px;text-align: right' id='color' class='manage-column column-color' style=''>Couleur</th>
+							  <th scope='col' style='width: 50px;text-align: right' id='items' class='manage-column column-items' style=''>Éléments</th>
 							  <th style='width: 30px'></th>
 							  </tr>
 							  </thead>
@@ -1175,7 +1175,7 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 							 
 							<?php endif; ?>
 							
-							<p>Categories can only be deleted when they don't have any associated items.</p>
+							<p>Les catégories peuvent seulement être supprimés quand ils n'ont aucun élément associé</p>
 				</div>
 				<?php /* --------------------------------------- Items --------------------------------- */ ?>
 				<?php elseif ($adminpage == "items"): ?>
