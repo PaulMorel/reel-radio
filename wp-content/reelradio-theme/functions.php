@@ -178,162 +178,7 @@ endif; // _s_content_nav
 }*/
  
 //add_filter('guar_sitemap_posttype_filter','my_filter',10,1);	
-// ----------------------------------------------
-// New Short Codes
-// ----------------------------------------------
 
-/*function layout_one_third( $atts, $content = null ) {
-	   extract( shortcode_atts( array(
-      'last' => false,
-      ), $atts ) );
-	 
-	  if ($last) {
-	 	$class = ' col-last';
-	  } else {
-		$class = '';
-  	  }
-
-   return '<div class="col-one-third' . $class  . '">' . do_shortcode($content) . '</div>';
-}
-add_shortcode('one_third', 'layout_one_third');
-
-function layout_two_third( $atts, $content = null ) {
-		   extract( shortcode_atts( array(
-      'last' => false,
-      ), $atts ) );
-	 
-	  if ($last) {
-	 	$class = ' col-last';
-	  } else {
-		$class = '';
-  	  }
-   return '<div class="col-two-third' . $class  . '">' . do_shortcode($content) . '</div>';
-}
-add_shortcode('two_third', 'layout_two_third');
-function layout_one_half( $atts, $content = null ) {
-		   extract( shortcode_atts( array(
-      'last' => false,
-      ), $atts ) );
-	 
-	  if ($last) {
-	 	$class = ' col-last';
-	  } else {
-		$class = '';
-  	  }
-   return '<div class="col-one-half' . $class  . '">' . do_shortcode($content) . '</div>';
-}
-add_shortcode('one_half', 'layout_one_half');
-
-function shortcode_button( $atts, $content = null ) {
-   return '<span class="red-button">' . do_shortcode($content) . '</span>';
-}
-add_shortcode('button', 'shortcode_button');
-
-function shortcode_button2( $atts, $content = null ) {
-   return '<span class="grey-button">' . do_shortcode($content) . '</span>';
-}
-add_shortcode('button2', 'shortcode_button2');
-
-function shortcode_elegant( $atts, $content = null ) {
-   return '<span class="elegant">' . do_shortcode($content) . '</span>';
-}
-add_shortcode('elegant', 'shortcode_elegant');
-
-function shortcode_social( $atts, $content = null ) {
-	
-	if (stripslashes(get_option("gat_twitter"))) {
-		$twitter = "<li class=\"twitter\"><a href=\"http://twitter.com/". stripslashes(get_option("gat_twitter")) ."\" title=\"Twitter\" rel=\"me external\" >Twitter</a></li>\n";
-	}
-	
-	if (stripslashes(get_option("gat_zerply"))) {
-		$zerply = "<li class=\"zerply\"><a href=\"http://zerp.ly/". stripslashes(get_option("gat_zerply")) ."\" title=\"Zerply\" rel=\"me external\" >Zerply</a></li>\n";
-	}
-	
-	if (stripslashes(get_option("gat_dribbble"))) {
-		$dribbble = "<li class=\"dribbble\"><a href=\"http://dribbble.com/". stripslashes(get_option("gat_dribbble")) ."\" title=\"Dribbble\" rel=\"me external\" >Dribbble</a></li>\n";
-	}
-	
-	if (stripslashes(get_option("gat_da"))) {
-		$da = "<li class=\"da\"><a href=\"http://". stripslashes(get_option("gat_da")) .".deviantart.com\" title=\"DeviantART\" rel=\"me external\" >DeviantART</a></li>\n";
-	}
-	
-	if (stripslashes(get_option("gat_flickr"))) {
-		$flickr = "<li class=\"flickr\"><a href=\"http://www.flickr.com/photos/". stripslashes(get_option("gat_flickr")) ."\" title=\"Flickr\" rel=\"me external\">Flickr</a></li>\n";
-	}
-
-	if (stripslashes(get_option("gat_flickr"))) {
-		$flickr = "<li class=\"flickr\"><a href=\"http://www.flickr.com/photos/". stripslashes(get_option("gat_flickr")) ."\" title=\"Flickr\" rel=\"me external\">Flickr</a></li>\n";
-	}
-	
-	if (stripslashes(get_option("gat_facebook"))) {
-		$facebook = "<li class=\"facebook\"><a href=\"". stripslashes(get_option("gat_facebook")) ."\" title=\"Facebook\">Facebook</a></li>\n";
-	}
-
-	if (stripslashes(get_option("gat_lastfm"))) {
-		$lastfm = "<li class=\"lastfm\"><a href=\"http://last.fm/user/". stripslashes(get_option("gat_lastfm")) ."\" title=\"Last.fm\" rel=\"me external\">Last.fm</a></li>\n";
-	}
-	
-	$construct = "<ul class=\"links-social clearfix\">\n
-	   			$zerply
-	   			$twitter
-				$dribbble
-				$da
-				$flickr
-				$facebook
-				$lastfm
-				</ul>";
-	   return  $construct;
-}
-add_shortcode('social', 'shortcode_social');
-
-function shortcode_slider( $atts, $content = null ) {
-   return '<div class="slider">
-	<div class="slides_container">' . do_shortcode($content) . '</div></div>';
-}
-add_shortcode('slider', 'shortcode_slider');
-
-function shortcode_slide( $atts, $content = null ) {
-		   extract( shortcode_atts( array(
-		  'caption' => '',
-		  'date' => ''
-		  ), $atts ) );
-		 
-		  if ($caption && $date) {
-			$figcaption = "<figcaption>$caption<span>$date</span></figcaption>";
-		  } elseif ($caption && !$date) {
-			$figcaption = "<figcaption>$caption</figcaption>";
-		  }
-
-		  
-		  return '<figure>' . do_shortcode($content) . $figcaption .'</figure>';
-}
-add_shortcode('slide', 'shortcode_slide');
-
-/*function shortcode_timthumb( $atts, $content = null ) {
-		   extract( shortcode_atts( array(
-		  'width' => '',
-		  'height' => ''
-		  ), $atts ) );
-		  $template = bloginfo('template_directory');
-		  return  $template . "/inc/thumb.php?src='". do_shortcode($content) ."&w=$width&h=$height&zc=1&q=100";
-}
-add_shortcode('timthumb', 'shortcode_timthumb');*/
-
-// Add Shortcodes to Tiny MCE
-/*add_action('init', 'add_newshortcodes'); 
- 
-function add_newshortcodes() {
-   if ( current_user_can('edit_posts') &&  current_user_can('edit_pages') )
-   {
-     add_filter('mce_external_plugins', 'add_plugin');
-     add_filter('mce_buttons', 'register_newshortcodes');
-   }
-}
-
-function register_newshortcodes($buttons) {
-   array_push($buttons, "quote");
-   return $buttons;
-}*/
 
 // WP Filters
 
@@ -432,28 +277,7 @@ $align = 'class="' . esc_attr($align) . '" ';
 // ----------------------------------------------
 
 add_action( 'init', 'add_emissions_post_type');
-/*add_action( 'init', 'portfolio_builtin_taxonimies');
 
-
-add_action( "admin_init", "portfolio_meta_boxes");
-add_action('save_post', 'portfolio_save');
-add_action("manage_posts_custom_column",  "portfolio_custom_columns");
-add_filter("manage_edit-releases_columns", "portfolio_edit_columns");*/
-
-
-/*function portfolio_builtin_taxonimies() {
-	register_taxonomy_for_object_type('category', 'portfolio'); 
-	register_taxonomy_for_object_type('post_tag', 'portfolio'); 	
-}*/
-// Load Meta-Box Plugin
-
-// Re-define meta box path and URL
-define( 'RWMB_URL', trailingslashit( get_stylesheet_directory_uri() . '/include/meta-box' ) );
-define( 'RWMB_DIR', trailingslashit( STYLESHEETPATH . '/include/meta-box' ) );
-// Include the meta box script
-require_once RWMB_DIR . 'meta-box.php';
-// Include the meta box definition (the file where you define meta boxes, see `demo/demo.php`)
-//include 'config-meta-boxes.php';
 
 
 function add_emissions_post_type() {
@@ -503,49 +327,69 @@ function add_emissions_post_type() {
 		)
 	);*/
 
-
 }
 
-/*function portfolio_edit_columns($columns){
-  $columns = array(
-    "cb" => "<input type=\"checkbox\" />",
-    "title" => "Release Title",
-	"artist" => "Artist",
-    "description" => "Description",
-    "release_date" => "Release Date",
-    "catalogue_number" => "Catalogue Number",
-  );
- 
-  return $columns;
-}
-function releases_custom_columns($column){
-  global $post;
- 
-  switch ($column) {
-	case "artist":
-      echo get_the_term_list($post->ID, 'artist', '', ', ','');
-      break;
-    case "description":
-      the_excerpt();
-      break;
-    case "release_date":
-      $custom = get_post_custom();
-      echo $custom["release_date"][0];
-      break;
-	case "catalogue_number":
-      $custom = get_post_custom();
-      echo $custom["catalogue_number"][0];
-      break;
+// Load Meta-Box Plugin
 
-  }
-}*/
-/*
-// Custom Fields
-function get_custom_field_value($szKey, $bPrint = false) {
-	global $post;
-	$szValue = get_post_meta($post->ID, $szKey, true);
-	if ( $bPrint == false ) return $szValue; else echo $szValue;
+// Re-define meta box path and URL
+define( 'RWMB_URL', trailingslashit( get_stylesheet_directory_uri() . '/include/meta-box' ) );
+define( 'RWMB_DIR', trailingslashit( STYLESHEETPATH . '/include/meta-box' ) );
+// Include the meta box script
+require_once RWMB_DIR . 'meta-box.php';
+
+//
+$prefix = 'rr_';
+
+global $meta_boxes;
+
+$meta_boxes = array();
+
+$meta_boxes[] = array(
+	'id'       => 'excerpt-size',
+	'title'    => __('Dimensions', 'rr'),
+	'pages'    => array('post'),
+	'context'  => 'normal',
+	'priority' => 'high',
+
+	'fields'   => array(
+		array(
+			'name' => __('Dimensions de la boite de l\'article', 'rr'),
+			'id'   => $prefix . 'dimensions',
+			'type' => 'radio',
+			'options' => array(
+				'is-normal' => 'Normale',
+				'is-long' => 'Large',
+			),
+			'std'  => ''
+		)
+	)
+);
+
+/**
+ * Register meta boxes
+ *
+ * @return void
+ */
+function register_meta_boxes()
+{
+	global $meta_boxes;
+
+	// Make sure there's no errors when the plugin is deactivated or during upgrade
+	if ( class_exists( 'RW_Meta_Box' ) )
+	{
+		foreach ( $meta_boxes as $meta_box )
+		{
+			new RW_Meta_Box( $meta_box );
+		}
+	}
 }
+// Hook to 'admin_init' to make sure the meta box class is loaded
+//  before (in case using the meta box class in another plugin)
+// This is also helpful for some conditionals like checking page template, categories, etc.
+add_action( 'admin_init', 'register_meta_boxes' );
+
+
+
 
 // ----------------------------------------------
 // Option Page

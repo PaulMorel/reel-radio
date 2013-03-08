@@ -534,7 +534,7 @@ Articles
 	overflow: hidden;
 }
 
-.home article .post-image {
+.home article .article-image {
 	position: absolute;
 	z-index: 0;
 }
@@ -578,7 +578,7 @@ Articles
 }
 
 .home article.is-long {
-	width: 460px;
+	width: 620px;
 }
 
 .page article {

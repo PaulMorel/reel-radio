@@ -19,12 +19,17 @@ get_header(); ?>
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
-
+			
+			<?php if(rwmb_meta( 'rr_dimensions' ) == 'is-long') : ?> 
+			<article id="post-<?php the_ID(); ?>" <?php post_class('is-long'); ?>>
+			<?php else : ?>
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			<?php endif; ?>
 		      	<div class="article-content">
 			        <h2 class="post-title"><a href="<?php the_permalink(); ?>" title="<?php _e('Permalink to ','rr'); the_title(); ?>" rel="bookmark" ><?php the_title(); ?></a></h2>
 			        <div class="excerpt">
 				        <p><?php the_excerpt(); ?></p>
+				        <?php echo rwmb_meta( 'rr_dimensions' ) ?>
 				        <p><a href="<?php the_permalink(); ?>" title="<?php _e('Permalink to ','rr'); the_title(); ?>" rel="bookmark" >En lire plus...</a></p>
 			        </div>
 			    </div>
