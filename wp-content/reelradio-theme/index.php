@@ -46,7 +46,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php //_s_content_nav( 'nav-below' ); ?>
+			<?php reel_content_nav( 'nav-below' ); ?>
 			</div>
 		<?php else : ?>
 
