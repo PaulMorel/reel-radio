@@ -31,7 +31,7 @@ get_header(); ?>
 			    <div class="article-image">
 			    	<?php if ( has_post_thumbnail() ) :
 						the_post_thumbnail();
-					endif;
+					endif; //test
 			    	?>
 			    </div>
 	     	</article>
