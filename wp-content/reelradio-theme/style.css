@@ -599,6 +599,12 @@ Articles
 	padding: 40px;
 }
 
+.single .main-content article .attachment-post-thumbnail {
+	position: relative;
+	left: -40px;
+	top: -40px;
+}
+
 .single .main-content section.widget-area {
 	float: left;
 	width: 200px;

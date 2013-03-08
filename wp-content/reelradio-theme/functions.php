@@ -45,7 +45,7 @@ function login_error_mess() {
 // Extra Theme Support
 if ( function_exists( 'add_theme_support' ) ) { 
   add_theme_support( 'post-thumbnails' ); 
-  set_post_thumbnail_size( 300, 225, true );
+  set_post_thumbnail_size( 700, 0, true );
   add_theme_support( 'nav-menus' );
 }
 

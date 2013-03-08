@@ -28,6 +28,12 @@ get_header(); ?>
 				        <p><a href="<?php the_permalink(); ?>" title="<?php _e('Permalink to ','rr'); the_title(); ?>" rel="bookmark" >En lire plus...</a></p>
 			        </div>
 			    </div>
+			    <div class="article-image">
+			    	<?php if ( has_post_thumbnail() ) :
+						the_post_thumbnail();
+					endif;
+			    	?>
+			    </div>
 	     	</article>
 
 				<?php
