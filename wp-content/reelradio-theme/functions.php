@@ -114,6 +114,8 @@ if ( function_exists('register_sidebars') )
         'after_title' => '</h3>'
     ));
 
+if ( ! function_exists( 'reel_content_nav' ) ) :
+
 function reel_content_nav( $nav_id ) {
 	global $wp_query, $post;
 
