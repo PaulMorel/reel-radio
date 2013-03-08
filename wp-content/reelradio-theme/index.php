@@ -29,13 +29,16 @@ get_header(); ?>
 			        <h2 class="post-title"><a href="<?php the_permalink(); ?>" title="<?php _e('Permalink to ','rr'); the_title(); ?>" rel="bookmark" ><?php the_title(); ?></a></h2>
 			        <div class="excerpt">
 				        <p><?php the_excerpt(); ?></p>
-				        <?php echo rwmb_meta( 'rr_dimensions' ) ?>
 				        <p><a href="<?php the_permalink(); ?>" title="<?php _e('Permalink to ','rr'); the_title(); ?>" rel="bookmark" >En lire plus...</a></p>
 			        </div>
 			    </div>
 			    <div class="article-image">
 			    	<?php if ( has_post_thumbnail() ) :
-						the_post_thumbnail();
+			    		if(rwmb_meta( 'rr_dimensions' ) == 'is-long') :
+							the_post_thumbnail('long'); 
+						else:
+							the_post_thumbnail('short'); 
+						endif;
 					endif; //test
 			    	?>
 			    </div>

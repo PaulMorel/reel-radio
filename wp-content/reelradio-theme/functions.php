@@ -46,6 +46,9 @@ function login_error_mess() {
 if ( function_exists( 'add_theme_support' ) ) { 
   add_theme_support( 'post-thumbnails' ); 
   set_post_thumbnail_size( 700, 0, true );
+  add_image_size( 'long', 660, 0, true );
+  add_image_size( 'short', 340, 0, true );
+
   add_theme_support( 'nav-menus' );
 }
 
