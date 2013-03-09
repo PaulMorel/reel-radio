@@ -328,6 +328,10 @@ nav.main-menu {
 			background: #fff;
 			margin-bottom: 20px;
 			padding:20px;
+
+			h3 {
+				margin-top:0;
+			}
 		}
 	}
 }
@@ -425,6 +429,37 @@ nav.navigation-paging {
 	.next {
 		display: block;
 		float: right;
+	}
+}
+.comments {
+	ol.commentlist {
+		margin:0;
+		padding:0;
+		list-style: none;
+		
+		li {
+			margin-bottom:30px;
+			
+			border-bottom: 1px #eee solid;
+
+			.comment-meta {
+				margin:10px 0;
+			}
+
+			.reply {
+				display:none;
+				visibility: hidden;
+			}
+		}
+
+	}
+
+	form {
+		width:100%;
+
+		#comment {
+			width:100%;
+		}
 	}
 }
 /* -----------------------------------------------------------------------------

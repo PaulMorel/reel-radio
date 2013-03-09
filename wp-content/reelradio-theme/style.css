@@ -557,6 +557,9 @@ nav.main-menu a:hover {
   margin-bottom: 20px;
   padding: 20px;
 }
+.single .main-content section.widget-area .widget h3 {
+  margin-top: 0;
+}
 .page.contact article #mapcanvas {
   width: 100%;
   height: 400px;
@@ -638,6 +641,28 @@ nav.navigation-paging .previous {
 nav.navigation-paging .next {
   display: block;
   float: right;
+}
+.comments ol.commentlist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.comments ol.commentlist li {
+  margin-bottom: 30px;
+  border-bottom: 1px #eee solid;
+}
+.comments ol.commentlist li .comment-meta {
+  margin: 10px 0;
+}
+.comments ol.commentlist li .reply {
+  display: none;
+  visibility: hidden;
+}
+.comments form {
+  width: 100%;
+}
+.comments form #comment {
+  width: 100%;
 }
 /* -----------------------------------------------------------------------------
    Side Bar & Pre Footer

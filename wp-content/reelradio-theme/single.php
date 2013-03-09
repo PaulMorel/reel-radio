@@ -43,10 +43,9 @@ get_header(); ?>
 					 */
 					//get_template_part( 'content', get_post_format() );
 				?>
-			<div class="comments">
-				<h2>Commentaires</h2>
+				
 				 <?php comments_template(); ?>
-			</div>
+
 			
 			 	
 			<?php endwhile; ?>
