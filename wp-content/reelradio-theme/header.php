@@ -30,7 +30,7 @@
 	<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/img/favicon.ico"/>
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
 	
-	<script src="<?php bloginfo('template_url'); ?>/js/libs/modernizr-1.6.min.js"></script>
+	<script src="<?php bloginfo('template_url'); ?>/js/libs/modernizr-2.6.2.min.js"></script>
 	<!-- Wordpress Head -->
 	<?php wp_head() ?>
 	<?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>

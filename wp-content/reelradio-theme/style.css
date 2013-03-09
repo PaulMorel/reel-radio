@@ -450,40 +450,34 @@ header.page .logo a {
 	margin-top: 10px;
 }
 
-header.page nav.main-menu {
+nav.main-menu {
 	float: left;
 }
 
-header.page nav.main-menu ul {
+nav.main-menu ul {
 	list-style: none;
 	margin: 25px 0 0 50px;
 	padding: 0;
 }
 
-header.page nav.main-menu ul li {
+nav.main-menu ul li {
 	float: left;
-	margin-left:20px; /*&:after  {
-	
-	font-family: 'ModernPictogramsNormal';
-	
-	font-size: 1.25em;
-	
-	content: '/';
-	
-	color: #fff;
-	
-	padding-left: 5px;
-	
+	margin-left: 20px;
 }
 
-*/
-}
-
-header.page nav.main-menu ul li:first-child {
+nav.main-menu ul li:first-child {
 	margin-left: 0;
 }
 
-header.page nav.main-menu ul li ul.sub-menu {
+nav.main-menu ul li.menu-parent:after {
+	font-family: 'ModernPictogramsNormal';
+	font-size: 1.25em;
+	content: '/';
+	color: #fff;
+	padding-left: 5px;
+}
+
+nav.main-menu ul li .sub-menu {
 	display: none;
 	margin: 0;
 	background: #000;
@@ -491,34 +485,34 @@ header.page nav.main-menu ul li ul.sub-menu {
 	*/
 position: absolute;
 	z-index: 20;
-	top: 67px;
+	top: 95px;
 }
 
-header.page nav.main-menu ul li ul.sub-menu li {
+nav.main-menu ul li .sub-menu li {
 	float: none;
 	height: auto;
 	margin: 0;
 }
 
-header.page nav.main-menu ul li ul.sub-menu li a {
+nav.main-menu ul li .sub-menu li a {
 	padding: 10px 20px;
 	margin: 0;
 	display: block;
 }
 
-header.page nav.main-menu ul li ul.sub-menu li a:hover {
+nav.main-menu ul li .sub-menu li a:hover {
 	background: #f2c536;
 	color: #fff;
 }
 
-header.page nav.main-menu a {
+nav.main-menu a {
 	font-weight: bold;
 	color: #FFF;
 	text-transform: uppercase;
 	text-decoration: none;
 }
 
-header.page nav.main-menu a:hover {
+nav.main-menu a:hover {
 	color: #f2c536;
 }
 
@@ -689,6 +683,22 @@ form input[type=submit]:hover {
 blockquote {
 	background: #eeeeee;
 	padding: 20px 20px 1px;
+}
+
+nav.navigation-paging {
+	background: #fff;
+	margin: 20px 0 40px 0;
+	padding: 20px;
+}
+
+nav.navigation-paging .previous {
+	display: block;
+	float: left;
+}
+
+nav.navigation-paging .next {
+	display: block;
+	float: right;
 }
 
 /* -----------------------------------------------------------------------------

@@ -69,21 +69,24 @@ $(document).ready(function() {
 		}
 	});
 
-	$('.sub-menu').parents('li.menu-item').click(function(e){
+	$('.sub-menu').siblings('a').click(function(e) {
     
     e.preventDefault();
     $('ul.sub-menu').slideUp(100);
 
-    if ( $(this).children('ul').css('display') != 'none' ){
+    if ( $(this).siblings('ul.sub-menu').css('display') != 'none' ){
 
-      $(this).children('ul').slideUp(100);
+      $(this).siblings('ul.sub-menu').slideUp(100);
 
     } else {
 
-      $(this).children('ul').slideDown(100); 
+      $(this).siblings('ul.sub-menu').slideDown(100); 
 
     }
 
-	})
+	});
+
+  $('.sub-menu').parent('li.menu-item').addClass('menu-parent');
+  
 	
 })

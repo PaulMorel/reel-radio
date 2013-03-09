@@ -158,72 +158,74 @@ header.page {
 		}
 	}
 
-	nav.main-menu {
-		float:left;
+}
 
-		ul {
-			list-style: none;
-			margin:25px 0 0 50px;
-			padding:0;
+nav.main-menu {
+	float:left;
 
-			li {
-				float:left;
-				margin-left:20px;
+	ul {
+		list-style: none;
+		margin:25px 0 0 50px;
+		padding:0;
 
-				&:first-child{
-					margin-left: 0;
-				}
-				/*&:after {
-					font-family:'ModernPictogramsNormal';
-					font-size:1.25em;
-				    content:'/';
-				    color:#fff;
-				    padding-left:5px;
-				}*/
+		li {
+			float:left;
+			margin-left:20px;
 
-				ul.sub-menu {
-					display:none;
+			&:first-child{
+				margin-left: 0;
+			}
+
+			&.menu-parent:after {
+				font-family:'ModernPictogramsNormal';
+				font-size:1.25em;
+			    content:'/';
+			    color:#fff;
+			    padding-left:5px;
+			}
+
+			.sub-menu {
+				display:none;
+				margin:0;
+				background: #000;
+				margin-left: -20px;
+				/*border-top:1px solid #fff;*/
+				position: absolute;
+				z-index: 20;
+				top: 95px;
+
+				li {
+					float: none;
+					height:auto;
 					margin:0;
-					background: #000;
-					margin-left: -20px;
-					/*border-top:1px solid #fff;*/
-					position: absolute;
-					z-index: 20;
-					top:67px;
-
-					li {
-						float: none;
-						height:auto;
+					
+					a {
+						padding:10px 20px;
 						margin:0;
-						
-						a {
-							padding:10px 20px;
-							margin:0;
-							display: block;
+						display: block;
 
-							&:hover{
-								background: @yellow;
-								color: #fff;
-							}
+						&:hover{
+							background: @yellow;
+							color: #fff;
 						}
 					}
 				}
 			}
 		}
-
-		a {
-			font-weight: bold;
-			//font-size: 12px;
-			color:#FFF;
-			text-transform: uppercase;
-			text-decoration: none;
-
-			&:hover {
-				color:@yellow;
-			}
-
-		}	
 	}
+
+	a {
+		font-weight: bold;
+		//font-size: 12px;
+		color:#FFF;
+		text-transform: uppercase;
+		text-decoration: none;
+
+		&:hover {
+			color:@yellow;
+		}
+
+	}	
 }
 /* -----------------------------------------------------------------------------
    Articles
@@ -404,6 +406,22 @@ form {
 blockquote {
 	background:@grey;
 	padding:20px 20px 1px;
+}
+
+nav.navigation-paging {
+	background: #fff;
+	margin: 20px 0 40px 0;
+	padding: 20px;
+
+	.previous {
+		display: block;
+		float: left;
+	}
+
+	.next {
+		display: block;
+		float: right;
+	}
 }
 /* -----------------------------------------------------------------------------
    Side Bar & Pre Footer
