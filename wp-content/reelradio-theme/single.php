@@ -28,10 +28,10 @@ get_header(); ?>
 				<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'rr' ), 'after' => '</div>' ) ); ?>
 				</div>
                 <div lass="entry-meta">
-					<span class="meta-date">Écrit le <time datetime="<?php the_time('c'); ?>" pubdate><?php the_time(get_option('date_format')); ?></time></span> —
-					<span class="meta-comments"><a href="<?php the_permalink(); ?>#comments"><?php comments_number('Aucun commentaire','1 commentaire','% commentaires'); ?></a></span>
+					<p class="meta-date">Écrit le <time datetime="<?php the_time('c'); ?>" pubdate><?php the_time(get_option('date_format')); ?></time></p>
+					<p class="meta-comments"><a href="<?php the_permalink(); ?>#comments"><?php comments_number('Aucun commentaire','1 commentaire','% commentaires'); ?></a></p>
 					<?php if (get_the_tags()) : ?>
-					<span class="meta-tags"><?php _e('Filed under', 'rr') ?><?php the_tags(); ?></span>
+					<p class="meta-tags"><?php the_tags(); ?></p>
 					<?php endif; ?>
 				</div>
 	     	</article>

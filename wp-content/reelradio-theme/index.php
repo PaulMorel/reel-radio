@@ -15,11 +15,22 @@ get_header(); ?>
 
 		<?php if ( have_posts() ) : ?>
 			<div class="articles">
-		    <?php //_s_content_nav( 'nav-above' ); ?>
-
+		   			
+			<!-- Listen -->
+				<article class="listen">
+		        <div class="article-content">
+			        <h2 class="entry-title">Écouter <span class="highlight">Réél-Radio</span></h2>
+			        <div class="excerpt">
+			        	<ul>
+			        		<li><a href="#">Écouter la radio &rarr;</a></li>
+			        		<li><a href="#">Écouter la radio avec Flash &rarr;</a></li>
+			        	</ul>
+			        </div>
+		        </div>
+		        </article>
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
-			
+
 			<?php if(rwmb_meta( 'rr_dimensions' ) == 'is-long') : ?> 
 			<article id="post-<?php the_ID(); ?>" <?php post_class('is-long'); ?>>
 			<?php else : ?>
@@ -29,7 +40,8 @@ get_header(); ?>
 			        <h2 class="post-title"><a href="<?php the_permalink(); ?>" title="<?php _e('Permalink to ','rr'); the_title(); ?>" rel="bookmark" ><?php the_title(); ?></a></h2>
 			        <div class="excerpt">
 				        <p><?php the_excerpt(); ?></p>
-				        <p><a href="<?php the_permalink(); ?>" title="<?php _e('Permalink to ','rr'); the_title(); ?>" rel="bookmark" >En lire plus...</a></p>
+				        <p>Publié le <time datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><?php the_date('j F Y'); ?></time></p>
+				        <p><a href="<?php the_permalink(); ?>" title="<?php _e('Permalink to ','rr'); the_title(); ?>" rel="bookmark" >En lire plus &rarr;</a></p>
 			        </div>
 			    </div>
 			    <div class="article-image">
