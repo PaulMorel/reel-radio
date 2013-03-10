@@ -45,6 +45,7 @@
 				        </span>
 				        Courriel : <a class="email" href="mailto:info@reel-radio.fm">info@reel-radio.fm</a>
 				    </p>
+				    <p>Site web créé par <a href="http://paulmorel.com">Paul Morel</a></p>
 			    </div>
 			</div>
 		</div>
