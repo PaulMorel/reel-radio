@@ -664,6 +664,14 @@ nav.navigation-paging .next {
 .comments form #comment {
   width: 100%;
 }
+article.emissions h2 {
+  margin-bottom: 10px;
+}
+article.emissions .attachment-very-large {
+  position: relative;
+  left: -40px;
+  top: -40px;
+}
 /* -----------------------------------------------------------------------------
    Side Bar & Pre Footer
    -------------------------------------------------------------------------- */

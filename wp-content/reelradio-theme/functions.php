@@ -48,6 +48,8 @@ if ( function_exists( 'add_theme_support' ) ) {
   set_post_thumbnail_size( 700, 0, true );
   add_image_size( 'long', 660, 0, true );
   add_image_size( 'short', 340, 0, true );
+  add_image_size( 'very-large', 940, 100, true );
+  add_image_size( 'very-large-full', 940, 0, false );
 
   add_theme_support( 'nav-menus' );
 }
@@ -275,6 +277,7 @@ function rr_comment($comment, $args, $depth) {
 // ----------------------------------------------
 
 add_action( 'init', 'add_emissions_post_type');
+add_action( 'init', 'add_episodes_post_type');
 
 
 
@@ -327,6 +330,54 @@ function add_emissions_post_type() {
 
 }
 
+function add_episodes_post_type() {
+
+	// Custom Post Type Labels
+	$labels = array('name' => _x('Épisodes', 'post type general name'),
+					'singular_name' => _x('Épisode', 'post type singular name'),
+					'add_new' => _x('Ajouter', 'portfolio item'),
+					'add_new_item' => __('Ajouter un nouvel épisode'),
+					'edit_item' => __('Modifier un épisode'),
+					'new_item' => __('Nouvel épisode'),
+					'all_items' => __( 'Tous les épisodes' ),
+					'view_item' => __('Afficher épisode'),
+					'search_items' => __('Rechercher épisodes'),
+					'not_found' =>  __('Aucune épisode trouvée'),
+					'not_found_in_trash' => __('Aucun épisode trouvée dans la corbeille'), 
+					'parent_item_colon' => '',
+					'menu_name' => 'Épisodes');
+
+	$args = array(	'labels'        => $labels,
+					'description'   => 'Contient les épisodes RÉÉL-Radio',
+					'public'        => true,
+					'menu_position' => 5,
+					'supports'      => array( 'title', 'editor', 'custom-fields'),
+					'has_archive'   => true
+	);
+
+	register_post_type('episodes',$args );
+			
+	flush_rewrite_rules();
+	
+	/*// Adding the Custom Taxonomy for Credits
+    register_taxonomy( 'tasks', 'portfolio', array(
+			 'hierarchical' => false,
+			 'label' =>  __('Tasks'), 
+			 "singular_label" => __('Task'),
+			 'rewrite' => array('slug' => 'tasks' )
+		)
+	);
+
+	// Adding the Custom Taxonomy for Skills related to the portfolio item. Here we can add tags specific for this post type.
+    register_taxonomy( 'skills', 'portfolio', array(
+			 'hierarchical' => true,
+			 "label" =>  __('Skills'), 
+			 "singular_label" => __('Skill'),
+			 'rewrite' => array('slug' => 'skills' )
+		)
+	);*/
+
+}
 // Load Meta-Box Plugin
 
 // Re-define meta box path and URL

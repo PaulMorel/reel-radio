@@ -87,6 +87,5 @@ $(document).ready(function() {
 	});
 
   $('.sub-menu').parent('li.menu-item').addClass('menu-parent');
-  
 	
 })

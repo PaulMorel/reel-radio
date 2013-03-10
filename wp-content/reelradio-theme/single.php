@@ -43,11 +43,10 @@ get_header(); ?>
 					 */
 					//get_template_part( 'content', get_post_format() );
 				?>
-				
+
 				 <?php comments_template(); ?>
 
 			
-			 	
 			<?php endwhile; ?>
 
 			<?php //_s_content_nav( 'nav-below' ); ?>
