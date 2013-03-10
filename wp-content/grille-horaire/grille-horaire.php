@@ -1179,7 +1179,7 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 				</div>
 				<?php /* --------------------------------------- Items --------------------------------- */ ?>
 				<?php elseif ($adminpage == "items"): ?>
-				<a href="?page=grille-horaire.php&amp;settings=general&amp;schedule=<?php echo $schedule; ?>">General Settings</a> | <a href="?page=grille-horaire.php&amp;settings=categories&amp;schedule=<?php echo $schedule; ?>">Manage Schedule Categories</a> | <a href="?page=grille-horaire.php&amp;settings=items&amp;schedule=<?php echo $schedule; ?>"><strong>Manage Schedule Items</strong></a> | <a href="?page=grille-horaire.php&amp;settings=days&amp;schedule=<?php echo $schedule; ?>">Manage Days Labels</a><br /><br />
+				<a href="?page=grille-horaire.php&amp;settings=general&amp;schedule=<?php echo $schedule; ?>">Paramètres généraux</a> | <a href="?page=grille-horaire.php&amp;settings=categories&amp;schedule=<?php echo $schedule; ?>">Gérer les catégories de l'horaire</a> | <a href="?page=grille-horaire.php&amp;settings=items&amp;schedule=<?php echo $schedule; ?>"><strong>Gérer les items de l'horaire</strong></a> | <a href="?page=grille-horaire.php&amp;settings=days&amp;schedule=<?php echo $schedule; ?>">Gérer les noms des jours</a><br /><br />
 				<div style='float:left;margin-right: 15px;width: 500px;'>
 					<form name="wsitemsform" action="" method="post" id="ws-config">
 					<?php
@@ -1201,11 +1201,11 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 						wp_nonce_field('wspp-config');
 					?>
 					<tr>
-					<td style='width: 180px'>Item Title</td>
+					<td style='width: 180px'>Style d'item</td>
 					<td><input style="width:360px" type="text" name="name" <?php if ($mode == "edit") echo 'value="' . stripslashes($selecteditem->name) . '"';?>/></td>
 					</tr>
 					<tr>
-					<td>Category</td>
+					<td>Catégorie</td>
 					<td><select style='width: 360px' name="category">
 					<?php $cats = $wpdb->get_results("SELECT * from " . $wpdb->prefix. "wscategories where scheduleid = " . $schedule . " ORDER by name");
 					
@@ -1225,11 +1225,11 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 					<td><textarea id="description" rows="5" cols="45" name="description"><?php if ($mode == "edit") echo  stripslashes($selecteditem->description);?></textarea></td>
 					</tr>
 					<tr>
-					<td>Web Address</td>
+					<td>Adresse Web</td>
 					<td><input style="width:360px" type="text" name="address" <?php if ($mode == "edit") echo "value='" . $selecteditem->address . "'";?>/></td>
 					</tr>
 					<tr>
-					<td>Day</td><td><select style='width: 360px' name="day">
+					<td>Jour</td><td><select style='width: 360px' name="day">
 					<?php $days = $wpdb->get_results("SELECT * from " . $wpdb->prefix. "wsdays where scheduleid = " . $schedule . " ORDER by id");
 					
 						foreach ($days as $day)
@@ -1245,7 +1245,7 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 					?></select></td>
 					</tr>
 					<tr>
-					<td>Start Time</td>
+					<td>Heure de début</td>
 					<td><select style='width: 360px' name="starttime">
 					<?php for ($i = $options['starttime']; $i < $options['endtime']; $i += $options['timedivision'])
 						  {
@@ -1294,7 +1294,7 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 					?></select></td>
 					</tr>
 					<tr>
-					<td>Duration</td>
+					<td>Durée</td>
 					<td><select style='width: 360px' name="duration">
 					<?php for ($i = $options['timedivision']; $i <= ($options['endtime'] - $options['starttime']); $i += $options['timedivision'])
 						  {
@@ -1317,11 +1317,11 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 					?></select></td>
                     </tr>
                     <tr>
-                    <td>Background Cell Color (optional)</td>
+                    <td>Couleur de fond de la cellule (optionnel)</td>
                     <td><input style="width:100px" type="text" name="backgroundcolor" <?php if ($mode == "edit") echo "value='" . $selecteditem->backgroundcolor . "'";?>/></td>
 					</tr>
                     <tr>
-                    <td>Title Color (optional)</td>
+                    <td>Couleur du titre (optionnel)</td>
                     <td><input style="width:100px" type="text" name="titlecolor" <?php if ($mode == "edit") echo "value='" . $selecteditem->titlecolor . "'";?>/></td>
 					</tr>                    
 					</table>
@@ -1341,10 +1341,10 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 							  <thead>
 							  <tr>
   							  <th scope='col' style='width: 50px' id='id' class='manage-column column-id' >ID</th>
-							  <th scope='col' id='name' class='manage-column column-name' style=''>Name</th>
-							  <th scope='col' id='color' class='manage-column column-color' style=''>Color</th>
-							  <th scope='col' id='day' class='manage-column column-day' style='text-align: right'>Day</th>
-							  <th scope='col' style='width: 50px;text-align: right' id='starttime' class='manage-column column-items' style=''>Start Time</th>
+							  <th scope='col' id='name' class='manage-column column-name' style=''>Nom</th>
+							  <th scope='col' id='color' class='manage-column column-color' style=''>Couleur</th>
+							  <th scope='col' id='day' class='manage-column column-day' style='text-align: right'>Jour</th>
+							  <th scope='col' style='width: 50px;text-align: right' id='starttime' class='manage-column column-items' style=''>Heure de début</th>
 							  <th style='width: 30px'></th>
 							  </tr>
 							  </thead>
@@ -1408,7 +1408,7 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 				</div>
 				<?php elseif ($adminpage == "days"): ?>
 				<div>
-					<a href="?page=grille-horaire.php&amp;settings=general&amp;schedule=<?php echo $schedule; ?>">General Settings</a> | <a href="?page=grille-horaire.php&amp;settings=categories&amp;schedule=<?php echo $schedule; ?>">Manage Schedule Categories</a> | <a href="?page=grille-horaire.php&amp;settings=items&amp;schedule=<?php echo $schedule; ?>">Manage Schedule Items</a> | <a href="?page=grille-horaire.php&amp;settings=days&amp;schedule=<?php echo $schedule; ?>"><strong>Manage Days Labels</strong></a><br /><br />
+					<a href="?page=grille-horaire.php&amp;settings=general&amp;schedule=<?php echo $schedule; ?>">Paramètres généraux</a> | <a href="?page=grille-horaire.php&amp;settings=categories&amp;schedule=<?php echo $schedule; ?>">Gérer les catégories de l'horaire</a> | <a href="?page=grille-horaire.php&amp;settings=items&amp;schedule=<?php echo $schedule; ?>">Gérer les items de l'horaire</a> | <a href="?page=grille-horaire.php&amp;settings=days&amp;schedule=<?php echo $schedule; ?>"><strong>Gérer les noms des jours</strong></a><br /><br />
 					<div>
 						<form name="wsdaysform" action="" method="post" id="ws-config">
 						<?php
@@ -1422,7 +1422,7 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 						<input type="hidden" name="schedule" value="<?php echo $schedule; ?>" />
 						<table>
 						<tr>
-						<th style='text-align:left'><strong>ID</strong></th><th style='text-align:left'><strong>Name</strong></th>
+						<th style='text-align:left'><strong>ID</strong></th><th style='text-align:left'><strong>Nom</strong></th>
 						</tr>
 						<?php foreach($days as $day): ?>
 							<tr>
@@ -2244,23 +2244,23 @@ class WSTodayScheduleWidget extends WP_Widget {
 		?>
 
 		<p>
-		<label for="<?php echo $this->get_field_id( 'title' ); ?>">Title:</label>
+		<label for="<?php echo $this->get_field_id( 'title' ); ?>">Titre:</label>
 		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 		</p>
         
         <p>
-		<label for="<?php echo $this->get_field_id( 'empty_msg' ); ?>">Empty Item List Message:</label>
+		<label for="<?php echo $this->get_field_id( 'empty_msg' ); ?>">Empty Item List Message (à traduire):</label>
 		<input class="widefat" id="<?php echo $this->get_field_id( 'empty_msg' ); ?>" name="<?php echo $this->get_field_name( 'empty_msg' ); ?>" type="text" value="<?php echo esc_attr( $empty_msg ); ?>" />
 		</p>
 
 		<p>
-		<label for="<?php echo $this->get_field_id( 'max_items' ); ?>">Max Number of Items:</label>
+		<label for="<?php echo $this->get_field_id( 'max_items' ); ?>">Nombre maximum d'items:</label>
 		<input class="widefat" id="<?php echo $this->get_field_id( 'max_items' ); ?>" name="<?php echo $this->get_field_name( 'max_items' ); ?>" type="text" value="<?php echo esc_attr( $max_items ); ?>" />
 		<span class='description'><?php __( 'Maximum number of items to display' ); ?></span>
 		</p>
 
         <p>
-            <label for="<?php echo $this->get_field_id( 'schedule_id' ); ?>">Schedule ID</label>
+            <label for="<?php echo $this->get_field_id( 'schedule_id' ); ?>">Identité de l'horaire</label>
 
             <SELECT class="widefat" id="<?php echo $this->get_field_id( 'schedule_id' ); ?>" name="<?php echo $this->get_field_name( 'schedule_id' ); ?>">
             <?php if ( empty( $genoptions['numberschedules'] ) ) $number_of_schedules = 2; else $number_of_schedules = $genoptions['numberschedules'];
