@@ -57,7 +57,7 @@ $(document).ready(function() {
 
   $('#mapcanvas').exists(function(){
       initialize();
-  })
+  });
 
 	$('.home .articles').isotope({
 		// options

@@ -645,16 +645,16 @@ Articles
 	margin-top: 0;
 }
 
-.page.contact article #mapcanvas {
+.page-template-contact-php article #mapcanvas {
 	width: 100%;
 	height: 400px;
 }
 
-.page.contact article .vcard {
+.page-template-contact-php article .vcard {
 	float: left;
 }
 
-.page.contact article .logo a {
+.page-template-contact-php article .logo a {
 	background: url(img/logo_big.png) top left no-repeat;
 	display: block;
 	width: 220px;
@@ -662,7 +662,7 @@ Articles
 	margin-bottom: 20px;
 }
 
-.page.contact article .org,.page.contact article .adr,.page.contact article .street-address,.page.contact article .tel {
+.page-template-contact-php article .org,.page-template-contact-php article .adr,.page-template-contact-php article .street-address,.page-template-contact-php article .tel {
 	display: block;
 }
 

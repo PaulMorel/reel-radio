@@ -69,7 +69,7 @@
 	 */
 	if ( ! comments_open() ) :
 ?>
-<div class="comments">
+
 	<!-- No Comments -->
 <?php endif; // end ! comments_open() ?>
 
