@@ -526,38 +526,62 @@ nav.main-menu a:hover {
 .home article.sticky {
   border-top: 6px solid #f2c536;
 }
-.page article {
+.page article,
+.single-emissions article {
   width: 940px;
   background: #fff;
   margin-bottom: 40px;
 }
-.page article .entry-content {
+.page article .entry-content,
+.single-emissions article .entry-content {
   padding: 40px;
 }
-.single .main-content article,
-.single .main-content .comments {
+.single-emissions .episodes {
+  background: #fff;
+  padding: 40px;
+  margin-bottom: 40px;
+}
+.single-emissions .episodes h3,
+.single-emissions .episodes p {
+  margin-top: 0;
+}
+.single-emissions .episodes table {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid #eee;
+  width: 100%;
+}
+.single-emissions .episodes table tr {
+  vertical-align: top;
+  border-bottom: 1px solid #eee;
+}
+.single-emissions .episodes table td {
+  padding: 20px;
+}
+.single-post .main-content article,
+.single-post .main-content .comments {
   width: 700px;
   background: #fff;
   margin: 0 20px 40px 0;
   float: left;
   padding: 40px;
 }
-.single .main-content article .attachment-post-thumbnail {
+.single-post .main-content article .attachment-post-thumbnail {
   position: relative;
   left: -40px;
   top: -40px;
 }
-.single .main-content section.widget-area {
+.single-post .main-content section.widget-area {
   float: left;
   width: 200px;
 }
-.single .main-content section.widget-area .widget {
+.single-post .main-content section.widget-area .widget {
   width: 200px;
   background: #fff;
   margin-bottom: 20px;
   padding: 20px;
 }
-.single .main-content section.widget-area .widget h3 {
+.single-post .main-content section.widget-area .widget h3 {
   margin-top: 0;
 }
 .page.contact article #mapcanvas {
@@ -667,7 +691,8 @@ nav.navigation-paging .next {
 article.emissions h2 {
   margin-bottom: 10px;
 }
-article.emissions .attachment-very-large {
+article.emissions .attachment-very-large,
+article.emissions .attachment-very-large-full {
   position: relative;
   left: -40px;
   top: -40px;

@@ -414,6 +414,41 @@ $meta_boxes[] = array(
 	)
 );
 
+
+function rr_get_some_posts( $post_type )
+{
+	// set the criteria 
+	$args = array(
+		'post_type' => $post_type,
+		'numberposts' => -1
+	);
+	// return the object array of the posts.
+	return get_posts( $args );
+}
+$emissions_returned = rr_get_some_posts( 'emissions' );
+foreach ( $emissions_returned as $emission_returned ) {
+	$emissions_array[$emission_returned->post_name] = $emission_returned->post_title;
+}
+//var_dump ($emissions_array);
+
+$meta_boxes[] = array(
+	'id'       => 'join-emission',
+	'title'    => __('Émission', 'rr'),
+	'pages'    => array('episodes'),
+	'context'  => 'normal',
+	'priority' => 'high',
+
+	'fields'   => array(
+		array(
+			'name' => __('Émission associée', 'rr'),
+			'id'   => $prefix . 'emission',
+			'type' => 'select',
+			'options' => $emissions_array,
+			'std'  => ''
+		)
+	)
+);
+
 /**
  * Register meta boxes
  *

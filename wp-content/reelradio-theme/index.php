@@ -40,7 +40,7 @@ get_header(); ?>
 			        <h2 class="post-title"><a href="<?php the_permalink(); ?>" title="<?php _e('Permalink to ','rr'); the_title(); ?>" rel="bookmark" ><?php the_title(); ?></a></h2>
 			        <div class="excerpt">
 				        <p><?php the_excerpt(); ?></p>
-				        <p>Publié le <time datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><?php the_date('j F Y'); ?></time></p>
+				        <p>Publié le <time datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><?php the_time('j F Y'); ?></time></p>
 				        <p><a href="<?php the_permalink(); ?>" title="<?php _e('Permalink to ','rr'); the_title(); ?>" rel="bookmark" >En lire plus &rarr;</a></p>
 			        </div>
 			    </div>

@@ -292,7 +292,7 @@ nav.main-menu {
 	}
 }
 
-.page article {
+.page article, .single-emissions article  {
 	width:940px;
 	background: #fff;
 	margin-bottom:40px;
@@ -302,8 +302,33 @@ nav.main-menu {
 	}
 
 }
+.single-emissions .episodes {
+	background: #fff;
+	padding:40px;
+	margin-bottom:40px;
 
-.single .main-content {
+	h3, p {
+		margin-top:0;
+	}
+
+	table {
+		margin:0;
+		padding:0;
+		border-top:1px solid #eee;
+		width:100%;
+
+		tr { 
+			vertical-align: top;
+			border-bottom:1px solid #eee;
+		}
+
+		
+		td {
+			padding:20px;
+		}
+	}
+}
+.single-post .main-content {
 
 	article, .comments {
 		width:700px;
@@ -469,7 +494,7 @@ article.emissions {
 		margin-bottom:10px;
 	}
 
-		.attachment-very-large {
+		.attachment-very-large, .attachment-very-large-full {
 		position: relative;
 		left:-40px;
 		top:-40px;
