@@ -61,7 +61,7 @@
 				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments <span class="meta-nav">&rarr;</span>', 'twentyten' ) ); ?></div>
 			</div><!-- .navigation -->
 <?php endif; // check for comment navigation ?>
-
+</div>
 <?php else : // or, if we don't have comments:
 
 	/* If there are no comments and comments are closed,
@@ -76,8 +76,10 @@
 <?php endif; // end have_comments() ?>
 	
 <?php if ( comments_open() ) : ?>
-
-<?php comment_form(); ?>
+<div class="comments">
+<?php comment_form(array(
+	'comment_notes_after' => ''
+)); ?>
  
  <?php endif ?>
 
