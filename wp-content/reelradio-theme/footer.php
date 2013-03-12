@@ -15,7 +15,9 @@
 					'title_li'         => __('Partenaires'),
 				    'title_before'     => '<h3>',
 				    'title_after'      => '</h3>',
-				    'categorize'	=> false
+				    'categorize'	=> 0,
+				    'category_before' => "",
+				    'category_after' => ""
 				)); ?> 
 			</div>
 		</div>
