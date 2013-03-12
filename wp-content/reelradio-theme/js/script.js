@@ -69,6 +69,16 @@ $(document).ready(function() {
 		}
 	});
 
+  $('.blogroll').isotope({
+    // options
+    itemSelector : 'li',
+      layoutMode: 'cellsByRow',
+        cellsByRow : {
+          columnWidth : 250,
+          rowHeight : 150
+        },
+  });
+  
 	$('.sub-menu').siblings('a').click(function(e) {
     
     e.preventDefault();

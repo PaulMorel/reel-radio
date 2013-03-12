@@ -801,22 +801,11 @@ aside.page {
 
 .widget-links h3 {
 	float: left;
-	margin-right: 120px;
-	display: table-cell;
+	margin-right: 100px;
 }
 
 .widget-links ul {
 	list-style: none;
-	float: left;
-}
-
-.widget-links ul li {
-	float: left;
-	margin-left: 20px;
-}
-
-.widget-links ul li:first-child {
-	margin-left: 0px;
 }
 
 .widget ul {
