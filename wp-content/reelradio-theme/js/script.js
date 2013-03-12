@@ -68,16 +68,19 @@ $(document).ready(function() {
 			gutterWidth : 20
 		}
 	});
-
-  $('.blogroll').isotope({
-    // options
-    itemSelector : 'li',
-      layoutMode: 'cellsByRow',
-        cellsByRow : {
-          columnWidth : 240,
-          rowHeight : 150
-        },
-  });
+  
+  $('.blogroll').imagesLoaded( function(){
+    
+    $('.blogroll').isotope({
+      // options
+      itemSelector : 'li',
+        layoutMode: 'cellsByRow',
+          cellsByRow : {
+            columnWidth : 240,
+            rowHeight : 150
+          },
+    });
+  }
 
 	$('.sub-menu').siblings('a').click(function(e) {
     
