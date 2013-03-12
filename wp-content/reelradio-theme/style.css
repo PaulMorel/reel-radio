@@ -550,6 +550,15 @@ Articles
 	display: inline-block;
 }
 
+.home article h2 a {
+	text-decoration: none;
+	color: #f2c536;
+}
+
+.home article h2 a:hover {
+	color: #000000;
+}
+
 .home article .excerpt {
 	margin: 0;
 	padding: 10px 20px 0px 20px;

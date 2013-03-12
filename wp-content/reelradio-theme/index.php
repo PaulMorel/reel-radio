@@ -41,16 +41,17 @@ get_header(); ?>
 			        <div class="excerpt">
 				        <p><?php the_excerpt(); ?></p>
 				        <p>Publié le <time datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><?php the_time('j F Y'); ?></time></p>
-				        <p><a href="<?php the_permalink(); ?>" title="<?php _e('Permalink to ','rr'); the_title(); ?>" rel="bookmark" >En lire plus &rarr;</a></p>
 			        </div>
 			    </div>
 			    <div class="article-image">
-			    	<?php if ( has_post_thumbnail() ) :
-			    		if(rwmb_meta( 'rr_dimensions' ) == 'is-long') :
+			    	<?php if ( has_post_thumbnail() ) : ?>
+			    	<a href="<?php the_permalink(); ?>" title="<?php _e('Permalink to ','rr'); the_title(); ?>" rel="bookmark" >
+			    		<?php if(rwmb_meta( 'rr_dimensions' ) == 'is-long') :
 							the_post_thumbnail('long'); 
 						else:
-							the_post_thumbnail('short'); 
-						endif;
+							the_post_thumbnail('short'); ?>
+					</a>
+						<?php endif;
 					endif; //test
 			    	?>
 			    </div>
