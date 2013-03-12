@@ -799,13 +799,10 @@ aside.page {
 	padding: 40px 0;
 }
 
-.widget-links h3 {
-	float: left;
-	margin-right: 100px;
-}
-
 .widget-links ul {
 	list-style: none;
+	width: 960px;
+	left: -30px;
 }
 
 .widget ul {

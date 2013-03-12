@@ -74,11 +74,11 @@ $(document).ready(function() {
     itemSelector : 'li',
       layoutMode: 'cellsByRow',
         cellsByRow : {
-          columnWidth : 250,
+          columnWidth : 240,
           rowHeight : 150
         },
   });
-  
+
 	$('.sub-menu').siblings('a').click(function(e) {
     
     e.preventDefault();
