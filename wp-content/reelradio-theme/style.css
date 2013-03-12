@@ -384,9 +384,9 @@ h1 {
 	color: #fff;
 	background: #f2c536;
 	display: inline-block;
-	padding: 20px 40px 15px 20px;
-	text-transform: uppercase; /*width:  330px;
-	*/
+	padding: 12px 30px 7px 20px;
+	text-transform: uppercase;
+	line-height: 1.2em;
 }
 
 h2 {
