@@ -308,7 +308,7 @@ nav.main-menu {
 	margin-bottom:40px;
 
 	.entry-content {
-		padding:40px;
+		padding:40px 40px 20px 40px;
 	}
 
 }
@@ -345,7 +345,7 @@ nav.main-menu {
 		background: #fff;
 		margin:0 20px 40px 0;
 		float:left;
-		padding:40px;
+		padding:40px 40px 20px 40px;
 	}
 
 	article .attachment-post-thumbnail {
@@ -502,8 +502,17 @@ article.emissions {
 
 	h2 {
 		margin-bottom:10px;
-	}
 
+		a {
+			text-decoration:none;
+			color:@yellow;
+		
+			&:hover {
+				color:@black;
+			}
+		
+		}
+	}
 		.attachment-very-large, .attachment-very-large-full {
 		position: relative;
 		left:-40px;

@@ -27,12 +27,13 @@ get_header(); ?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		      	<div class="entry-content">
-			        <?php if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-						the_post_thumbnail('very-large');
-					} ?>	
+			        <?php if ( has_post_thumbnail() ) : // check if the post has a Post Thumbnail assigned to it. ?>
+			        <a href="<?php the_permalink(); ?>" title="<?php _e('Permalink to ','rr'); the_title(); ?>" rel="bookmark" >
+						<?php the_post_thumbnail('very-large'); ?>
+					</a>
+					<?php endif; ?>	
 			        <h2 class="post-title"><a href="<?php the_permalink(); ?>" title="<?php _e('Permalink to ','rr'); the_title(); ?>" rel="bookmark" ><?php the_title(); ?></a></h2>
 		            <?php the_content(); ?>
-			        <p><a href="<?php the_permalink(); ?>" title="<?php _e('Permalink to ','rr'); the_title(); ?>" rel="bookmark" >Écouter les épisodes &rarr;</a></p>
 			    </div>
 	     	</article>
 

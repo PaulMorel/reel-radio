@@ -595,7 +595,7 @@ Articles
 }
 
 .page article .entry-content,.single-emissions article .entry-content {
-	padding: 40px;
+	padding: 40px 40px 20px 40px;
 }
 
 .single-emissions .episodes {
@@ -629,7 +629,7 @@ Articles
 	background: #fff;
 	margin: 0 20px 40px 0;
 	float: left;
-	padding: 40px;
+	padding: 40px 40px 20px 40px;
 }
 
 .single-post .main-content article .attachment-post-thumbnail,.error404 .main-content article .attachment-post-thumbnail {
@@ -774,6 +774,15 @@ nav.navigation-paging .next {
 
 article.emissions h2 {
 	margin-bottom: 10px;
+}
+
+article.emissions h2 a {
+	text-decoration: none;
+	color: #f2c536;
+}
+
+article.emissions h2 a:hover {
+	color: #000000;
 }
 
 article.emissions .attachment-very-large,article.emissions .attachment-very-large-full {
