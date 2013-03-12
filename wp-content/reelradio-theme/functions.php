@@ -110,14 +110,24 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 add_action( 'init', 'custom_menus' ); // Add Custom Menus
 
 //Modify Sidebar Markup
-if ( function_exists('register_sidebars') )
-    register_sidebars(2, array(
-    	'name' => 'Sidebar %d',
+if ( function_exists('register_sidebars') ) {
+    register_sidebar( array(
+    	'name' => 'Sidebar',
         'before_widget' => '<div class="widget %2$s">',
         'after_widget' => '</div>',
         'before_title' => '<h3>',
         'after_title' => '</h3>'
     ));
+   
+    register_sidebar( array(
+    	'name' => 'Footer',
+        'before_widget' => '<div class="widget %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>'
+    ));
+
+}
 
 if ( ! function_exists( 'reel_content_nav' ) ) :
 
@@ -162,25 +172,6 @@ function reel_content_nav( $nav_id ) {
 	<?php
 }
 endif; // _s_content_nav
-
-/*function my_filter($posttypes)
-{
-    // to remove posttypes of a particular name
-    foreach($posttypes as $key => $val)
-    {
-        if($val=='super_duper')
-        {
-            unset($posttypes[$key]);
-        }
-    }
- 
-    // to add posttypes e.g. page
-    $posttypes[] = 'page';
- 
-    return $posttypes;
-}*/
- 
-//add_filter('guar_sitemap_posttype_filter','my_filter',10,1);	
 
 
 // WP Filters
