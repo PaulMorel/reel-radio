@@ -36,16 +36,9 @@ get_header(); ?>
 				</div>
 	     	</article>
 
-				<?php
-					/* 
-					 * Create content-___.php (where ___ is the Post Format name) 
-					 * and that will be used instead depending on the post format.
-					 */
-					//get_template_part( 'content', get_post_format() );
-				?>
-
-				 <?php comments_template(); ?>
-
+				<?php get_sidebar(); ?>	
+				
+				<?php comments_template(); ?>
 			
 			<?php endwhile; ?>
 
@@ -55,7 +48,7 @@ get_header(); ?>
 			<?php get_template_part( 'no-results', 'index' ); ?>
 
 		<?php endif; ?>
-<?php get_sidebar(); ?>	
+
 </div>
 
 
