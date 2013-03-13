@@ -801,7 +801,7 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 
 				<div style='padding-top: 15px;clear:both'>
 					<fieldset style='border:1px solid #CCC;padding:10px'>
-					<legend style='padding: 0 5px 0 5px;'><strong>Selection d'horaire et instructions d'utilisation</strong></legend>				
+					<legend style='padding: 0 5px 0 5px;'><strong>Selection d'horaire </strong></legend>				
 						<FORM name="scheduleselection">
 							Selectionner grille horaire actuelle: 
 							<SELECT name="schedulelist" style='width: 300px'>
@@ -831,10 +831,10 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 						<thead>
 						<tr>
 							<th style='width:80px' class="tooltip">
-								No. de la Grille horiare
+								No.
 							</th>
 							<th style='width:130px' class="tooltip">
-								Nom de Grille horaire
+								Nom
 							</th>
 							<th class="tooltip">
 								Code à insérer sur une page pour visionner la grille horaire
@@ -853,7 +853,7 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 
 	
 				<fieldset style='border:1px solid #CCC;padding:10px'>
-				<legend style='padding: 0 5px 0 5px;'><strong>Paramètres pous grille horaire <?php echo $schedule; ?> - <?php echo $options['schedulename']; ?></strong></legend>	
+				<legend style='padding: 0 5px 0 5px;'><strong>Paramètres de la grille horaire <?php echo $schedule; ?> - <?php echo $options['schedulename']; ?></strong></legend>	
 				<?php if (($adminpage == "") || ($adminpage == "general")): ?>
 				<a href="?page=grille-horaire.php&amp;settings=general&amp;schedule=<?php echo $schedule; ?>"><strong>Réglages généraux</strong></a> | <a href="?page=grille-horaire.php&amp;settings=categories&amp;schedule=<?php echo $schedule; ?>">Gérer les catégories de l'horaire</a> | <a href="?page=grille-horaire.php&amp;settings=items&amp;schedule=<?php echo $schedule; ?>">Gérer les éléments de l'horaire</a> | <a href="?page=grille-horaire.php&amp;settings=days&amp;schedule=<?php echo $schedule; ?>">Gérer les noms des jours</a><br /><br />
 				<form name="wsadminform" action="<?php echo add_query_arg( 'page', 'grille-horaire', admin_url( 'options-general.php' ) ); ?>" method="post" id="ws-config">

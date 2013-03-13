@@ -68,7 +68,7 @@ $(document).ready(function() {
 			gutterWidth : 20
 		}
 	});
-  
+
   $('.blogroll').imagesLoaded( function(){
     
     $('.blogroll').isotope({
@@ -80,7 +80,7 @@ $(document).ready(function() {
             rowHeight : 150
           },
     });
-  }
+  });
 
 	$('.sub-menu').siblings('a').click(function(e) {
     
