@@ -346,6 +346,10 @@ nav.main-menu {
 		
 		td {
 			padding:20px;
+
+			&.episode-title, &.episode-date {
+				width:200px;
+			}
 		}
 	}
 }
@@ -549,7 +553,20 @@ aside.page {
 	ul {
 		list-style: none;
 		width: 960px;
-		left: -30px;
+		left: -10px;
+	}
+
+	img {
+		width:75%;
+		height:auto;
+	}
+
+	a {
+		.opacity(0.6);
+
+		&:hover {
+			.opacity(1);
+		}
 	}
 		
 }

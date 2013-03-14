@@ -76,8 +76,8 @@ $(document).ready(function() {
       itemSelector : 'li',
         layoutMode: 'cellsByRow',
         cellsByRow : {
-            columnWidth : 240,
-            rowHeight : 150
+            columnWidth : 180,
+            rowHeight : 120
           }
     });
   
