@@ -53,10 +53,10 @@ get_header(); ?>
 			<?php while ($episode_query->have_posts()) : $episode_query->the_post(); ?>
 
 						<tr id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-						<td><h3 class="post-title"><?php the_title(); ?></a></td>
-						<td><p>Publié le <time datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><?php the_time('j F Y'); ?></time></p></td>
-						<td><?php the_content(); ?></td>
-						</tr>	      	
+						<td class="episode-title"><h3 class="post-title"><?php the_title(); ?></a></td>
+						<td class="episode-date"><p>Publié le <time datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><?php the_time('j F Y'); ?></time></p></td>
+						<td class="episode-content"><?php the_content(); ?></td>
+						</tr>	       	
 		
 			<?php endwhile; ?>
 					</tbody>
