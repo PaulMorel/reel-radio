@@ -1016,7 +1016,7 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 					</select></td>
 					<td>Afficher description</td>
 					<td><select style="width: 200px" name='displaydescription'>
-					<?php $descriptions = array("infobulle" => "Afficher en tant qu'infobulle", "cellule" => "Afficher dans la cellule après le nom de l'item", "aucun" => "Ne pas afficher");
+					<?php $descriptions = array("tooltip" => "Afficher en tant qu'infobulle", "cell" => "Afficher dans la cellule après le nom de l'item", "none" => "Ne pas afficher");
 						foreach($descriptions as $key => $description)
 						{
 							if ($key == $options['displaydescription'])
