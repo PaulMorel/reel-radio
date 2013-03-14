@@ -926,6 +926,10 @@ footer.page .widget ul {
 	margin-bottom: 18px;
 }
 
+.widget_recent_entries {
+	width: 200px;
+}
+
 .widget-contact .vcard {
 	text-align: right;
 }
