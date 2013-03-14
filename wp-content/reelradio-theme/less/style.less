@@ -43,12 +43,12 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 }
 
 @font-face {
-	font-family: 'Avenir';
+	font-family: 'Avenir Bold';
 	src: url('type/AvenirBlack.eot');
 	src: url('type/AvenirBlack.eot?#iefix') format('embedded-opentype'),
 		 url('type/AvenirBlack.woff') format('woff'),
 		 url('type/AvenirBlack.ttf') format('truetype');
-	font-weight: 700;
+	font-weight: normal;
 	font-style: normal;
 }
 
@@ -86,7 +86,12 @@ a {
 	}
 }
 
+h1,h2,h3,h4,h5,h6 {
+	font-weight: normal;
+}
+
 h1 {
+	font-family: 'Avenir Bold', Helvetica, Arial, sans-serif;
 	font-size: 2.15em;
 	color:#fff;
 	background: @yellow;
@@ -100,7 +105,7 @@ h2 {
 
 	font-size: 1.28em;
 	line-height: 1.25em;
-	font-weight: bold;
+	font-family: 'Avenir Bold', Helvetica, Arial, sans-serif;
 	text-transform: uppercase;
 	margin:0 0 40px 0;
 
@@ -109,14 +114,15 @@ h2 {
 h3 {
 	font-size:1em;
 	color:@yellow;
-	font-weight: bold;
+	font-family: 'Avenir Bold', Helvetica, Arial, sans-serif;
 	text-transform: uppercase;
 }
 
 h4 {
 	font-size:1em;
 	color:@black;
-	font-weight: bold;
+	font-family: 'Avenir Bold', Helvetica, Arial, sans-serif;
+
 }
 
 p {
@@ -194,6 +200,10 @@ nav.main-menu {
 				z-index: 20;
 				top: 95px;
 
+				.lt-ie10 & {
+					top:67px;
+				}
+
 				li {
 					float: none;
 					height:auto;
@@ -215,8 +225,8 @@ nav.main-menu {
 	}
 
 	a {
-		font-weight: bold;
-		//font-size: 12px;
+		font-weight: normal;
+		font-family: 'Avenir Bold', Helvetica, Arial, sans-serif;
 		color:#FFF;
 		text-transform: uppercase;
 		text-decoration: none;
@@ -250,6 +260,7 @@ nav.main-menu {
 		bottom:0;
 		left:0;
 		z-index: 10;
+		background:@yellow;
 		background: rgba(242, 197, 54, 0.6);
 		display: inline-block;
 		padding:10px 10px 0 0;
@@ -358,6 +369,9 @@ nav.main-menu {
 		float:left;
 		width:200px;
 
+		.lt-ie10 & {
+			float:right;
+		}
 		.widget {
 			width:200px;
 			background: #fff;
@@ -434,8 +448,8 @@ form {
 		color: #fff;
 		text-transform: uppercase;
 		font-size:1.28em;
-		font-weight: bold;
-		font-family: 'Avenir', Helvetica, Arial, sans-serif;
+		font-weight: normal;
+		font-family: 'Avenir Bold', Helvetica, Arial, sans-serif;
 		border-bottom:4px solid darken(@yellow,10%);
 
 		&:hover{
@@ -560,8 +574,8 @@ aside.page {
 		color: #fff;
 		text-transform: uppercase;
 		font-size:1em;
-		font-weight: bold;
-		font-family: 'Avenir', Helvetica, Arial, sans-serif;
+		font-weight: normal;
+		font-family: 'Avenir Bold', Helvetica, Arial, sans-serif;
 		border-bottom:4px solid darken(@yellow,10%);
 
 	&:hover{

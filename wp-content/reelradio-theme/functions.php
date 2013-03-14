@@ -72,7 +72,7 @@ function comment_count($count) {
 function replace_jquery() {
 	if (!is_admin()) {
 		wp_deregister_script('jquery');
-		wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js',array(),'1.8.3',true);
+		wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',array(),'1.9.1',true);
 		wp_enqueue_script( 'jquery' );
 	}
 }

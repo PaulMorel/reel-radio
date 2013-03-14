@@ -75,11 +75,12 @@ $(document).ready(function() {
       // options
       itemSelector : 'li',
         layoutMode: 'cellsByRow',
-          cellsByRow : {
+        cellsByRow : {
             columnWidth : 240,
             rowHeight : 150
-          },
+          }
     });
+  
   });
 
 	$('.sub-menu').siblings('a').click(function(e) {
