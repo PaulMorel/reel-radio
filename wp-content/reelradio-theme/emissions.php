@@ -17,7 +17,7 @@ get_header(); ?>
 
       		<h1><?php the_title(); ?></h1>
 
-	<?php $query = new WP_Query('post_type=emissions');
+	<?php $query = new WP_Query('post_type=emissions&post_count=-1');
 	global $query;
 	$query->in_the_loop = true;  
 	

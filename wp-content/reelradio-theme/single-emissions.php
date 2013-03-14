@@ -33,6 +33,7 @@ get_header(); ?>
 			<?php 
 			$query_args = array(
 				'post_type' => 'episodes',
+				'post_count' => -1,
 				'meta_query' => array(
 					array(
 						'key' => 'rr_emission',
