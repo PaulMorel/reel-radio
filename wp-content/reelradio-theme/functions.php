@@ -476,4 +476,35 @@ function customformatTinyMCE($init) {
 // Modify Tiny_MCE init
 add_filter('tiny_mce_before_init', 'customformatTinyMCE' );
 
+// Add columns for Episodes
+add_action("manage_episodes_posts_custom_column",  "episode_custom_columns");
+add_filter("manage_edit-episodes_columns", "episode_edit_columns");
+ 
+function episode_edit_columns($columns){
+  $columns = array(
+    "cb" => "&lt;input type=\"checkbox\" /&gt;",
+    "title" => "Titre de l'épisode",
+    "description" => "Description",
+    "show" => "Émission",
+    "date" => "Date"
+  );
+ 
+  return $columns;
+}
+function episode_custom_columns($column){
+  global $post;
+ 
+  switch ($column) {
+    case "description":
+      the_excerpt();
+      break;
+    case "show":
+      $custom = get_post_custom();
+      echo $custom["rr_emission"][0];
+      break;
+    case "date":
+      the_date();
+      break;
+  }
+}
 ?>
