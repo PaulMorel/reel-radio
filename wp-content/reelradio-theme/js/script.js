@@ -69,6 +69,17 @@ $(document).ready(function() {
 		}
 	});
 
+  $('.page-template-emissions-php .articles').isotope({
+    // options
+    itemSelector : 'article',
+    layoutMode : 'masonry',
+    masonry : {
+      columnWidth : 450,
+      gutterWidth : 20
+    }
+  });
+
+
   $('.blogroll').imagesLoaded( function(){
     
     $('.blogroll').isotope({

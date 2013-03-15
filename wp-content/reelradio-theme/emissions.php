@@ -21,9 +21,9 @@ get_header(); ?>
 	global $query;
 	$query->in_the_loop = true;  
 	
-	if ($query->have_posts()) :
-	
-	while ($query->have_posts()) : $query->the_post(); ?>
+	if ($query->have_posts()) : ?>
+	<div class="articles">
+	<?php while ($query->have_posts()) : $query->the_post(); ?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		      	<div class="entry-content">
@@ -38,7 +38,7 @@ get_header(); ?>
 	     	</article>
 
 				<?php endwhile; ?>
-
+			</div>
 			<?php //_s_content_nav( 'nav-below' ); ?>
 		<?php else : ?>
 
