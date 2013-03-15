@@ -4,7 +4,7 @@ Theme URI:  http://reel-radio.fm
 Author:  Paul Morel & Marie-Michelle Daigle
 Author URI:  http://paulmorel.com
 Description:  RÉÉL-Radio est un theme créé à partir de zéro pour la radio étudiante de l'Université du Québec en Outaouais.
-Version:  1.0.2
+Version:  1.0.3
 License:  GNU General Public License v2 or later
 License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  */
@@ -806,8 +806,8 @@ article.emissions h2 a:hover {
 
 article.emissions .attachment-very-large,article.emissions .attachment-very-large-full {
 	position: relative;
-	left: -20px;
-	top: -20px;
+	left: -40px;
+	top: -40px;
 }
 
 .page-template-emissions-php article {
@@ -818,6 +818,12 @@ article.emissions .attachment-very-large,article.emissions .attachment-very-larg
 .page-template-emissions-php article .entry-content {
 	padding: 20px 20px 1px 20px;
 	overflow: hidden;
+}
+
+.page-template-emissions-php article .attachment-very-large,.page-template-emissions-php article .attachment-very-large-full {
+	position: relative;
+	left: -20px;
+	top: -20px;
 }
 
 /* -----------------------------------------------------------------------------
