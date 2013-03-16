@@ -766,7 +766,7 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 						wp_nonce_field('wspp-config');
 					?>
 				<fieldset style='border:1px solid #CCC;padding:10px'>
-				<legend class="tooltip" title='Ceci sapplique à tous les horaires.' style='padding: 0 5px 0 5px;'><strong> Mettre à jour les réglages généraux <span style="border:0;padding-left: 15px;" class="submit"><input type="submit" name="submitgen" value="Update General Settings &raquo;" /></span></strong></legend>
+				<legend class="tooltip" title='Ceci sapplique à tous les horaires.' style='padding: 0 5px 0 5px;'><strong> Mettre à jour les réglages généraux <span style="border:0;padding-left: 15px;" class="submit"><input type="submit" name="submitgen" value="Mettre à jour les réglages généraux &rarr;" /></span></strong></legend>
 				<table>
 				<tr>
 				<td style='padding: 8px; vertical-align: top'>
