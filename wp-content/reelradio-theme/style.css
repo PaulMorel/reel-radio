@@ -419,6 +419,13 @@ p {
 	margin: 0 0 22px 0;
 }
 
+i {
+	font-family: 'ModernPictogramsNormal';
+	font-size: 1.5em;
+	vertical-align: top;
+	padding: 0 5px 0 0;
+}
+
 .highlight {
 	color: #f2c536;
 }
