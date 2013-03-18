@@ -266,6 +266,11 @@ nav.main-menu {
 		padding:10px 10px 0 0;
 	}
 
+	time {
+		color:#999;
+		font-family: 'Avenir Bold', Helvetica, Arial, sans-serif;
+	}
+
 	h2 {
 		margin:0;
 		padding:15px 30px 10px 20px;
@@ -484,6 +489,30 @@ nav.navigation-paging {
 		float: right;
 	}
 }
+
+.post-categories {
+
+	li {
+		display:inline-block;
+		margin:2px;
+		
+
+		a {
+			font-size:0.75em;
+			font-family: 'Avenir Bold', sans-serif;
+			padding:3px 7px;
+			min-width: 50px;
+			background: @yellow;
+			color:#fff;
+			text-decoration: none;
+
+
+			&:hover {
+			 background: @black;
+			}
+		}
+	}
+}
 .comments {
 	ol.commentlist {
 		margin:0;
@@ -492,7 +521,6 @@ nav.navigation-paging {
 		
 		li {
 			margin-bottom:30px;
-			
 			border-bottom: 1px #eee solid;
 
 			.comment-meta {

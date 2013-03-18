@@ -22,8 +22,7 @@ get_header(); ?>
 			        <h2 class="entry-title">Écouter <span class="highlight">Réél-Radio</span></h2>
 			        <div class="excerpt">
 			        	<ul>
-			        		<li><a href="#">Écouter la radio &rarr;</a></li>
-			        		<li><a href="#">Écouter la radio avec Flash &rarr;</a></li>
+			        		<li><a href="http://50.7.242.114:7561/listen.m3u">Écouter la radio &rarr;</a></li>
 			        	</ul>
 			        </div>
 		        </div>
@@ -39,8 +38,9 @@ get_header(); ?>
 		      	<div class="article-content">
 			        <h2 class="post-title"><a href="<?php the_permalink(); ?>" title="<?php _e('Permalink to ','rr'); the_title(); ?>" rel="bookmark" ><?php the_title(); ?></a></h2>
 			        <div class="excerpt">
+			        	<p><time datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><?php the_time('j F Y'); ?></time></p>
 				        <p><?php the_excerpt(); ?></p>
-				        <p>Publié le <time datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><?php the_time('j F Y'); ?></time></p>
+				        <?php the_category(); ?>
 			        </div>
 			    </div>
 			    <div class="article-image">

@@ -554,6 +554,11 @@ Articles
 	padding: 10px 10px 0 0;
 }
 
+.home article time {
+	color: #999;
+	font-family: 'Avenir Bold', Helvetica, Arial, sans-serif;
+}
+
 .home article h2 {
 	margin: 0;
 	padding: 15px 30px 10px 20px;
@@ -761,6 +766,25 @@ nav.navigation-paging .previous {
 nav.navigation-paging .next {
 	display: block;
 	float: right;
+}
+
+.post-categories li {
+	display: inline-block;
+	margin: 2px;
+}
+
+.post-categories li a {
+	font-size: 0.75em;
+	font-family: 'Avenir Bold', sans-serif;
+	padding: 3px 7px;
+	min-width: 50px;
+	background: #f2c536;
+	color: #fff;
+	text-decoration: none;
+}
+
+.post-categories li a:hover {
+	background: #000000;
 }
 
 .comments ol.commentlist {
