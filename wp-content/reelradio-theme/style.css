@@ -767,12 +767,12 @@ nav.navigation-paging {
 
 nav.navigation-paging .previous {
 	display: block;
-	float: left;
+	float: right;
 }
 
 nav.navigation-paging .next {
 	display: block;
-	float: right;
+	float: left;
 }
 
 .post-categories li {
