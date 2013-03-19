@@ -766,7 +766,7 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 						wp_nonce_field('wspp-config');
 					?>
 				<fieldset style='border:1px solid #CCC;padding:10px'>
-				<legend class="tooltip" title='These apply to all schedules' style='padding: 0 5px 0 5px;'><strong>Réglages généraux <span style="border:0;padding-left: 15px;" class="submit"><input type="submit" name="submitgen" value="Update General Settings &raquo;" /></span></strong></legend>
+				<legend class="tooltip" title='Ceci sapplique à tous les horaires.' style='padding: 0 5px 0 5px;'><strong> Mettre à jour les réglages généraux <span style="border:0;padding-left: 15px;" class="submit"><input type="submit" name="submitgen" value="Mettre à jour les réglages généraux &rarr;" /></span></strong></legend>
 				<table>
 				<tr>
 				<td style='padding: 8px; vertical-align: top'>
@@ -784,7 +784,7 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 					<td><input type="checkbox" id="debugmode" name="debugmode" <?php if ($genoptions['debugmode']) echo ' checked="checked" '; ?>/></td>
 					</tr>
 					<tr>
-						<td colspan="2">Pages supplémentaires à styliser (Comma-Separated List of Page IDs)</td>
+						<td colspan="2">Pages supplémentaires à styliser (liste des pages, éléments séparés par une virgule)</td>
 					</tr>
 					<tr>
 						<td colspan="2"><input type='text' name='includestylescript' style='width: 200px' value='<?php echo $genoptions['includestylescript']; ?>' /></td>
@@ -812,8 +812,8 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 									   <option value="<?php echo $counter ?>" <?php if ($schedule == $counter) echo 'SELECTED';?>>Schedule <?php echo $counter ?><?php if ($tempoptions != "") echo " (" . $tempoptions['schedulename'] . ")"; ?></option>
 								<?php endfor; ?>
 							</SELECT>
-							<INPUT type="button" name="go" value="Go!" onClick="window.location= '?page=grille-horaire.php&amp;settings=<?php echo $adminpage; ?>&amp;schedule=' + document.scheduleselection.schedulelist.options[document.scheduleselection.schedulelist.selectedIndex].value">						
-							Copy from: 
+							<INPUT type="button" name="go" value="Aller" onClick="window.location= '?page=grille-horaire.php&amp;settings=<?php echo $adminpage; ?>&amp;schedule=' + document.scheduleselection.schedulelist.options[document.scheduleselection.schedulelist.selectedIndex].value">						
+							Copier à partir de: 
 							<SELECT name="copysource" style='width: 300px'>
 							<?php if ($genoptions['numberschedules'] == '') $numberofschedules = 2; else $numberofschedules = $genoptions['numberschedules'];
 								for ($counter = 1; $counter <= $numberofschedules; $counter++): ?>
@@ -824,14 +824,14 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 									   <?php endif; 
 								    endfor; ?>
 							</SELECT>
-							<INPUT type="button" name="copy" value="Copy!" onClick="window.location= '?page=grille-horaire.php&amp;copy=<?php echo $schedule; ?>&amp;source=' + document.scheduleselection.copysource.options[document.scheduleselection.copysource.selectedIndex].value">							
+							<INPUT type="button" name="copy" value="Copier" onClick="window.location= '?page=grille-horaire.php&amp;copy=<?php echo $schedule; ?>&amp;source=' + document.scheduleselection.copysource.options[document.scheduleselection.copysource.selectedIndex].value">							
 					<br />
 					<br />
 					<table class='widefat' style='clear:none;width:100%;background: #DFDFDF url(/wp-admin/images/gray-grad.png) repeat-x scroll left top;'>
 						<thead>
 						<tr>
 							<th style='width:80px' class="tooltip">
-								No.
+								Non.
 							</th>
 							<th style='width:130px' class="tooltip">
 								Nom
@@ -1016,7 +1016,7 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 					</select></td>
 					<td>Afficher description</td>
 					<td><select style="width: 200px" name='displaydescription'>
-					<?php $descriptions = array("tooltip" => "Show as tooltip", "cell" => "Show in cell after item name", "none" => "Do not display");
+					<?php $descriptions = array("tooltip" => "Afficher en tant qu'infobulle", "cell" => "Afficher dans la cellule après le nom de l'item", "none" => "Ne pas afficher");
 						foreach($descriptions as $key => $description)
 						{
 							if ($key == $options['displaydescription'])
@@ -1116,7 +1116,7 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 					</fieldset>
 				<?php /* --------------------------------------- Categories --------------------------------- */ ?>
 				<?php elseif ($adminpage == "categories"): ?>
-				<a href="?page=grille-horaire.php&amp;settings=general&amp;schedule=<?php echo $schedule; ?>">Réglages généraux</a> | <a href="?page=grille-horaire.php&amp;settings=categories&amp;schedule=<?php echo $schedule; ?>"><strong>Manage Schedule Categories</strong></a> | <a href="?page=grille-horaire.php&amp;settings=items&amp;schedule=<?php echo $schedule; ?>">Manage Schedule Items</a> | <a href="?page=grille-horaire.php&amp;settings=days&amp;schedule=<?php echo $schedule; ?>">Manage Days Labels</a><br /><br />
+				<a href="?page=grille-horaire.php&amp;settings=general&amp;schedule=<?php echo $schedule; ?>">Réglages généraux</a> | <a href="?page=grille-horaire.php&amp;settings=categories&amp;schedule=<?php echo $schedule; ?>"><strong>Gérer les catégories d'horaire</strong></a> | <a href="?page=grille-horaire.php&amp;settings=items&amp;schedule=<?php echo $schedule; ?>">Gérer les items de l'horaire</a> | <a href="?page=grille-horaire.php&amp;settings=days&amp;schedule=<?php echo $schedule; ?>">Gérer les noms des jours</a><br /><br />
 				<div style='float:left;margin-right: 15px'>
 					<form name="wscatform" action="" method="post" id="ws-config">
 					<?php
@@ -1179,7 +1179,7 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 				</div>
 				<?php /* --------------------------------------- Items --------------------------------- */ ?>
 				<?php elseif ($adminpage == "items"): ?>
-				<a href="?page=grille-horaire.php&amp;settings=general&amp;schedule=<?php echo $schedule; ?>">Paramètres généraux</a> | <a href="?page=grille-horaire.php&amp;settings=categories&amp;schedule=<?php echo $schedule; ?>">Gérer les catégories de l'horaire</a> | <a href="?page=grille-horaire.php&amp;settings=items&amp;schedule=<?php echo $schedule; ?>"><strong>Gérer les items de l'horaire</strong></a> | <a href="?page=grille-horaire.php&amp;settings=days&amp;schedule=<?php echo $schedule; ?>">Gérer les noms des jours</a><br /><br />
+				<a href="?page=grille-horaire.php&amp;settings=general&amp;schedule=<?php echo $schedule; ?>">Réglages généraux</a> | <a href="?page=grille-horaire.php&amp;settings=categories&amp;schedule=<?php echo $schedule; ?>">Gérer les catégories de l'horaire</a> | <a href="?page=grille-horaire.php&amp;settings=items&amp;schedule=<?php echo $schedule; ?>"><strong>Gérer les items de l'horaire</strong></a> | <a href="?page=grille-horaire.php&amp;settings=days&amp;schedule=<?php echo $schedule; ?>">Gérer les noms des jours</a><br /><br />
 				<div style='float:left;margin-right: 15px;width: 500px;'>
 					<form name="wsitemsform" action="" method="post" id="ws-config">
 					<?php
@@ -1201,7 +1201,7 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 						wp_nonce_field('wspp-config');
 					?>
 					<tr>
-					<td style='width: 180px'>Style d'item</td>
+					<td style='width: 180px'>Titre</td>
 					<td><input style="width:360px" type="text" name="name" <?php if ($mode == "edit") echo 'value="' . stripslashes($selecteditem->name) . '"';?>/></td>
 					</tr>
 					<tr>
@@ -1317,18 +1317,18 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 					?></select></td>
                     </tr>
                     <tr>
-                    <td>Couleur de fond de la cellule (optionnel)</td>
+                    <td>Couleur de fond de la cellule (facultatif)</td>
                     <td><input style="width:100px" type="text" name="backgroundcolor" <?php if ($mode == "edit") echo "value='" . $selecteditem->backgroundcolor . "'";?>/></td>
 					</tr>
                     <tr>
-                    <td>Couleur du titre (optionnel)</td>
+                    <td>Couleur du titre (facultatif)</td>
                     <td><input style="width:100px" type="text" name="titlecolor" <?php if ($mode == "edit") echo "value='" . $selecteditem->titlecolor . "'";?>/></td>
 					</tr>                    
 					</table>
 					<?php if ($mode == "edit"): ?>
-						<p style="border:0;" class="submit"><input type="submit" name="updateitem" value="Update &raquo;" /></p>
+						<p style="border:0;" class="submit"><input type="submit" name="updateitem" value="Mettre à jour &rarr;" /></p>
 					<?php else: ?>
-						<p style="border:0;" class="submit"><input type="submit" name="newitem" value="Insert New Item &raquo;" /></p>
+						<p style="border:0;" class="submit"><input type="submit" name="newitem" value="Insérer un nouvel item &rarr;" /></p>
 					<?php endif; ?>
 				</form>
 				</div>
@@ -1408,7 +1408,7 @@ if ( ! class_exists( 'WS_Admin' ) ) {
 				</div>
 				<?php elseif ($adminpage == "days"): ?>
 				<div>
-					<a href="?page=grille-horaire.php&amp;settings=general&amp;schedule=<?php echo $schedule; ?>">Paramètres généraux</a> | <a href="?page=grille-horaire.php&amp;settings=categories&amp;schedule=<?php echo $schedule; ?>">Gérer les catégories de l'horaire</a> | <a href="?page=grille-horaire.php&amp;settings=items&amp;schedule=<?php echo $schedule; ?>">Gérer les items de l'horaire</a> | <a href="?page=grille-horaire.php&amp;settings=days&amp;schedule=<?php echo $schedule; ?>"><strong>Gérer les noms des jours</strong></a><br /><br />
+					<a href="?page=grille-horaire.php&amp;settings=general&amp;schedule=<?php echo $schedule; ?>">Réglages généraux</a> | <a href="?page=grille-horaire.php&amp;settings=categories&amp;schedule=<?php echo $schedule; ?>">Gérer les catégories de l'horaire</a> | <a href="?page=grille-horaire.php&amp;settings=items&amp;schedule=<?php echo $schedule; ?>">Gérer les items de l'horaire</a> | <a href="?page=grille-horaire.php&amp;settings=days&amp;schedule=<?php echo $schedule; ?>"><strong>Gérer les noms des jours</strong></a><br /><br />
 					<div>
 						<form name="wsdaysform" action="" method="post" id="ws-config">
 						<?php
