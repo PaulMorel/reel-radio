@@ -113,6 +113,8 @@ $(document).ready(function() {
 
   $('.sub-menu').parent('li.menu-item').addClass('menu-parent');
 	
+  $('.menu-parent > a').append('<span class="arrow">/</span>');
+
   $('.wp-post-image[width!="700"]').css({
     'position':'static',
     'top':'auto',

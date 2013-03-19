@@ -487,11 +487,9 @@ nav.main-menu ul li:first-child {
 	margin-left: 0;
 }
 
-nav.main-menu ul li.menu-parent:after {
+nav.main-menu ul li .arrow {
 	font-family: 'ModernPictogramsNormal';
 	font-size: 1.25em;
-	content: '/';
-	color: #fff;
 	padding-left: 5px;
 }
 
