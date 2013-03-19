@@ -1,29 +1,33 @@
-.ws-schedule a {
+/*.ws-schedule a {
 	color: #000000;
 	text-decoration: none;
 }
 .ws-schedule a:hover {
 	text-decoration: underline;
 	color: #FFFFFF;
-}
+}*/
 .ws-schedule table {
 	table-layout: fixed;
 	border-padding: 0px !important;
 	}
-    
+ .ws-schedule .verticalcolumn {
+	float: left;
+	width: 107px;
+}
+
 .ws-schedule .verticalcolumn1 {
 	float: left;
-	width: 100px;
+	width: 107px;
 }
 .ws-schedule .verticalcolumn2 {
 	float: left;
 	width: 50px;
 }
 .ws-schedule table.verticalheader {
-	width: 100px;
+	width: 107px;
 }
 .ws-schedule table.vertical1 {
-	width: 100px;
+	width: 107px;
 }
 .ws-schedule table.vertical2 {
 	width: 50px;
@@ -33,13 +37,17 @@
 	height: 50px;
 }
 .ws-schedule th {
-	background: #F5F5DC;
+	background: #f8e196;
 	text-align: center;
 	vertical-align: middle;
 }
 
 .ws-schedule tr th {
 	padding: 0px !important;
+	border-top: 1px solid #fff;
+	border-left: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+
 }
 
 .ws-schedule tr.topheader {
@@ -57,40 +65,52 @@
 	height: 90px;
 }
 .ws-schedule tr.datarow {
-	height: 70px;
+	height: 50px;
+	text-align: center;
 }
 .ws-schedule tr.datarow1 {
-	height: 70px;
+	height: 50px;
+	text-align: center;
 }
 .ws-schedule tr.datarow2 {
-	height: 140px;
+	height: 100px;
+	text-align: center;
 }
 .ws-schedule tr.datarow3 {
-	height: 210px;
+	height: 150px;
+	text-align: center;
 }
 .ws-schedule tr.datarow4 {
-	height: 280px;
+	height: 200px;
+	text-align: center;
 }
 .ws-schedule tr.datarow5 {
-	height: 350px;
+	height: 250px;
+	text-align: center;
 }
 .ws-schedule tr.datarow6 {
-	height: 420px;
+	height: 300px;
+	text-align: center;
 }
 .ws-schedule tr.datarow7 {
-	height: 490px;
+	height: 350px;
+	text-align: center;
 }
 .ws-schedule tr.datarow8 {
-	height: 560px;
+	height: 400px;
+	text-align: center;
 }
 .ws-schedule tr.vertrow {
 	width: 50px;
 }
 .ws-schedule td:hover {
-	background: #CCCCCC;
+	background: #eee;
 }
 .ws-schedule table td {
-	background: #EEEEEE;
+	background: #fafafa;
+	border-top: 1px solid #fff;
+	border-left: 1px solid #fff;
+	border-bottom: 1px solid #fff;
 }
 .ws-schedule td.cat1, td.cat2, td.cat3, td.cat4, td.cat5 {
 	border: 1px solid;

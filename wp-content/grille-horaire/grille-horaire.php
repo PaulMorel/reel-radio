@@ -1510,7 +1510,7 @@ function ws_library($scheduleid = 1, $starttime = 19, $endtime = 22, $timedivisi
 	
 	$output = "<!-- Weekly Schedule Output -->\n";
 
-	$output .= "<div class='ws-schedule' id='ws-schedule" . $scheduleid . "'>\n";
+	$output .= "<div class='ws-schedule clearfix' id='ws-schedule" . $scheduleid . "'>\n";
 	
 	if ($layout == 'horizontal' || $layout == '')
 	{
