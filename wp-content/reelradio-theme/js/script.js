@@ -113,4 +113,12 @@ $(document).ready(function() {
 
   $('.sub-menu').parent('li.menu-item').addClass('menu-parent');
 	
+  $('.wp-post-image[width!="700"]').css({
+    'position':'static',
+    'top':'auto',
+    'left' : 'auto',
+    'display': 'block',
+    'margin': '0 auto 40px'
+  })
+
 })
