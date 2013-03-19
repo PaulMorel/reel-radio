@@ -507,4 +507,24 @@ function episode_custom_columns($column){
       break;
   }
 }
+// ADD FILTERS 
+/*add_action( 'restrict_manage_posts', 'episodes_filter_list' );
+
+function episodes_filter_list() {
+    $screen = get_current_screen();
+    global $wp_query;
+    if ( $screen->post_type == 'episodes' ) {
+        wp_dropdown_categories( array(
+            'show_option_all' => 'Afficher toutes les émissions',
+            'taxonomy' => 'movie_reviews_movie_genre',
+            'name' => 'movie_reviews_movie_genre',
+            'orderby' => 'name',
+            'selected' => ( isset( $wp_query->query['movie_reviews_movie_genre'] ) ? $wp_query->query['movie_reviews_movie_genre'] : '' ),
+            'hierarchical' => false,
+            'depth' => 3,
+            'show_count' => false,
+            'hide_empty' => true,
+        ) );
+    }
+}*/
 ?>

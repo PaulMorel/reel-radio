@@ -495,17 +495,20 @@ nav.main-menu ul li .arrow {
 
 nav.main-menu ul li .sub-menu {
 	display: none;
-	margin: 0;
 	background: #000;
-	margin-left: -20px; /*border-top: 1px solid #fff;
-	*/
-position: absolute;
-	z-index: 20;
+	margin-left: -20px;
+	margin-top: 21px;
+	position: absolute;
+	z-index: 20; /*top:  67px;
+	
+	
+	.lt-ie10 &  {
+	
 	top: 67px;
+	
 }
 
-.lt-ie10 nav.main-menu ul li .sub-menu {
-	top: 67px;
+*/
 }
 
 nav.main-menu ul li .sub-menu li {
