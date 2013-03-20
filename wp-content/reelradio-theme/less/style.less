@@ -317,7 +317,41 @@ nav.main-menu {
 	}
 
 	&.listen {
-		background: @yellow;
+		background: @black;
+
+		.excerpt {
+			background: none;
+			margin:80px auto 0;
+			width:300px;
+			text-align: center;
+		}
+
+		.article-content {
+			position:static;
+			bottom: auto;
+			left: auto;
+			background: none;
+
+
+			h2 {
+				display: block;
+				color:#fff;
+				background: none;
+			}
+
+			.large-play a {
+				color:@yellow;
+				font-size:150px;
+				text-decoration: none;
+
+
+				&:hover {
+					color:lighten(@yellow, 50%);
+				}
+			}
+
+		}
+
 	}
 
 	&.is-long {

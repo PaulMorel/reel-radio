@@ -115,12 +115,13 @@ $(document).ready(function() {
 	
   $('.menu-parent > a').append('<span class="arrow">/</span>');
 
-  $('.wp-post-image[width!="700"]').css({
+  $('.attachment-post-thumbnail[width!="700"], .attachment-very-large-full[width!="940"]').css({
     'position':'static',
     'top':'auto',
     'left' : 'auto',
     'display': 'block',
     'margin': '0 auto 40px'
   })
+
 
 })

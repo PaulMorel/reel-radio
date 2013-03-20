@@ -21,9 +21,7 @@ get_header(); ?>
 		        <div class="article-content">
 			        <h2 class="entry-title">Écouter <span class="highlight">Réél-Radio</span></h2>
 			        <div class="excerpt">
-			        	<ul>
-			        		<li><a href="http://50.7.242.114:7561/listen.m3u">Écouter la radio &rarr;</a></li>
-			        	</ul>
+			        	<p class="large-play"><i><a href="http://50.7.242.114:7561/listen.m3u" title="Écouter la radio!">P</a></i></p>
 			        </div>
 		        </div>
 		        </article>
