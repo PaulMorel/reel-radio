@@ -4,7 +4,7 @@ Theme URI:  http://reel-radio.fm
 Author:  Paul Morel & Marie-Michelle Daigle
 Author URI:  http://paulmorel.com
 Description:  RÉÉL-Radio est un theme créé à partir de zéro pour la radio étudiante de l'Université du Québec en Outaouais.
-Version:  1.0.3
+Version:  1.1
 License:  GNU General Public License v2 or later
 License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  */
@@ -688,7 +688,7 @@ Articles
 	width: 200px;
 }
 
-.single-post .main-content article,.error404 .main-content article,.single-post .main-content .comments,.error404 .main-content .comments {
+.single-post .main-content article,.error404 .main-content article,.archive .main-content article,.single-post .main-content .comments,.error404 .main-content .comments,.archive .main-content .comments {
 	width: 700px;
 	background: #fff;
 	margin: 0 20px 40px 0;
@@ -696,29 +696,29 @@ Articles
 	padding: 40px 40px 20px 40px;
 }
 
-.single-post .main-content article .attachment-post-thumbnail,.error404 .main-content article .attachment-post-thumbnail {
+.single-post .main-content article .attachment-post-thumbnail,.error404 .main-content article .attachment-post-thumbnail,.archive .main-content article .attachment-post-thumbnail {
 	position: relative;
 	left: -40px;
 	top: -40px;
 }
 
-.single-post .main-content section.widget-area,.error404 .main-content section.widget-area {
+.single-post .main-content section.widget-area,.error404 .main-content section.widget-area,.archive .main-content section.widget-area {
 	float: left;
 	width: 200px;
 }
 
-.lt-ie10 .single-post .main-content section.widget-area,.lt-ie10 .error404 .main-content section.widget-area {
+.lt-ie10 .single-post .main-content section.widget-area,.lt-ie10 .error404 .main-content section.widget-area,.lt-ie10 .archive .main-content section.widget-area {
 	float: right;
 }
 
-.single-post .main-content section.widget-area .widget,.error404 .main-content section.widget-area .widget {
+.single-post .main-content section.widget-area .widget,.error404 .main-content section.widget-area .widget,.archive .main-content section.widget-area .widget {
 	width: 200px;
 	background: #fff;
 	margin-bottom: 20px;
 	padding: 20px;
 }
 
-.single-post .main-content section.widget-area .widget h3,.error404 .main-content section.widget-area .widget h3 {
+.single-post .main-content section.widget-area .widget h3,.error404 .main-content section.widget-area .widget h3,.archive .main-content section.widget-area .widget h3 {
 	margin-top: 0;
 }
 
