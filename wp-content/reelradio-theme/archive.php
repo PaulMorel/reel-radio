@@ -54,11 +54,11 @@ get_header(); ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		        <h2 class="post-title"><a href="<?php the_permalink(); ?>" title="<?php _e('Permalink to ','rr'); the_title(); ?>" rel="bookmark" ><?php the_title(); ?></a></h2>
 		      	<div class="entry-content">
 				<?php if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
 						the_post_thumbnail();
-					} ?>				
+					} ?>
+					<h2 class="post-title"><a href="<?php the_permalink(); ?>" title="<?php _e('Permalink to ','rr'); the_title(); ?>" rel="bookmark" ><?php the_title(); ?></a></h2>
 					<?php the_content(); ?>
 				<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'rr' ), 'after' => '</div>' ) ); ?>
 				</div>
@@ -70,13 +70,13 @@ get_header(); ?>
 					<?php endif; ?>
 				</div>
 	     	</article>
+			
+			<?php endwhile; ?>
 
 				<?php get_sidebar(); ?>	
 				
 				<?php comments_template(); ?>
-			
-			<?php endwhile; ?>
-
+				
 			<?php //_s_content_nav( 'nav-below' ); ?>
 		<?php else : ?>
 

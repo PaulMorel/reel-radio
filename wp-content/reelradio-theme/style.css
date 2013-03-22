@@ -461,11 +461,20 @@ header.page .logo {
 }
 
 header.page .logo a {
-	background: url(img/logo_small.png) top left no-repeat;
+	background: url(img/logo_small2.png) top left no-repeat;
 	display: block;
-	width: 140px;
+	width: 182px;
 	height: 43px;
 	margin-top: 10px;
+}
+
+header.page .logo a:hover {
+	-moz-opacity: 0.5;
+	-khtml-opacity: 0.5;
+	-webkit-opacity: 0.5;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	filter: alpha(opacity=50);
+	opacity: 0.5;
 }
 
 nav.main-menu {
@@ -607,7 +616,7 @@ Articles
 }
 
 .home article.listen {
-	background: #000000;
+	background: #f2c536;
 }
 
 .home article.listen .excerpt {

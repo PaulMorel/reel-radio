@@ -170,11 +170,15 @@ header.page {
 		z-index: 10;
 
 		a {
-			background: url(img/logo_small.png) top left no-repeat;
+			background: url(img/logo_small2.png) top left no-repeat;
 			display: block;
-			width: 140px;
+			width: 182px;
 			height: 43px;
 			margin-top: 10px;
+
+			&:hover {
+				.opacity(0.5);
+			}
 		}
 	}
 
@@ -317,7 +321,7 @@ nav.main-menu {
 	}
 
 	&.listen {
-		background: @black;
+		background: @yellow;
 
 		.excerpt {
 			background: none;

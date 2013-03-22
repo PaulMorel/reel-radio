@@ -113,7 +113,7 @@ $(document).ready(function() {
 
   $('.sub-menu').parent('li.menu-item').addClass('menu-parent');
 	
-  $('.menu-parent > a').append('<span class="arrow">/</span>');
+  $('nav.main-menu .menu-parent > a').append('<span class="arrow">/</span>');
 
   $('.attachment-post-thumbnail[width!="700"], .attachment-very-large-full[width!="940"]').css({
     'position':'static',
