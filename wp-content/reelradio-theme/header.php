@@ -19,7 +19,7 @@
 	<meta name="viewport" content="width=device-width" />
   	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title><?php wp_title('&laquo;', true, 'right'); ?><?php bloginfo('name'); ?></title>
+	<title><?php wp_title('&laquo;', true, 'right'); ?></title>
 	<meta name="description" content="<?php bloginfo('description'); ?>">
 	<meta name="author" content="Paul Morel">
 	
