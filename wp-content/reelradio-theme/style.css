@@ -619,13 +619,6 @@ Articles
 	background: #f2c536;
 }
 
-.home article.listen .excerpt {
-	background: none;
-	margin: 80px auto 0;
-	width: 300px;
-	text-align: center;
-}
-
 .home article.listen .article-content {
 	position: static;
 	bottom: auto;
@@ -633,20 +626,26 @@ Articles
 	background: none;
 }
 
-.home article.listen .article-content h2 {
+.home article.listen .article-content .large-play {
+	margin: 100px auto 30px;
+	width: 300px;
+	text-align: center;
 	display: block;
-	color: #fff;
-	background: none;
 }
 
 .home article.listen .article-content .large-play a {
-	color: #f2c536;
+	color: #fff;
 	font-size: 150px;
 	text-decoration: none;
 }
 
 .home article.listen .article-content .large-play a:hover {
-	color: #ffffff;
+	-moz-opacity: 0.8;
+	-khtml-opacity: 0.8;
+	-webkit-opacity: 0.8;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+	filter: alpha(opacity=80);
+	opacity: 0.8;
 }
 
 .home article.is-long {

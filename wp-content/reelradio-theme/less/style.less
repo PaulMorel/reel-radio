@@ -321,14 +321,8 @@ nav.main-menu {
 	}
 
 	&.listen {
+		
 		background: @yellow;
-
-		.excerpt {
-			background: none;
-			margin:80px auto 0;
-			width:300px;
-			text-align: center;
-		}
 
 		.article-content {
 			position:static;
@@ -337,27 +331,26 @@ nav.main-menu {
 			background: none;
 
 
-			h2 {
-				display: block;
-				color:#fff;
-				background: none;
-			}
+			.large-play {
 
-			.large-play a {
-				color:@yellow;
+				margin:100px auto 30px;
+				width:300px;
+				text-align: center;
+				display: block;
+
+				a {
+				color:#fff;
 				font-size:150px;
 				text-decoration: none;
 
+					&:hover {
+						.opacity(0.8);
+					}
 
-				&:hover {
-					color:lighten(@yellow, 50%);
 				}
 			}
-
 		}
-
 	}
-
 	&.is-long {
 		width:620px;
 	}
