@@ -135,7 +135,7 @@ p {
 	margin: 0 0 22px 0;
 }
 
-i {
+i.icon {
 	font-family: 'ModernPictogramsNormal';
 	font-size: 1.5em;
 	vertical-align: top;
@@ -163,7 +163,7 @@ header.page {
 	}
 
 	.logo {
-		width:350px;
+		width:270px;
 		height:66px;
 		float:left;
 		position: relative;
@@ -189,6 +189,7 @@ nav.main-menu {
 
 	ul {
 		list-style: none;
+		float:left;
 		margin:25px 0 0 50px;
 		padding:0;
 
@@ -236,6 +237,25 @@ nav.main-menu {
 					}
 				}
 			}
+		}
+	}
+
+	.links-social {
+		list-style: none;
+		/*margin-top: 15px;*/
+
+		li {
+			float:left;
+			width:24px;
+			height: 24px;
+			border-radius: 24px;
+			text-align: center;
+			padding: 3px 0 0 3px;
+			margin-left: 5px;
+
+			&.twitter { background: #00acee; }
+			&.facebook {background: #3b5998; }
+			&.youtube { background: #c4302b; }
 		}
 	}
 

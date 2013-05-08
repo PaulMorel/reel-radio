@@ -44,6 +44,26 @@
 			   <div class="site-title logo ir"><a href="<?php echo get_option('home'); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></div>
 			   <nav class="main-menu">
 					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+					<?php 	
+							if (stripslashes(get_option("rr_twitter"))) {
+								$twitter = "<li class=\"twitter\"><a href=\"http://twitter.com/". stripslashes(get_option("rr_twitter")) ."\" title=\"Twitter\" rel=\"me external\" ><i class=\"icon\">T</i></a></li>\n";
+							}
+							
+							if (stripslashes(get_option("rr_youtube"))) {
+								$youtube = "<li class=\"youtube\"><a href=\"http://www.youtube.com/user/". stripslashes(get_option("rr_youtube")) ."\" title=\"Youtube\" rel=\"me external\" ><i class=\"icon\">P</i></a></li>\n";
+							}
+							
+							if (stripslashes(get_option("rr_facebook"))) {
+								$facebook = "<li class=\"facebook\"><a href=\"https://www.facebook.com/pages/". stripslashes(get_option("rr_facebook")) ."\" title=\"Facebook\" rel=\"me external\" ><i class=\"icon\">F</i></a></li>\n";
+							}
+							
+							$construct = "<ul class=\"links-social clearfix\">\n
+							   			$twitter
+										$facebook
+										$youtube
+										</ul>";
+							   echo  $construct;
+						?>
 			   </nav>
 		   </div>
 	  </header>
