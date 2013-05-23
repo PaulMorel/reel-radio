@@ -854,7 +854,7 @@ aside.page {
   left: -10px;
 }
 .widget-links img {
-  width: 75%;
+  max-width: 75%;
   height: auto;
 }
 .widget-links a {
