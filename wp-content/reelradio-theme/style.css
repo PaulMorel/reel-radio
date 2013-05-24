@@ -924,6 +924,12 @@ footer.page .widget ul {
 .widget_nav_menu ul.sub-menu {
   display: none;
 }
+.widget_recent_entries li .post-date,
+.widget-related li .post-date,
+.widget-listen li .post-date {
+  color: #89838a;
+}
+
 .widget_recent_entries li a,
 .widget-related li a,
 .widget-listen li a {
@@ -951,7 +957,7 @@ footer.page .widget ul {
   width: 200px;
 }
 .widget-contact .vcard {
-  text-align: right;
+  text-align: left;
 }
 .widget-contact .vcard .logo a {
   background: url(img/logo_big.png) top left no-repeat;
