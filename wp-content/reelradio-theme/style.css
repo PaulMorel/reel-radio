@@ -70,6 +70,7 @@ audio:not([controls]) {
 /* --------------------------------------------------------------------------
    Links
    -------------------------------------------------------------------------- */
+
 a:focus {
   outline: thin dotted;
 }
@@ -350,10 +351,14 @@ body {
   margin: 0 auto;
 }
 a {
-  color: #163d78;
+  color:#38445b ;
+  text-decoration: none;
+
 }
 a:hover {
-  color: #a0bfed;
+  color: #050f1f;
+  text-decoration: underline;
+
 }
 strong {
   font-family: 'Avenir Bold';
