@@ -814,7 +814,6 @@ nav.navigation-paging .next {
   width: 100%;
 }
 .comments form #comment {
-  width: 100%;
   max-width: 100%;
   min-width: 100%;
 
@@ -848,6 +847,41 @@ article.emissions .attachment-very-large-full {
   position: relative;
   left: -20px;
   top: -20px;
+}
+/* -----------------------------------------------------------------------------
+   Meta author
+   -------------------------------------------------------------------------- */
+.meta-author{
+  margin: 22px 0;
+  border-bottom:1px solid #F2C536;
+  padding-bottom: 5px;
+}
+.author-avatar{
+  position: relative;
+  float: left;
+  width: 90px;
+}
+.author-avatar img{
+  border: 3px solid #e5e9eb;
+
+}
+.author-about{
+  position: relative;
+  float: left;
+  width: 520px;
+  margin-left: 10px;
+ 
+}
+.meta-author h1{
+  position: relative;
+  float: left;
+  width: 100%;
+  margin:0 0 5px;
+  font-size: 1em;
+
+}
+.meta-comments{
+  height: auto;
 }
 /* -----------------------------------------------------------------------------
    Side Bar & Pre Footer
