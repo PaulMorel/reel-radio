@@ -337,6 +337,16 @@ table {
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'social';
+  src: url('type/social.eot');
+  src: url('type/social.eot#iefix') format('embedded-opentype'),
+       url('type/social.woff') format('woff'),
+       url('type/social.ttf') format('truetype'),
+       url('type/social.svg#social') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 /* -----------------------------------------------------------------------------
    Base Styles
    -------------------------------------------------------------------------- */
@@ -353,11 +363,21 @@ body {
 a {
   color:#444444 ;
   text-decoration: none;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
 
 }
 a:hover {
-  color: #050f1f;
-  text-decoration: underline;
+   color:#F2C536;
+  text-decoration: none;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
 
 }
 strong {
@@ -856,6 +876,21 @@ article.emissions .attachment-very-large-full {
   border-bottom:1px solid #F2C536;
   padding-bottom: 5px;
 }
+
+.meta-author h1{
+  position: relative;
+  float: left;
+  width: 100%;
+  margin:0 0 5px;
+  font-size: 1em;
+}
+.meta-author h1:first-letter{
+  text-transform: capitalize;
+}
+
+.meta-author .author-present{
+  text-transform: lowercase;
+}
 .author-avatar{
   position: relative;
   float: left;
@@ -870,19 +905,45 @@ article.emissions .attachment-very-large-full {
   float: left;
   width: 520px;
   margin-left: 10px;
- 
-}
-.meta-author h1{
-  position: relative;
-  float: left;
-  width: 100%;
-  margin:0 0 5px;
-  font-size: 1em;
-
 }
 .meta-comments{
   height: auto;
 }
+.author-about ul{
+  padding: 0px;
+}
+.author-about li{
+  display: inline;
+  margin-right: 10px;
+}
+.author-about .twitter a:before{
+  content:"t";
+  font-family: 'social';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  margin-right: 0.5em;
+}
+.author-about .googleplus a:before{
+  content:"g";
+  font-family: 'social';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  margin-right: 0.5em;
+}
+.author-about .url a:before{
+  content:"u";
+  font-family: 'social';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  margin-right: 0.5em;
+}
+
 /* -----------------------------------------------------------------------------
    Side Bar & Pre Footer
    -------------------------------------------------------------------------- */

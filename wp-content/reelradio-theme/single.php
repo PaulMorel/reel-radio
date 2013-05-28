@@ -27,8 +27,42 @@ get_header(); ?>
 					<?php the_content(); ?>
 				<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'rr' ), 'after' => '</div>' ) ); ?>
 				</div>
-                <div lass="entry-meta">
-					<p class="meta-date">Écrit le <time datetime="<?php the_time('c'); ?>" pubdate><?php the_time(get_option('date_format')); ?></time></p>
+                <div class="entry-meta">
+					<div  class="meta-author clearfix">
+						<h1> <span class="author-present">Écrit par</span> <?php the_author(); ?> <span class="author-present">, le <?php the_date(); ?></span> </h1>
+
+						<div class="author-avatar"><?php echo get_avatar( get_the_author_id(), $size = '90' );?></div>
+						<div class="author-about">
+							<p><?php the_author_description(); ?></p>
+										
+								<!-- récupération des indormations sur l'auteur -->
+								<?php 
+								$twitter = get_the_author_meta('twitter'); 
+								$googleplus = get_the_author_meta('googleplus'); 
+								$url = get_the_author_meta('url'); 
+								?>
+
+							<ul>
+								<?php if(!empty($twitter)) 
+											{ ?>
+								<li class="twitter"><a href="http://twitter.com/<?php the_author_meta('twitter'); ?>">@<?php the_author_meta('twitter'); ?></a></li>
+								<?php } else {}?>
+
+
+								<?php if(!empty($googleplus)) 
+											{ ?>
+								<li class="googleplus"><a href="<?php the_author_meta('googleplus'); ?>">google +</a></li>
+								<?php } else {}?>
+
+
+								<?php if(!empty($googleplus)) 
+											{ ?>
+								<li class="url"><a href="<?php the_author_meta('url'); ?>"><?php the_author_meta('url'); ?></a></li>
+								<?php } else {}?>								
+							</ul>
+							
+						</div>	 	 
+					</div>
 					<p class="meta-comments"><a href="<?php the_permalink(); ?>#comments"><?php comments_number('Aucun commentaire','1 commentaire','% commentaires'); ?></a></p>
 					<?php if (get_the_tags()) : ?>
 					<p class="meta-tags"><?php the_tags(); ?></p>
