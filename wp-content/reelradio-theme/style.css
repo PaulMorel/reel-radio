@@ -785,7 +785,26 @@ blockquote {
   background: #eeeeee;
   padding: 20px 20px 1px;
 }
-nav.navigation-paging {
+.wp-pagenavi{
+  text-align: center;
+  clear: both;
+   background: #EEEEEE;
+   margin: 20px 0 40px 0;
+  
+}
+.wp-pagenavi a,.wp-pagenavi span {
+  height: 60px;
+  border:2px solid #EEEEEE;
+  padding: 10px 14px;
+  background: #fff;
+  clear: both;
+}
+.wp-pagenavi span.current{
+  background: #F2C536;
+  color: #fff;
+}
+
+/*nav.navigation-paging {
   background: #fff;
   margin: 20px 0 40px 0;
   padding: 20px;
@@ -797,7 +816,8 @@ nav.navigation-paging .previous {
 nav.navigation-paging .next {
   display: block;
   float: left;
-}
+}*/
+
 .post-categories li {
   display: inline-block;
   margin: 2px;
@@ -876,7 +896,6 @@ article.emissions .attachment-very-large-full {
   border-bottom:1px solid #F2C536;
   padding-bottom: 5px;
 }
-
 .meta-author h1{
   position: relative;
   float: left;
@@ -887,7 +906,6 @@ article.emissions .attachment-very-large-full {
 .meta-author h1:first-letter{
   text-transform: capitalize;
 }
-
 .meta-author .author-present{
   text-transform: lowercase;
 }
@@ -898,7 +916,6 @@ article.emissions .attachment-very-large-full {
 }
 .author-avatar img{
   border: 3px solid #e5e9eb;
-
 }
 .author-about{
   position: relative;
@@ -943,7 +960,61 @@ article.emissions .attachment-very-large-full {
   line-height: 1;
   margin-right: 0.5em;
 }
-
+/* -----------------------------------------------------------------------------
+   Page Player Réél-Radio
+   -------------------------------------------------------------------------- */
+#wrap-player{
+  background-color: #FFFFFF;
+  width: 500px;
+  margin: auto;
+  webkit-box-shadow: 0px 0px 20px 0px #8b8b8b;
+  box-shadow: 0px 0px 20px 0px #8b8b8b;
+}
+header.hp-page {
+  height: 66px;
+  width: 500px;
+  margin: 0px auto 0 auto;
+  background-color: #fff;
+}
+header.hp-page .hp-wrapper {
+  height: 66px;
+  margin:10px 0;
+  padding: 10px;
+  text-align: center;
+}
+header.hp-page .hp-logo {
+  width: 270px;
+  height: 66px;
+  float: left;
+  position: relative;
+  z-index: 10;
+}
+header.hp-page .hp-logo a{
+  background: url(img/logo_small2.png) top left no-repeat;
+  display: block;
+  width: 182px;
+  height: 43px;
+}
+header.hp-page .hp-logo a:hover {
+  -moz-opacity: 0.5;
+  -khtml-opacity: 0.5;
+  -webkit-opacity: 0.5;
+  opacity: 0.5;
+}
+.p-wrapper{
+  margin: 10px 0 20px 0; 
+}
+.player{
+  webkit-box-shadow: 0px 10px 20px 0px #8b8b8b;
+  box-shadow: 0px 10px 20px 0px #8b8b8b;
+}
+#wrap-player h1{
+  width: 100%;
+  margin: 0;
+}
+#wrap-player footer{
+  margin: 10px 10px;
+}
 /* -----------------------------------------------------------------------------
    Side Bar & Pre Footer
    -------------------------------------------------------------------------- */

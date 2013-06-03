@@ -55,7 +55,7 @@ get_header(); ?>
 								<?php } else {}?>
 
 
-								<?php if(!empty($googleplus)) 
+								<?php if(!empty($url)) 
 											{ ?>
 								<li class="url"><a href="<?php the_author_meta('url'); ?>"><?php the_author_meta('url'); ?></a></li>
 								<?php } else {}?>								
