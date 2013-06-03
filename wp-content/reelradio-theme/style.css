@@ -70,6 +70,7 @@ audio:not([controls]) {
 /* --------------------------------------------------------------------------
    Links
    -------------------------------------------------------------------------- */
+
 a:focus {
   outline: thin dotted;
 }
@@ -336,6 +337,16 @@ table {
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'social';
+  src: url('type/social.eot');
+  src: url('type/social.eot#iefix') format('embedded-opentype'),
+       url('type/social.woff') format('woff'),
+       url('type/social.ttf') format('truetype'),
+       url('type/social.svg#social') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 /* -----------------------------------------------------------------------------
    Base Styles
    -------------------------------------------------------------------------- */
@@ -350,10 +361,24 @@ body {
   margin: 0 auto;
 }
 a {
-  color: #163d78;
+  color:#444444 ;
+  text-decoration: none;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+
 }
 a:hover {
-  color: #a0bfed;
+   color:#F2C536;
+  text-decoration: none;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+
 }
 strong {
   font-family: 'Avenir Bold';
@@ -760,7 +785,26 @@ blockquote {
   background: #eeeeee;
   padding: 20px 20px 1px;
 }
-nav.navigation-paging {
+.wp-pagenavi{
+  text-align: center;
+  clear: both;
+   background: #EEEEEE;
+   margin: 20px 0 40px 0;
+  
+}
+.wp-pagenavi a,.wp-pagenavi span {
+  height: 60px;
+  border:2px solid #EEEEEE;
+  padding: 10px 14px;
+  background: #fff;
+  clear: both;
+}
+.wp-pagenavi span.current{
+  background: #F2C536;
+  color: #fff;
+}
+
+/*nav.navigation-paging {
   background: #fff;
   margin: 20px 0 40px 0;
   padding: 20px;
@@ -772,7 +816,8 @@ nav.navigation-paging .previous {
 nav.navigation-paging .next {
   display: block;
   float: left;
-}
+}*/
+
 .post-categories li {
   display: inline-block;
   margin: 2px;
@@ -809,7 +854,9 @@ nav.navigation-paging .next {
   width: 100%;
 }
 .comments form #comment {
-  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+
 }
 article.emissions h2 {
   margin-bottom: 10px;
@@ -842,6 +889,133 @@ article.emissions .attachment-very-large-full {
   top: -20px;
 }
 /* -----------------------------------------------------------------------------
+   Meta author
+   -------------------------------------------------------------------------- */
+.meta-author{
+  margin: 22px 0;
+  border-bottom:1px solid #F2C536;
+  padding-bottom: 5px;
+}
+.meta-author h1{
+  position: relative;
+  float: left;
+  width: 100%;
+  margin:0 0 5px;
+  font-size: 1em;
+}
+.meta-author h1:first-letter{
+  text-transform: capitalize;
+}
+.meta-author .author-present{
+  text-transform: lowercase;
+}
+.author-avatar{
+  position: relative;
+  float: left;
+  width: 90px;
+}
+.author-avatar img{
+  border: 3px solid #e5e9eb;
+}
+.author-about{
+  position: relative;
+  float: left;
+  width: 520px;
+  margin-left: 10px;
+}
+.meta-comments{
+  height: auto;
+}
+.author-about ul{
+  padding: 0px;
+}
+.author-about li{
+  display: inline;
+  margin-right: 10px;
+}
+.author-about .twitter a:before{
+  content:"t";
+  font-family: 'social';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  margin-right: 0.5em;
+}
+.author-about .googleplus a:before{
+  content:"g";
+  font-family: 'social';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  margin-right: 0.5em;
+}
+.author-about .url a:before{
+  content:"u";
+  font-family: 'social';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  margin-right: 0.5em;
+}
+/* -----------------------------------------------------------------------------
+   Page Player Réél-Radio
+   -------------------------------------------------------------------------- */
+#wrap-player{
+  background-color: #FFFFFF;
+  width: 500px;
+  margin: auto;
+  webkit-box-shadow: 0px 0px 20px 0px #8b8b8b;
+  box-shadow: 0px 0px 20px 0px #8b8b8b;
+}
+header.hp-page {
+  height: 66px;
+  width: 500px;
+  margin: 0px auto 0 auto;
+  background-color: #fff;
+}
+header.hp-page .hp-wrapper {
+  height: 66px;
+  margin:10px 0;
+  padding: 10px;
+  text-align: center;
+}
+header.hp-page .hp-logo {
+  width: 270px;
+  height: 66px;
+  float: left;
+  position: relative;
+  z-index: 10;
+}
+header.hp-page .hp-logo a{
+  background: url(img/logo_small2.png) top left no-repeat;
+  display: block;
+  width: 182px;
+  height: 43px;
+}
+header.hp-page .hp-logo a:hover {
+  -moz-opacity: 0.5;
+  -khtml-opacity: 0.5;
+  -webkit-opacity: 0.5;
+  opacity: 0.5;
+}
+.p-wrapper{
+  margin: 10px 0 20px 0; 
+}
+.player{
+  webkit-box-shadow: 0px 10px 20px 0px #8b8b8b;
+  box-shadow: 0px 10px 20px 0px #8b8b8b;
+}
+#wrap-player h1{
+  width: 100%;
+  margin: 0;
+}
+#wrap-player footer{
+  margin: 10px 10px;
+}
+/* -----------------------------------------------------------------------------
    Side Bar & Pre Footer
    -------------------------------------------------------------------------- */
 aside.page {
@@ -854,7 +1028,7 @@ aside.page {
   left: -10px;
 }
 .widget-links img {
-  width: 75%;
+  max-width: 75%;
   height: auto;
 }
 .widget-links a {
@@ -919,6 +1093,12 @@ footer.page .widget ul {
 .widget_nav_menu ul.sub-menu {
   display: none;
 }
+.widget_recent_entries li .post-date,
+.widget-related li .post-date,
+.widget-listen li .post-date {
+  color: #89838a;
+}
+
 .widget_recent_entries li a,
 .widget-related li a,
 .widget-listen li a {
@@ -946,7 +1126,7 @@ footer.page .widget ul {
   width: 200px;
 }
 .widget-contact .vcard {
-  text-align: right;
+  text-align: left;
 }
 .widget-contact .vcard .logo a {
   background: url(img/logo_big.png) top left no-repeat;

@@ -8,6 +8,7 @@
 
 get_header(); ?>
 
+
      <section class="main-content">
      	<div class="wrapper">
 
@@ -19,7 +20,7 @@ get_header(); ?>
 			<!-- Listen -->
 				<article class="listen">
 		        <div class="article-content">
-		        	<p class="large-play"><i class="icon"><a href="http://50.7.242.114:7561/listen.m3u" title="Écouter la radio!">P</a></i></p>
+		        	<p class="large-play"><i class="icon"><a href=" <?php bloginfo('url'); ?>/?page_id=826" title="Écouter la radio!" target="_blank">P</a></i></p>
 			        <h2 class="entry-title">Écouter <span class="highlight">Réél-Radio</span></h2>
 		        </div>
 		        </article>
@@ -64,7 +65,7 @@ get_header(); ?>
 			<?php endwhile; ?>
 
 			</div>
-			<?php reel_content_nav( 'nav-below' ); ?>
+			<?php wp_pagenavi(); ?>
 		<?php else : ?>
 
 			<?php get_template_part( 'no-results', 'index' ); ?>
